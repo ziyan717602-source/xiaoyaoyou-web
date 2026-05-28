@@ -1,0 +1,234 @@
+[
+  {
+    "Name": "强袭",
+    "Code": "SF01",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "战牌阶段，若您参战，您可消耗以令一方战力+2。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "神行",
+    "Code": "SF02",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "战牌阶段，若您参战，可消耗令命中+2。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "法障",
+    "Code": "SF03",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      -18
+    ],
+    "Occurs": [
+      "G0OH"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "您可消耗以抵消一次五灵属性伤害。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "坚盾",
+    "Code": "SF04",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      -150
+    ],
+    "Occurs": [
+      "G0OH"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "您受到标准伤害时可消耗补1张牌；若为无属性伤害，则可改为抵消此伤害。生效后您HP+1。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "脱力",
+    "Code": "SF05",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*Z8"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "！若您参战，战斗开始阶段消耗令您的战力-2。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "虚弱",
+    "Code": "SF06",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      250
+    ],
+    "Occurs": [
+      "G1TH"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "！您承受伤害后强制消耗，您对自己造成1点伤害。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "神算",
+    "Code": "SF07",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      130
+    ],
+    "Occurs": [
+      "G0TT"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "任意角色掷骰结果生效前，您可消耗以令数值至多向上或向下调整2点。",
+    "Special": {
+      "IsConsume": "true"
+    }
+  },
+  {
+    "Name": "狂暴",
+    "Code": "SF08",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "Descripe": "！您不能使用任意手牌，不可放弃战斗。战斗开始阶段，您战力加倍，命中变为0。当您回复HP时，弃置本标记。",
+    "Special": {
+      "IsConsume": "false"
+    }
+  }
+]

@@ -1,0 +1,555 @@
+[
+  {
+    "Name": "横置",
+    "Code": "STU1",
+    "Type": 0,
+    "Hero": "",
+    "Skills": [],
+    "Description": {
+      "": "您跳过您的下个回合（弃牌阶段除外）。"
+    }
+  },
+  {
+    "Name": "已倾慕",
+    "Code": "STU2",
+    "Type": 0,
+    "Hero": "",
+    "Skills": [],
+    "Description": {
+      "": "您下次进入濒死阶段不再触发您的倾慕者的倾慕效果。"
+    }
+  },
+  {
+    "Name": "无宠物效果",
+    "Code": "STU3",
+    "Type": 0,
+    "Hero": "",
+    "Skills": [],
+    "Description": {
+      "": "本角色无法获得宠物效果，直至该角色离场。"
+    }
+  },
+  {
+    "Name": "结拜",
+    "Code": "TRXJ405",
+    "Type": 1,
+    "Hero": 10505,
+    "Skills": [],
+    "Description": {
+      "": "玄霄对该角色的支援或妨碍时命中额外+1。"
+    }
+  },
+  {
+    "Name": "雷灵",
+    "Code": "TKXJ508",
+    "Type": 2,
+    "Hero": 10608,
+    "Skills": [
+      "JN60801",
+      "JN60802",
+      "JN60803"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "入梦调",
+    "Code": "TRSP502",
+    "Type": 1,
+    "Hero": 15005,
+    "Skills": [],
+    "Description": {
+      "": "您在本场战斗中被禁止使用战牌。"
+    }
+  },
+  {
+    "Name": "灵音·羽",
+    "Code": "I1",
+    "Type": 3,
+    "Hero": 17004,
+    "Skills": [],
+    "Description": {
+      "灵音": "您可在受到水属性伤害时移除，将其减少1点转移给任意角色。",
+      "轮回调": "您参加水属性怪物战斗时若失败，战斗结束阶段可移除，指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+      "穹光破阵曲": "该牌移除后您的战力+1。"
+    }
+  },
+  {
+    "Name": "灵音·徵",
+    "Code": "I2",
+    "Type": 3,
+    "Hero": 17004,
+    "Skills": [],
+    "Description": {
+      "灵音": "您可在受到火属性伤害时移除，将其减少1点转移给任意角色。",
+      "轮回调": "您参加火属性怪物战斗时若失败，战斗结束阶段可移除，指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+      "穹光破阵曲": "该牌移除后您的战力+1。"
+    }
+  },
+  {
+    "Name": "灵音·商",
+    "Code": "I3",
+    "Type": 3,
+    "Hero": 17004,
+    "Skills": [],
+    "Description": {
+      "灵音": "您可在受到雷属性伤害时移除，将其减少1点转移给任意角色。",
+      "轮回调": "您参加雷属性怪物战斗时若失败，战斗结束阶段可移除，指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+      "穹光破阵曲": "该牌移除后您的战力+1。"
+    }
+  },
+  {
+    "Name": "灵音·角",
+    "Code": "I4",
+    "Type": 3,
+    "Hero": 17004,
+    "Skills": [],
+    "Description": {
+      "灵音": "您可在受到风属性伤害或其它无属性伤害时移除(倾慕除外)，将其减少1点转移给任意角色。",
+      "轮回调": "您参加风属性怪物战斗时若失败，战斗结束阶段可移除，指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+      "穹光破阵曲": "该牌移除后您的战力+1。"
+    }
+  },
+  {
+    "Name": "灵音·宫",
+    "Code": "I5",
+    "Type": 3,
+    "Hero": 17004,
+    "Skills": [],
+    "Description": {
+      "灵音": "您可在受到土属性伤害时移除，将其减少1点转移给任意角色。",
+      "轮回调": "您参加土属性怪物战斗时若失败，战斗结束阶段可移除，指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+      "穹光破阵曲": "该牌移除后您的战力+1。"
+    }
+  },
+  {
+    "Name": "御灵·锦八爷",
+    "Code": "I9,L4",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0703",
+      "JNT0704"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "御灵·扬枭",
+    "Code": "I10,L5",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0705",
+      "JNT0706"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "御灵·蕴儿",
+    "Code": "I11,L6",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0707",
+      "JNT0708"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "御灵·火猴",
+    "Code": "I12,L7",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0709",
+      "JNT0710"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "御灵·雷兽",
+    "Code": "I13,L8",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0711",
+      "JNT0712"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "御灵·蛊神",
+    "Code": "I14,L9",
+    "Type": 3,
+    "Hero": 17007,
+    "Skills": [
+      "JNT0713",
+      "JNT0714"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "坚盾",
+    "Code": "TRTR008",
+    "Type": 1,
+    "Hero": 17008,
+    "Skills": [],
+    "Description": {
+      "潜龙濯": "您受到属性伤害时可以弃置「坚盾」令伤害无效。"
+    }
+  },
+  {
+    "Name": "风雅颂·风",
+    "Code": "I6,L1",
+    "Type": 3,
+    "Hero": 17020,
+    "Skills": [
+      "JNT2003"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "风雅颂·雅",
+    "Code": "I7,L2",
+    "Type": 3,
+    "Hero": 17020,
+    "Skills": [
+      "JNT2004"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "风雅颂·颂",
+    "Code": "I8,L3",
+    "Type": 3,
+    "Hero": 17020,
+    "Skills": [
+      "JNT2005"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "天蛇杖",
+    "Code": "TRTR028",
+    "Type": 1,
+    "Hero": 17028,
+    "Skills": [],
+    "Description": {
+      "": "您的HP回复值额外+1。"
+    }
+  },
+  {
+    "Name": "大英雄",
+    "Code": "TRTR032",
+    "Type": 1,
+    "Hero": 17032,
+    "Skills": [],
+    "Description": {
+      "": "当居十方受到伤害时您额外受到等量同种伤害。"
+    }
+  },
+  {
+    "Name": "穹极洰傀",
+    "Code": "I25",
+    "Type": 3,
+    "Hero": 17039,
+    "Skills": [
+      "JNT3901"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "剑意",
+    "Code": "TKEX301",
+    "Type": 2,
+    "Hero": 18002,
+    "Skills": [
+      "JNE0203"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "附魂",
+    "Code": "TREX506",
+    "Type": 1,
+    "Hero": 18004,
+    "Skills": [],
+    "Description": {
+      "": "您补牌阶段补牌数+1，然后EX枯木抽取您一张手牌。"
+    }
+  },
+  {
+    "Name": "天璇迷局",
+    "Code": "TKEX515",
+    "Type": 2,
+    "Hero": 18005,
+    "Skills": [
+      "JNE0501"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "赤血毒焰",
+    "Code": "TAEX116",
+    "Type": 4,
+    "Hero": 18010,
+    "Skills": [
+      "JNE1003"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "金翎",
+    "Code": "TKHL001",
+    "Type": 2,
+    "Hero": 19001,
+    "Skills": [
+      "JNH0101",
+      "JNH0102"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "紫阳门",
+    "Code": "I23,L18",
+    "Type": 3,
+    "Hero": 19002,
+    "Skills": [
+      "JNH0203",
+      "JNH0204"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "神剑宗",
+    "Code": "I24,L19",
+    "Type": 3,
+    "Hero": 19002,
+    "Skills": [
+      "JNH0205",
+      "JNH0206"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "胧妖之眼",
+    "Code": "TRHL002",
+    "Type": 1,
+    "Hero": 19002,
+    "Skills": [],
+    "Description": {
+      "": "您执行效果直至战斗结束：技牌，HP-1；战牌，战力-2；特殊牌，本战中不能使用手牌；装备牌，立即将此牌装备并补1张牌。"
+    }
+  },
+  {
+    "Name": "魔舞天轮",
+    "Code": "TRHL003",
+    "Type": 1,
+    "Hero": 19003,
+    "Skills": [],
+    "Description": {
+      "": "当前回合行动顺序处于反转状态。您与杨泰的天赋战力和命中均被反转。"
+    }
+  },
+  {
+    "Name": "灵智真法",
+    "Code": "TAHL004",
+    "Type": 4,
+    "Hero": 19004,
+    "Skills": [],
+    "Description": {
+      "": "您不可使用战牌，本场战斗中我方角色每使用一张牌且生效后，我方战力+1。若我方战力未曾因此增加，战斗结束阶段您补1张牌。"
+    }
+  },
+  {
+    "Name": "冷月凄霜",
+    "Code": "TAHL005",
+    "Type": 4,
+    "Hero": 19005,
+    "Skills": [],
+    "Description": {
+      "": "直到您的下个回合开始阶段，对方所有角色回复HP无效（倾慕除外）。"
+    }
+  },
+  {
+    "Name": "镜花水月",
+    "Code": "TRHL005",
+    "Type": 1,
+    "Hero": 19005,
+    "Skills": [],
+    "Description": {
+      "": "直到月神解除横置为止：该角色主动技失效并免疫所有伤害。"
+    }
+  },
+  {
+    "Name": "慈航普渡",
+    "Code": "TAHL006",
+    "Type": 4,
+    "Hero": 19006,
+    "Skills": [],
+    "Description": {
+      "": "本回合剩余的伤害值-1。"
+    }
+  },
+  {
+    "Name": "化幻镜石",
+    "Code": "TKHL009",
+    "Type": 2,
+    "Hero": 19009,
+    "Skills": [
+      "JNH0903"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "大魔言咒",
+    "Code": "TAHL014",
+    "Type": 4,
+    "Hero": 19014,
+    "Skills": [],
+    "Description": {
+      "": "游戏将在您的下个回合开始阶段强制结束。"
+    }
+  },
+  {
+    "Name": "玄冰阵",
+    "Code": "I15,L10",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1603"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "炎火阵",
+    "Code": "I16,L11",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1604"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "闪雷阵",
+    "Code": "I17,L12",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1605"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "狂风阵",
+    "Code": "I18,L13",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1606"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "厚土阵",
+    "Code": "I19,L14",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1607"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "歙阴阵",
+    "Code": "I26,L20",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1608"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "寰阳阵",
+    "Code": "I27,L21",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1609"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "天师符法阵",
+    "Code": "I20,L15",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1610"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "八门金锁阵",
+    "Code": "I21,L16",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1611"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "诸葛七星阵",
+    "Code": "I22,L17",
+    "Type": 3,
+    "Hero": 19016,
+    "Skills": [
+      "JNH1612"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "噬心",
+    "Code": "TKHL019",
+    "Type": 2,
+    "Hero": 19019,
+    "Skills": [
+      "JNH1901",
+      "JNH1902",
+      "JNH1903"
+    ],
+    "Description": {}
+  },
+  {
+    "Name": "扰心",
+    "Code": "TRHL019",
+    "Type": 1,
+    "Hero": 19019,
+    "Skills": [],
+    "Description": {
+      "": "孔绣与您的战力数值始终相同。"
+    }
+  },
+  {
+    "Name": "回梦",
+    "Code": "TAHL019",
+    "Type": 4,
+    "Hero": 19019,
+    "Skills": [],
+    "Description": {
+      "": "对方女性角色不能使用非装备牌，且其支援或妨碍时，战牌开始阶段退出战斗，然后须弃置1张牌，弃牌后掷骰判定，结果小于5则取消「回梦」并弃1枚「噬心」。"
+    }
+  },
+  {
+    "Name": "结拜",
+    "Code": "TRRM405",
+    "Type": 1,
+    "Hero": 20006,
+    "Skills": [],
+    "Description": {
+      "": "玄霄对该角色的支援或妨碍时命中额外+2。"
+    }
+  }
+]

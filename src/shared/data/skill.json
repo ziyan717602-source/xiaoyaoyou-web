@@ -1,0 +1,10541 @@
+[
+  {
+    "Name": "侠骨柔肠",
+    "Code": "JN10101",
+    "Occurs": [
+      "R$Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您支援女性角色触发的战斗时，您的命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "飞龙探云手",
+    "Code": "JN10102",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参与我方触发的战斗时，若怪物的闪避小于等于2，战斗开始阶段，您抽取妨碍者1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "双剑",
+    "Code": "JN10201",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您可装备两件武器，效果叠加。",
+    "_isBless": false
+  },
+  {
+    "Name": "梦蛇",
+    "Code": "JN10202",
+    "Occurs": [
+      "G0HD",
+      "G0IS"
+    ],
+    "Priorities": [
+      120,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！敌方合计拥有3个及以上宠物时，您变身为赵灵儿·梦蛇，当前HP不变。",
+    "_isBless": false
+  },
+  {
+    "Name": "梦蛇·变身",
+    "Code": "JN10302",
+    "Occurs": [
+      "G0HL",
+      "G0IS"
+    ],
+    "Priorities": [
+      120,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当敌方宠物合计不足3个时，您变身为赵灵儿，当前HP不变。",
+    "_isBless": false
+  },
+  {
+    "Name": "女娲",
+    "Code": "JN10303",
+    "Occurs": [
+      "R*PD",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您在场时，任意战斗中我方战力额外+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "气剑指",
+    "Code": "JN10401",
+    "Occurs": [
+      "G1IZ",
+      "G1OZ"
+    ],
+    "Priorities": [
+      120,
+      70
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您装备任意武器时，战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "嫉恶如仇",
+    "Code": "JN10402",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参与任何战斗时，若本方失败，战斗结束阶段，敌方所有参战者HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "鬼灵精",
+    "Code": "JN10501",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的技牌阶段，您可将任意数量的手牌交给一名或多名玩家。",
+    "_isBless": false
+  },
+  {
+    "Name": "万蛊蚀天",
+    "Code": "JN10502",
+    "Occurs": [
+      "R#BC"
+    ],
+    "Priorities": [
+      -150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的补牌阶段开始时，若您没有手牌，则我方全体玩家补一张牌，之后自己以外的所有角色HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "御剑术",
+    "Code": "JN10601",
+    "Occurs": [
+      "G1IZ",
+      "G1OZ"
+    ],
+    "Priorities": [
+      120,
+      70
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您装备任意武器时，您的命中额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "醉仙望月步",
+    "Code": "JN10602",
+    "Occurs": [
+      "R#ZF",
+      "G0HT",
+      "R#ZW"
+    ],
+    "Priorities": [
+      0,
+      40,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战斗阶段中，您可以触发两次战斗，若只触发一次战斗，补牌阶段您多补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "水魔兽合体",
+    "Code": "JN10701",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参与水、火属性怪物的战斗时，自身战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "召唤水魔兽",
+    "Code": "JN10702",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "参战时，若您未使用过战牌，战牌阶段您可丢弃2张手牌，我方战力+5。此后本场战斗中您不可使用战牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "虎煞之力",
+    "Code": "JN20101",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您在战斗开始阶段进行掷骰判定，本场战斗中您的战力额外增加骰子点数。1、6点算作0点。",
+    "_isBless": false
+  },
+  {
+    "Name": "不屈不挠",
+    "Code": "JN20102",
+    "Occurs": [
+      "G0TT"
+    ],
+    "Priorities": [
+      160
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您进行掷骰判定时，若对骰子点数不满意，每丢弃1张手牌可重投一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "狡猾",
+    "Code": "JN20201",
+    "Occurs": [
+      "R#Z1"
+    ],
+    "Priorities": [
+      -200
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您触发战斗时，战斗开始阶段可丢弃此怪牌，重新翻取1张。每回合只能使用一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "拒绝",
+    "Code": "JN20202",
+    "Occurs": [
+      "&TP01&0"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可以将任意特殊类手牌当做【冰心诀】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "仙霞五奇",
+    "Code": "JN20301",
+    "Occurs": [
+      "R*PD",
+      "G09P"
+    ],
+    "Priorities": [
+      0,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您在场时，战斗开始阶段我方支援未命中或没有支援时触发者战力+3；我方妨碍未命中或没有妨碍，怪物战力+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "元灵归心术",
+    "Code": "JN20302",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "在您的技牌阶段，您每丢弃1张技牌，回复任意玩家2点HP。",
+    "_isBless": false
+  },
+  {
+    "Name": "辣手摧花",
+    "Code": "JN20601",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，若您的HP大于等于2，您可选定一名在场女性角色，令其与您自己HP各-1，一回合不能对同一角色反复使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "生命献祭",
+    "Code": "JN20602",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      -10
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您死亡后变为魔尊，装备、手牌、宠物保留。",
+    "_isBless": false
+  },
+  {
+    "Name": "蓄势待发",
+    "Code": "JN20701",
+    "Occurs": [
+      "R#ST"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的回合开始阶段，您补充1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "崩坏",
+    "Code": "JN20702",
+    "Occurs": [
+      "R#TM"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的回合结束阶段，您的HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "追打",
+    "Code": "JN30201",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      190
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当有玩家HP减少时，您可丢弃1张手牌，本次HP减少的全部玩家额外HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "连击",
+    "Code": "JN30202",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段，您每丢弃1张战牌以外的手牌，本次战斗内您的战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "好胜",
+    "Code": "JN30203",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您参战时，若您HP大于等于2，可在战牌阶段令自身HP-2，然后补2张牌，每场战斗只能使用一次。本伤害隐蛊无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "朱砂变·红",
+    "Code": "JN30301",
+    "Occurs": [
+      "R#ST"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的回合开始阶段，可选择变身为龙葵·红，当前HP不变。",
+    "_isBless": false
+  },
+  {
+    "Name": "熔铸",
+    "Code": "JN30302",
+    "Occurs": [
+      "%5",
+      "G0CC"
+    ],
+    "Priorities": [
+      0,
+      320
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可令自身HP-1，然后视为打出一张本回合打出的上1张技牌相同的技牌并生效。每回合限1次。",
+    "_isBless": false
+  },
+  {
+    "Name": "剑灵",
+    "Code": "JN30303",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可在战斗中爆发任一装备，本场战斗您的战力+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "朱砂变·蓝",
+    "Code": "JN30401",
+    "Occurs": [
+      "R#ST"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的回合开始阶段，可选择变身为龙葵·蓝，当前HP不变。",
+    "_isBless": false
+  },
+  {
+    "Name": "控剑",
+    "Code": "JN30402",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可将任意队友已放置的装备收归为您的手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "剑魂",
+    "Code": "JN30403",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可爆发任一装备，指定一人HP-3，之后该装备废弃。每回合限1次。",
+    "_isBless": false
+  },
+  {
+    "Name": "关爱",
+    "Code": "JN30501",
+    "Occurs": [
+      "G0HD"
+    ],
+    "Priorities": [
+      130
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您在场时，我方每从非我方角色处得到一个宠物，您指定一人补充2张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "神圣",
+    "Code": "JN30502",
+    "Occurs": [
+      "G0WB"
+    ],
+    "Priorities": [
+      110
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您拥有的宠物战力额外+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "决斗",
+    "Code": "JN30601",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可丢弃n张手牌（n=本回合发动决斗的次数），并指定1-2名角色分别与自己掷骰子拼点，点数小的一方HP-3，平局双方各HP-2。决斗造成的伤害隐蛊无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "手下留情",
+    "Code": "JN30602",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      97
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！HP大于等于2的一方，决斗后至少保留1HP。",
+    "_isBless": false
+  },
+  {
+    "Name": "降临",
+    "Code": "JN30603",
+    "Occurs": [
+      "R$Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您作为妨碍者时，您的命中额外+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "占卜",
+    "Code": "JN40101",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可弃掉1张手牌观看怪物牌堆顶的3张牌，弃置其中2张怪物牌然后将剩下1张放回怪物牌顶。",
+    "_isBless": false
+  },
+  {
+    "Name": "摄灵法阵",
+    "Code": "JN40102",
+    "Occurs": [
+      "G0HD"
+    ],
+    "Priorities": [
+      140
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发战斗并获得宠物时，消灭对方任意一只同属性宠物。",
+    "_isBless": false
+  },
+  {
+    "Name": "阵法",
+    "Code": "JN40201",
+    "Occurs": [
+      "R#ZC",
+      "G09P"
+    ],
+    "Priorities": [
+      0,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您触发战斗时，若我方支援命中，您在本场战斗中战力额外+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "蛮横",
+    "Code": "JN40202",
+    "Occurs": [
+      "R#VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "若您触发战斗并且战斗失败，战斗结束阶段您可指定任意一名角色HP-2。",
+    "_isBless": false
+  },
+  {
+    "Name": "烹饪",
+    "Code": "JN40301",
+    "Occurs": [
+      "&TP02&0",
+      "&TP02&1"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "TP02,0",
+      "TP02,1"
+    ],
+    "Descripe": "您可以将任意2张手牌当做【灵葫仙丹】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "兄弟",
+    "Code": "JN40302",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，您可收取所有队友的所有手牌，然后将全部手牌任意分配。每阶段限一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "饕餮",
+    "Code": "JN40401",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，您每丢弃1张手牌或装备，自身HP+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "敏感",
+    "Code": "JN40402",
+    "Occurs": [
+      "R#GR",
+      "R*Z1",
+      "R*ZD",
+      "G0QR",
+      "G1EV",
+      "R*ZN",
+      "G0CD",
+      "G0OH"
+    ],
+    "Priorities": [
+      0,
+      200,
+      0,
+      80,
+      150,
+      0,
+      50,
+      98
+    ],
+    "IsOnce": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可以在合理时机将任意非装备类手牌当做饰品装备，上限5个（不可替换已有饰品）。",
+    "_isBless": false
+  },
+  {
+    "Name": "合成饰品",
+    "Code": "JN40403",
+    "Occurs": [
+      "G0ZB",
+      "G0OT"
+    ],
+    "Priorities": [
+      140,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您每有一个饰品，您的战力+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "天河剑",
+    "Code": "JN50101",
+    "Occurs": [
+      "R*Z1",
+      "G0IX",
+      "G0OX",
+      "G0IW",
+      "G0OW"
+    ],
+    "Priorities": [
+      0,
+      150,
+      150,
+      150,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您参战时，若您的命中大于等于怪物的闪避4点，则本场战斗您的战力额外+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "后羿射日弓",
+    "Code": "JN50102",
+    "Occurs": [
+      "R*ZD",
+      "R*Z2"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "任意战斗的战牌阶段可使用，本场战斗中我方战力额外+8。本场战斗结束后您的基础命中变为0。每局游戏中只能使用一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "搜囊探宝",
+    "Code": "JN50201",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，您可以将1张任意手牌当作【偷盗】或【铜钱镖】使用。每阶段限一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "劫富济贫",
+    "Code": "JN50202",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，您可补1张牌，若发动此技能后您的手牌数大于等于2张，需选择弃掉1张。每回合只能使用一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "盗墓",
+    "Code": "JN50203",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      190
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！任意其他玩家死亡退场时，您得到所有阵亡角色的所有手牌、装备并将任意分配，然后自身HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "妖王",
+    "Code": "JN50301",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      110,
+      110,
+      120,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您在场时，我方的每个宠物额外获得「主人战力+1」的宠物效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "梦傀儡",
+    "Code": "JN50302",
+    "Occurs": [
+      "G0ZW",
+      "R*ZW",
+      "G0IY"
+    ],
+    "Priorities": [
+      350,
+      0,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您死亡退场后基础命中变为5，并依然可以进行支援、妨碍。",
+    "_isBless": false
+  },
+  {
+    "Name": "赠剑",
+    "Code": "JN50401",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，您可将自己装备区中的装备转移到其他玩家的装备区中，每通过此技能转移1件装备，您立刻补2张牌。一回合内不能对同一角色反复使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "剑匣",
+    "Code": "JN50402",
+    "Occurs": [
+      "G0QR",
+      "G0IS"
+    ],
+    "Priorities": [
+      0,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的手牌上限额外+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "凝冰焚炎",
+    "Code": "JN50501",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -40
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！水属性、火属性的HP伤害对您无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "结拜",
+    "Code": "JN50502",
+    "Occurs": [
+      "G0IS",
+      "R$Z1",
+      "G0OY"
+    ],
+    "Priorities": [
+      110,
+      0,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时，指定一名场内角色，整局游戏中，您对其支援或妨碍时命中额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "狂龙迅影斩",
+    "Code": "JN60101",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每一场战斗中，您可额外使用任意张数的战牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "山贼",
+    "Code": "JN60102",
+    "Occurs": [
+      "G1DI",
+      "G1DI"
+    ],
+    "Priorities": [
+      120,
+      121
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      true
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当队友补牌时，可以将其中的1张交给您。",
+    "_isBless": true
+  },
+  {
+    "Name": "咏圣调",
+    "Code": "JN60201",
+    "Occurs": [
+      "%2",
+      "%4"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "ZP01,0",
+      "ZP02,0",
+      "ZP03,0",
+      "TP02,0",
+      "ZPT1,0",
+      "ZPT2,0",
+      "ZPT3,0",
+      "TPR1,0",
+      "ZPT4,0",
+      "ZPT5,0",
+      "ZPH2,0",
+      "TPH3,0"
+    ],
+    "Descripe": "对自身生效的特殊牌或战牌，您亦可使用后令其改对其他角色生效，无视其他角色使用该牌的限制条件。",
+    "_isBless": false
+  },
+  {
+    "Name": "逆天阵",
+    "Code": "JN60202",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可令您的队友各翻取怪物牌堆顶1张牌，若为怪物牌直接成为宠物。此后您强制死亡退场。",
+    "_isBless": false
+  },
+  {
+    "Name": "表现欲",
+    "Code": "JN60301",
+    "Occurs": [
+      "R*Z1",
+      "G0IY",
+      "G0OY",
+      "G0FI"
+    ],
+    "Priorities": [
+      0,
+      120,
+      90,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每有一个女性角色参战，您在本场战斗中战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "越行之术",
+    "Code": "JN60302",
+    "Occurs": [
+      "G09P"
+    ],
+    "Priorities": [
+      40
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！由您触发战斗时，支援者强制命中。",
+    "_isBless": false
+  },
+  {
+    "Name": "无法无天",
+    "Code": "JN60401",
+    "Occurs": [
+      "R$GE"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "其他玩家的技牌阶段结束后，您可以使用技牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "活力",
+    "Code": "JN60402",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您参战时，您在战斗开始阶段补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "炼药",
+    "Code": "JN60403",
+    "Occurs": [
+      "R#GR",
+      "R*Z1",
+      "R*ZD",
+      "G0QR",
+      "G1EV",
+      "R*ZN",
+      "G0CD",
+      "G0ZH",
+      "G0OH"
+    ],
+    "Priorities": [
+      0,
+      200,
+      0,
+      80,
+      150,
+      0,
+      50,
+      0,
+      98
+    ],
+    "IsOnce": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可在合理时机弃置2张手牌，并令一名任意玩家立刻补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔君",
+    "Code": "JN60501",
+    "Occurs": [
+      "R$PD",
+      "G1CH",
+      "G1TH",
+      "G0OS",
+      "G0IS",
+      "G0FI"
+    ],
+    "Priorities": [
+      0,
+      120,
+      120,
+      80,
+      110,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您进行支援或妨碍时，我方战力+n，n=您当前已损失的HP。",
+    "_isBless": false
+  },
+  {
+    "Name": "牺牲",
+    "Code": "JN60502",
+    "Occurs": [
+      "R*ZD",
+      "R*Z2"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您参战时在战牌阶段可使用，本场战斗我方直接取胜，战斗结束阶段，您强制死亡退场。",
+    "_isBless": false
+  },
+  {
+    "Name": "锁魂",
+    "Code": "JN60601",
+    "Occurs": [
+      "G0ZW",
+      "R*PD",
+      "G0OJ"
+    ],
+    "Priorities": [
+      390,
+      0,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！有其他任意角色死亡退场时，您将该角色收为傀儡。您每拥有一个傀儡，任何战斗中我方战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "底牌",
+    "Code": "JN60602",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      340
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若您的队友全部死亡退场，您放弃所有手牌、装备、宠物、傀儡，变身为湮世穹兵，当前HP调整为湮世穹兵的HP满值。",
+    "_isBless": false
+  },
+  {
+    "Name": "侵略如火",
+    "Code": "JN60701",
+    "Occurs": [
+      "R#Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发的战斗中，您的战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "毁天灭地",
+    "Code": "JN60702",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的技牌阶段可进行一次掷骰判定，若大于等于5，除您以外所有角色HP-2。",
+    "_isBless": false
+  },
+  {
+    "Name": "雷灵",
+    "Code": "JN60801",
+    "Occurs": [
+      "R*Z2",
+      "G0OJ"
+    ],
+    "Priorities": [
+      0,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      null,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您参战时，战斗结束阶段放置一张雷灵牌在自己面前。每放置2张，您的命中+1，上限4张。",
+    "_isBless": false
+  },
+  {
+    "Name": "雷屏",
+    "Code": "JN60802",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      70
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！任何玩家受到伤害时（倾慕除外），您每放弃一个雷灵，可抵消1点HP伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "雳天击",
+    "Code": "JN60803",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段可使用，消耗全部雷灵，敌全体HP-n，n=消耗雷灵的一半（向下取整），此伤害为雷属性伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "成长",
+    "Code": "JNS0101",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的HP上限为12。",
+    "_isBless": false
+  },
+  {
+    "Name": "仙剑客栈",
+    "Code": "JNS0102",
+    "Occurs": [
+      "R#OC",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时翻取未选用的一张角色牌，您获得该角色的所有技能（变身技，维持技除外），直到下回合开始阶段。",
+    "_isBless": false
+  },
+  {
+    "Name": "桃花运",
+    "Code": "JNS0103",
+    "Occurs": [
+      "G0IV"
+    ],
+    "Priorities": [
+      120
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若您发动『仙剑客栈』翻到女性角色，您HP回复2点。",
+    "_isBless": false
+  },
+  {
+    "Name": "回魂仙梦",
+    "Code": "JNS0201",
+    "Occurs": [
+      "R#GR",
+      "R#IC",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      0,
+      80
+    ],
+    "IsOnce": [
+      false,
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段每个目标限一次，您可弃置1张手牌并指定一名其他角色，您获得其天赋技能直至回合结束或您更换目标（变身技、维持技、限定技除外）。",
+    "_isBless": false
+  },
+  {
+    "Name": "圣灵",
+    "Code": "JNS0202",
+    "Occurs": [
+      "R#GR",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      110,
+      90
+    ],
+    "IsOnce": [
+      false,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可将任意技牌当做【五气朝元】使用或典当。",
+    "_isBless": false
+  },
+  {
+    "Name": "比武招亲",
+    "Code": "JNS0301",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，每弃1张手牌，可令在场两名性别不同的角色掷骰拼点，负方HP-2，平局均不受伤。一回合内不能对同一角色反复使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "刁蛮",
+    "Code": "JNS0302",
+    "Occurs": [
+      "G1CK"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "如果对『比武招亲』的结果不满意，您可令双方重新掷骰，每次『比武招亲』只能发动一次。",
+    "_isBless": false
+  },
+  {
+    "Name": "狂风寨",
+    "Code": "JNS0401",
+    "Occurs": [
+      "R*ZC",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您参战时，本方战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "父爱",
+    "Code": "JNS0402",
+    "Occurs": [
+      "R*ZN"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任何一场战斗结束时，您可弃掉2张手牌，跳过本场战斗的胜负结算（宠物依然会获得）。",
+    "_isBless": false
+  },
+  {
+    "Name": "入梦调",
+    "Code": "JNS0501",
+    "Occurs": [
+      "R*Z1",
+      "G0AX"
+    ],
+    "Priorities": [
+      100,
+      50
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您参战时，您可在战斗开始时指定一名玩家，禁止其在本场战斗中使用战牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "玉殇",
+    "Code": "JNS0502",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您死亡退场时，您可以指定两名玩家的宠物对调。",
+    "_isBless": false
+  },
+  {
+    "Name": "侦查",
+    "Code": "JNS0601",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段，每放弃1张手牌，可令一名玩家展示全部手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "妖枪",
+    "Code": "JNS0602",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗开始阶段，可以将自身的部分战力转化为等量的命中。 ",
+    "_isBless": false
+  },
+  {
+    "Name": "嘟儿的礼物",
+    "Code": "JNS0701",
+    "Occurs": [
+      "R*Z2"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您参战时，您可以在战斗结束阶段指定任意一名玩家补1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "觉醒",
+    "Code": "JNS0702",
+    "Occurs": [
+      "G1WJ"
+    ],
+    "Priorities": [
+      90
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "整局游戏结束时，若您在场，您可指定消灭对方任意一个非BOSS宠物。",
+    "_isBless": false
+  },
+  {
+    "Name": "鉴宝",
+    "Code": "JNS0801",
+    "Occurs": [
+      "G0DH",
+      "G1DI"
+    ],
+    "Priorities": [
+      90,
+      170
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      true
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您因任何原因补牌时，多补1张，之后您从本次补的牌中选择弃掉1张。",
+    "_isBless": false
+  },
+  {
+    "Name": "讨价还价",
+    "Code": "JNS0802",
+    "Occurs": [
+      "G0CE",
+      "G0CE"
+    ],
+    "Priorities": [
+      95,
+      105
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任何人使用【偷盗】或【铜钱镖】时，您可指定1张自己的手牌或己方任何角色的1件装备，该牌无法成为本次【偷盗】或【铜钱镖】的目标。",
+    "_isBless": false
+  },
+  {
+    "Name": "霸气",
+    "Code": "JNS0901",
+    "Occurs": [
+      "R*Z1",
+      "G0HZ"
+    ],
+    "Priorities": [
+      0,
+      230
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您为触发者或支援者时，被触发的怪物及NPC角色战力-2，妨碍者命中-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "王者",
+    "Code": "JNS0902",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      105,
+      95
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您不能成为任何手牌及角色能力的指定目标。",
+    "_isBless": false
+  },
+  {
+    "Name": "望舒剑",
+    "Code": "JNT0101",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您支援我方男性角色，妨碍敌方女性角色时战力+1，命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "灵光藻玉",
+    "Code": "JNT0102",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -20
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方全体角色受到的水、火属性HP伤害-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "侠义",
+    "Code": "JNT0201",
+    "Occurs": [
+      "G0HD"
+    ],
+    "Priorities": [
+      135
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！敌方每从非敌方角色处获得一个宠物，您指定一人补2张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "剑神",
+    "Code": "JNT0202",
+    "Occurs": [
+      "R#VS",
+      "G1CK"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      false
+    ],
+    "IsHind": [
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您触发的战斗若失败，战斗结束阶段，您可以依次强制将战斗中的非BOSS级怪物收归宠物；若如此做，我方须先给敌方1只宠物（除非没有），不能与「侠义」同时发动。",
+    "_isBless": false
+  },
+  {
+    "Name": "仁义剑仙",
+    "Code": "JNT0301",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参与水、火属性以外的战斗时，命中+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "转轮镜台",
+    "Code": "JNT0302",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段可将您的宠物交给队友，每交出1只您补2张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "灵音",
+    "Code": "JNT0401",
+    "Occurs": [
+      "G0OH",
+      "G0IS"
+    ],
+    "Priorities": [
+      -100,
+      110
+    ],
+    "IsOnce": [
+      false,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您登场时获得专属的「灵音」牌；您可在受到伤害时移除相应的1张，将对应属性的伤害减少1点并转移给任意角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "轮回调",
+    "Code": "JNT0402",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您参战时若战斗失败，战斗结束阶段可移除对应本战怪物属性的「灵音」牌，每移除1张指定任意一人补1张牌，之后若该角色手牌数大于等于2，则须弃置1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "穹光破阵曲",
+    "Code": "JNT0403",
+    "Occurs": [
+      "G0OJ"
+    ],
+    "Priorities": [
+      120
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的「灵音」牌每减少1张，您的战力+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "凌云拨月",
+    "Code": "JNT0501",
+    "Occurs": [
+      "R*ZC"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您做为支援者或妨碍者参战时，战牌开始阶段开始时，可以临时减少命中，增加等量的战力。",
+    "_isBless": false
+  },
+  {
+    "Name": "梦缘",
+    "Code": "JNT0502",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您死亡退场时，指定1名角色无法获得宠物效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "痴情",
+    "Code": "JNT0601",
+    "Occurs": [
+      "R*ZC"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段开始时，您每弃1张不同种类的手牌并HP-1可令我方支援者或妨碍者的命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "千金",
+    "Code": "JNT0602",
+    "Occurs": [
+      "G0HT",
+      "G0HT"
+    ],
+    "Priorities": [
+      60,
+      180
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方角色的补牌阶段，多补1张，然后从手牌中弃置1张。",
+    "_isBless": false
+  },
+  {
+    "Name": "惹人怜爱",
+    "Code": "JNT0701",
+    "Occurs": [
+      "%7"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "TP03,0"
+    ],
+    "Descripe": "您的队友可替您使用【隐蛊】。",
+    "_isBless": true
+  },
+  {
+    "Name": "御灵",
+    "Code": "JNT0702",
+    "Occurs": [
+      "R#ST",
+      "G0IS"
+    ],
+    "Priorities": [
+      0,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您拥有专属的「御灵」牌；您登场时及您的回合开始阶段须移除1张，获得该牌效果直至您的下个回合开始阶段。",
+    "_isBless": false
+  },
+  {
+    "Name": "土御灵",
+    "Code": "JNT0703",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0ZH",
+      "G0ZB",
+      "G0OT"
+    ],
+    "Priorities": [
+      120,
+      80,
+      0,
+      130,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您防具区无牌时，您战力+1；此状态下若您进入濒死状态，您可令您HP+2并失去技能「土御灵」。",
+    "_isBless": false
+  },
+  {
+    "Name": "盗窃",
+    "Code": "JNT0704",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段限一次，可弃2张手牌，将场上的1件基础装备转移到相应位置（不可替换已有装备）。",
+    "_isBless": false
+  },
+  {
+    "Name": "风御灵",
+    "Code": "JNT0705",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您的技牌阶段，可将您的任意手牌当「五气朝元」使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "风卷残云",
+    "Code": "JNT0706",
+    "Occurs": [
+      "R#TM",
+      "R$TM",
+      "G0OS",
+      "G0OY",
+      "G0IY"
+    ],
+    "Priorities": [
+      0,
+      0,
+      80,
+      80,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的回合结束阶段，除您外全体角色命中减少您已损失的HP值。每个角色的回合结束阶段，命中降低效果解除。",
+    "_isBless": false
+  },
+  {
+    "Name": "水御灵",
+    "Code": "JNT0707",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0IY",
+      "G0OY"
+    ],
+    "Priorities": [
+      120,
+      80,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方全体各自选择一项：战力+1或命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "万里飞霜",
+    "Code": "JNT0708",
+    "Occurs": [
+      "G1DI"
+    ],
+    "Priorities": [
+      20
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "其他角色的牌因弃置进入弃牌堆时，您可弃任意数量手牌并将等量的弃牌收入手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "火御灵",
+    "Code": "JNT0709",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      120,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战力+3，命中-2。",
+    "_isBless": false
+  },
+  {
+    "Name": "焚天烈焰",
+    "Code": "JNT0710",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -13
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您在战斗中承受的伤害-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "雷御灵",
+    "Code": "JNT0711",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗阶段限一次，您参战成功时，可对自己造成n点阳属性伤害（n至多为您的HP），令自己战力+n。",
+    "_isBless": false
+  },
+  {
+    "Name": "雷动九州",
+    "Code": "JNT0712",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，若您有手牌可与场上一名其他有手牌的角色掷骰一次，负者弃置2张手牌，平局各弃1张。",
+    "_isBless": false
+  },
+  {
+    "Name": "毒御灵",
+    "Code": "JNT0713",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      120
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方角色受到伤害后补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "蛊毒天下",
+    "Code": "JNT0714",
+    "Occurs": [
+      "G0HT"
+    ],
+    "Priorities": [
+      85
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段您可少补1张，对全体角色造成1点阴属性伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "羊驼踏岳",
+    "Code": "JNT0801",
+    "Occurs": [
+      "R#Z0",
+      "R*ZW",
+      "R*ZZ",
+      "G0JM",
+      "G0OY"
+    ],
+    "Priorities": [
+      0,
+      0,
+      0,
+      80,
+      60
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可以跳过您的战斗阶段，令一名队友代替您执行战斗阶段，此阶段不可放弃战斗。",
+    "_isBless": false
+  },
+  {
+    "Name": "潜龙濯",
+    "Code": "JNT0802",
+    "Occurs": [
+      "R#BC"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段结束时，您可弃1张手牌令一名角色获得「法障」。",
+    "_isBless": false
+  },
+  {
+    "Name": "丹青化五灵",
+    "Code": "JNT0803",
+    "Occurs": [
+      "G0HD",
+      "G0HL",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      120,
+      120,
+      110,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战力额外加敌方五灵宠物属性数。",
+    "_isBless": false
+  },
+  {
+    "Name": "纵雨",
+    "Code": "JNT0901",
+    "Occurs": [
+      "G1DI"
+    ],
+    "Priorities": [
+      220
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方其它角色补牌后，您可按行动顺序与补牌角色分别交换至多1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "万殇",
+    "Code": "JNT0902",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      295
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的死亡补牌改为我方全体补2张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "返灵",
+    "Code": "JNT0903",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -70
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若一次伤害值（倾慕除外）不小于您当前HP，在伤害结算前，您掷骰一次，若点数小于5则该伤害无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "玩剑诀",
+    "Code": "JNT1001",
+    "Occurs": [
+      "G1IZ",
+      "G1OZ"
+    ],
+    "Priorities": [
+      120,
+      70
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战力始终增加敌方武器总数。",
+    "_isBless": false
+  },
+  {
+    "Name": "浮香掠影",
+    "Code": "JNT1002",
+    "Occurs": [
+      "G0XZ"
+    ],
+    "Priorities": [
+      170
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "除您外的其它角色查看怪物牌堆后，您可以查看其观看结果。",
+    "_isBless": false
+  },
+  {
+    "Name": "皓华燕芳诀",
+    "Code": "JNT1003",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参战时，若您战斗失败，战斗结束阶段，您抽取敌方一名参战者1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "义衅",
+    "Code": "JNT1101",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -60
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方其它角色受到伤害且伤害来源不为其本人时，您可以替其承担之，若如此做该伤害值+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "蚩尤血脉",
+    "Code": "JNT1102",
+    "Occurs": [
+      "R$Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您做为支援者参战时命中+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "净天教",
+    "Code": "JNT1103",
+    "Occurs": [
+      "H0ST"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "游戏开始阶段，若敌方有蜀山或四大世家弟子或我方有妖魔角色，您可变身为姜世离。",
+    "_isBless": false
+  },
+  {
+    "Name": "天循两仪",
+    "Code": "JNT1201",
+    "Occurs": [
+      "G1SG",
+      "R*ZD",
+      "R*Z1"
+    ],
+    "Priorities": [
+      0,
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任意角色决定是否翻怪牌前及每个战牌阶段，您可以每弃1张手牌指定一人查看怪牌堆顶1张牌，同时令您在该回合战牌阶段战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "长离剑",
+    "Code": "JNT1202",
+    "Occurs": [
+      "R#Z1"
+    ],
+    "Priorities": [
+      50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发的战斗，战斗开始阶段，若支援者未命中或无支援，则本场战斗您的战力额外+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "罡炼释",
+    "Code": "JNT1301",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您未装备武器时若参战，可每HP-n令您本战战力+1（n为您本战发动「罡炼释」的次数）。",
+    "_isBless": false
+  },
+  {
+    "Name": "兵解",
+    "Code": "JNT1302",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段，若您的HP小于5点，您可令敌方弃置战力总和至少为您剩余HP数量2倍的宠物，之后您强制死亡退场。",
+    "_isBless": false
+  },
+  {
+    "Name": "娇俏可人",
+    "Code": "JNT1401",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      97
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您发动『情蛊』与『千蛛碎影』使敌方角色受到伤害后，敌方角色至少保留1HP。",
+    "_isBless": false
+  },
+  {
+    "Name": "情蛊",
+    "Code": "JNT1402",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      90
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您受到伤害时，可弃1张手牌令一名男性角色与您平分此伤害（奇数伤害该角色多分1点）。",
+    "_isBless": false
+  },
+  {
+    "Name": "千蛛碎影",
+    "Code": "JNT1403",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -75
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当一方有多名角色即将受到伤害时，您可以弃置1张手牌令所有伤害改为由其中一名角色承担，但伤害总值减少该角色在场的队友数量。",
+    "_isBless": false
+  },
+  {
+    "Name": "千峰岭",
+    "Code": "JNT1501",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      180
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每当我方其他角色受到一次伤害（自伤除外），您对对方一名角色造成1点阴属性伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔影纵",
+    "Code": "JNT1502",
+    "Occurs": [
+      "R#EP",
+      "R#GE",
+      "G1EV"
+    ],
+    "Priorities": [
+      0,
+      150,
+      250
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您在事件阶段之前，额外进行一个技牌阶段；每当您翻取事件，在事件结算后您HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "夏螟虫",
+    "Code": "JNT1601",
+    "Occurs": [
+      "G0ZB"
+    ],
+    "Priorities": [
+      140
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每有一张牌进入您的装备区时您指定一人补2张牌，一回合不能对同一人多次使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "冰封玉碎",
+    "Code": "JNT1602",
+    "Occurs": [
+      "R*Z1",
+      "G09P",
+      "R*ZN",
+      "G0HD",
+      "G0HL",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      50,
+      0,
+      120,
+      120,
+      110,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "水属性怪物的战斗您可令我方参战者强制命中，之后若我方胜利则跳过胜负结算，若我方战败您的HP-2（此伤害为水属性）；我方拥有水属性宠物时，您的战力-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "拂照",
+    "Code": "JNT1701",
+    "Occurs": [
+      "G1EV",
+      "G1EV"
+    ],
+    "Priorities": [
+      160,
+      220
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任意事件结算前，我方角色可展示1张手牌将其临时移出游戏。",
+    "_isBless": false
+  },
+  {
+    "Name": "仁厚",
+    "Code": "JNT1702",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      92
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方每有一名角色在手牌不足上限时HP减少，您可令其HP减少量+1，然后该角色将手牌调整至上限。",
+    "_isBless": false
+  },
+  {
+    "Name": "弦歌问情",
+    "Code": "JNT1801",
+    "Occurs": [
+      "R*ZD",
+      "G0CC"
+    ],
+    "Priorities": [
+      0,
+      320
+    ],
+    "IsOnce": [
+      false,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段，您每使用或主动弃置1张战牌可令我方本场战斗战力额外+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "情殇",
+    "Code": "JNT1802",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段，您可以弃1张手牌令全体角色补或弃等于各自普通倾慕者数量的手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "生意经",
+    "Code": "JNT1901",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您指定一名其它角色，您与其各自保留1张手牌并亮出其余手牌，然后您与其轮流从这些牌中拿取1张直至分配完毕。",
+    "_isBless": false
+  },
+  {
+    "Name": "洒金笺",
+    "Code": "JNT1902",
+    "Occurs": [
+      "%1",
+      "%4"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "JP01,0",
+      "JP02,0",
+      "JP03,0",
+      "JP04,0",
+      "JP05,0",
+      "JP06,0",
+      "ZP01,0",
+      "ZP02,0",
+      "ZP03,0",
+      "ZP04,0",
+      "TP02,0",
+      "TP04,0",
+      "JPT1,0",
+      "JPT2,0",
+      "ZPT1,0",
+      "TPT1,0",
+      "TPT2,0",
+      "TPT2,1",
+      "JPT3,0",
+      "JPT4,0",
+      "JPT5,0",
+      "ZPT2,0",
+      "ZPT3,0",
+      "JPT6,0",
+      "TPT4,0",
+      "TPT4,1",
+      "ZPT4,0",
+      "ZPT5,0",
+      "TPR1,0",
+      "TPR1,1",
+      "JPR1,0",
+      "JPR2,0",
+      "JPH2,0",
+      "TPH1,0",
+      "TPH1,1",
+      "TPH4,0",
+      "ZPH1,0",
+      "TP01,0",
+      "TP02,1",
+      "TP03,0",
+      "TPT1,1",
+      "TPT3,0",
+      "TPT3,1"
+    ],
+    "Descripe": "我方角色的【洒金笺】可当作任意非装备牌使用。",
+    "_isBless": true
+  },
+  {
+    "Name": "轮回之剑",
+    "Code": "JNT1903",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0ON"
+    ],
+    "Priorities": [
+      120,
+      90,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您不能典当【魔剑】；【魔剑】由其它角色区域内进入弃牌堆后，您获得之。",
+    "_isBless": false
+  },
+  {
+    "Name": "绣口锦心咒",
+    "Code": "JNT1904",
+    "Occurs": [
+      "G0ZH",
+      "G0ZH"
+    ],
+    "Priorities": [
+      80,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，当一名角色执行濒死倾慕结算前，您可弃置全部手牌，令全体角色临时成为其倾慕者。",
+    "_isBless": false
+  },
+  {
+    "Name": "风雅颂",
+    "Code": "JNT2001",
+    "Occurs": [
+      "R#GR",
+      "R#GR",
+      "G0IS"
+    ],
+    "Priorities": [
+      0,
+      -100,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您拥有专属的「风雅颂」牌；您的技牌阶段可移除1张，获得该牌效果直至您的下个技牌阶段。",
+    "_isBless": false
+  },
+  {
+    "Name": "贿赂",
+    "Code": "JNT2002",
+    "Occurs": [
+      "G0XZ"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "有角色查看怪物牌堆后，您可弃1张手牌，将1张未加入游戏的NPC牌放在怪牌堆顶或堆顶牌下的位置。",
+    "_isBless": false
+  },
+  {
+    "Name": "风雅颂·风",
+    "Code": "JNT2003",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      120,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战力+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "风雅颂·雅",
+    "Code": "JNT2004",
+    "Occurs": [
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      120,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的命中+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "风雅颂·颂",
+    "Code": "JNT2005",
+    "Occurs": [
+      "G0HT"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任意角色的补牌阶段补牌后，您可补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "弈局",
+    "Code": "JNT2101",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可展示并交给一名对方角色1张手牌，令其二选一：展示全部手牌并弃置与该牌类型不同的所有手牌，或令您补4张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "君威",
+    "Code": "JNT2102",
+    "Occurs": [
+      "G09P"
+    ],
+    "Priorities": [
+      40
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您作为妨碍者参战时强制命中。",
+    "_isBless": false
+  },
+  {
+    "Name": "养剑",
+    "Code": "JNT2201",
+    "Occurs": [
+      "G0XZ",
+      "R*PD",
+      "G0OT"
+    ],
+    "Priorities": [
+      170,
+      0,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每次任意牌堆被查看后，您可将1张非装备牌作为「养剑」装备，此牌须与现有的「养剑」牌类型不同；我方战斗中战力增加「养剑」牌数。",
+    "_isBless": false
+  },
+  {
+    "Name": "殉剑",
+    "Code": "JNT2202",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段您可令我方一名角色将对方1张装备区内的牌收归手牌或立即装备，然后对方弃置所有同类型已装备的牌。此后您翻取未加入游戏的NPC牌直至可加入，您以HP满值一半（向上取整）加入。",
+    "_isBless": false
+  },
+  {
+    "Name": "记忆之瞳",
+    "Code": "JNT2301",
+    "Occurs": [
+      "G0IS",
+      "R*Z1"
+    ],
+    "Priorities": [
+      110,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！登场阶段，您获得4张未加入游戏的怪物牌作为「记忆」区。战斗开始阶段，「记忆」区每有一张与本战同属性的怪物牌，您的战力与命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "共鸣",
+    "Code": "JNT2302",
+    "Occurs": [
+      "R*ZD",
+      "R*TM"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段限一次，您参战时可弃置1张「记忆」牌，令我方战力+3，或指定一名角色获得「神行」标记。如此做当前回合结束阶段，您HP上限-2。",
+    "_isBless": false
+  },
+  {
+    "Name": "美食",
+    "Code": "JNT2401",
+    "Occurs": [
+      "G0ON"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方回合每有1张怪物牌进入弃牌堆时，您指定一名角色获得1枚普通标记。",
+    "_isBless": false
+  },
+  {
+    "Name": "执念",
+    "Code": "JNT2402",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可弃置1张手牌，然后从手牌堆依次翻取，直至翻出2张与该牌同类型的牌，您获得并可将其任意分配给我方角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "地脉",
+    "Code": "JNT2501",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段，您可将一张非战牌当【五灵轮】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "腐尸之眼",
+    "Code": "JNT2502",
+    "Occurs": [
+      "G0XZ",
+      "R*ED"
+    ],
+    "Priorities": [
+      170,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！任何角色查看怪物牌堆后，您当前回合内战力与命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "五毒珠",
+    "Code": "JNT2601",
+    "Occurs": [
+      "G0OH",
+      "G0IS"
+    ],
+    "Priorities": [
+      -8,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每类属性限一次，当一次五灵属性伤害产生时，您可指定我方一名伤害目标免疫之。",
+    "_isBless": false
+  },
+  {
+    "Name": "天灵千裂破",
+    "Code": "JNT2602",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，您可弃置我方一只宠物。然后令对方弃置一只同属性宠物：若其分别为弱怪、强怪或BOSS，您相应受到1点、2点、3点阳属性伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔器",
+    "Code": "JNT2701",
+    "Occurs": [
+      "R*Z1",
+      "G0FI",
+      "G0IX",
+      "G0OX",
+      "G0IW",
+      "G0OW"
+    ],
+    "Priorities": [
+      0,
+      110,
+      120,
+      120,
+      120,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若您参战，本场触发的怪物的战力减少您的命中与怪物的闪避的差值（最小为0）。",
+    "_isBless": false
+  },
+  {
+    "Name": "韬略",
+    "Code": "JNT2702",
+    "Occurs": [
+      "G0ZB",
+      "G0OT",
+      "G0IS",
+      "G0OS",
+      "G0FI"
+    ],
+    "Priorities": [
+      140,
+      90,
+      120,
+      90,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的手牌上限增加基础装备数；每当有角色放弃战斗，您补2张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "母仪",
+    "Code": "JNT2801",
+    "Occurs": [
+      "G0HD"
+    ],
+    "Priorities": [
+      130
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！场上一名角色获得1张宠物后，您指定我方一人补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "天蛇杖",
+    "Code": "JNT2802",
+    "Occurs": [
+      "G0IS",
+      "G0IH",
+      "G0ZW"
+    ],
+    "Priorities": [
+      110,
+      15,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时指定一名角色，您在场时该角色HP回复量额外+1；您阵亡后，您可指定一名我方角色从场上搜寻【天蛇杖】，并可将其立即装备。",
+    "_isBless": false
+  },
+  {
+    "Name": "修为",
+    "Code": "JNT2901",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方其他角色受到属性伤害后，您可交给该角色任意数量的手牌，然后此角色可立即使用1张技牌或装备牌，之后若您无手牌则您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "獠影",
+    "Code": "JNT2902",
+    "Occurs": [
+      "R*ZC"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌开始阶段，若您未参战且我方支援者或妨碍者未命中，您可改为由您支援或妨碍。",
+    "_isBless": false
+  },
+  {
+    "Name": "刀华",
+    "Code": "JNT3001",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗开始阶段，若您参战未命中，您对对方全体参战造成1点伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "家主",
+    "Code": "JNT3002",
+    "Occurs": [
+      "R*Z1",
+      "G0IT",
+      "G0OT"
+    ],
+    "Priorities": [
+      0,
+      120,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗阶段，若您是手牌数唯一最少者，您战力+1，命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "昙华",
+    "Code": "JNT3003",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      110
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方其他角色受到技牌或技能伤害后，您可变身为洛昭言。",
+    "_isBless": false
+  },
+  {
+    "Name": "散财",
+    "Code": "JNT3101",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可将2张手牌当【洒金笺】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "机关熊",
+    "Code": "JNT3201",
+    "Occurs": [
+      "G0IS"
+    ],
+    "Priorities": [
+      110
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您首次登场时变身为豆包。",
+    "_isBless": false
+  },
+  {
+    "Name": "大英雄",
+    "Code": "JNT3202",
+    "Occurs": [
+      "G0IS",
+      "G0OH"
+    ],
+    "Priorities": [
+      110,
+      -120
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您因豆包阵亡而登场时，您指定一名角色，此后当您受到伤害时该角色额外受到等量同种伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "万钧神弩",
+    "Code": "JNT3301",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗开始阶段，您的战力增加5-手牌数。",
+    "_isBless": false
+  },
+  {
+    "Name": "木罴",
+    "Code": "JNT3302",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      220
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您受到伤害后可弃置1张手牌令您HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "机关",
+    "Code": "JNT3303",
+    "Occurs": [
+      "G0ZH",
+      "G0ZH",
+      "G0ZW"
+    ],
+    "Priorities": [
+      80,
+      120,
+      -10
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方其它角色执行濒死倾慕结算前，您可临时成为其倾慕者；您阵亡后变身为居十方，HP为其满值。",
+    "_isBless": false
+  },
+  {
+    "Name": "耳光",
+    "Code": "JNT3401",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方战斗失败后，您可令一名我方其它参战者HP-1并获得「强袭」。",
+    "_isBless": false
+  },
+  {
+    "Name": "怒火",
+    "Code": "JNT3402",
+    "Occurs": [
+      "R*Z1",
+      "G0FI"
+    ],
+    "Priorities": [
+      0,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每一名妖魔角色参战，您战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "无垢",
+    "Code": "JNT3403",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，技牌阶段，若我方存活角色数少于对方，您可弃置对方一只宠物，您的天赋命中变成0。",
+    "_isBless": false
+  },
+  {
+    "Name": "改命",
+    "Code": "JNT3501",
+    "Occurs": [
+      "G1EV",
+      "G1EV",
+      "R*ED",
+      "G0IJ",
+      "G0OJ"
+    ],
+    "Priorities": [
+      130,
+      220,
+      -150,
+      120,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方角色翻取事件后，若您当前命中不为0，您可从弃牌堆中选取1张事件牌，令触发者选择一张执行，此后将这2张事件牌作为「改命」置于您角色牌旁。您的命中减少「改命」牌数量的一半。",
+    "_isBless": false
+  },
+  {
+    "Name": "舍生取义",
+    "Code": "JNT3502",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可令我方其他角色HP累计回复2n点，然后您受到n点阳属性伤害（n至多为您的HP）。",
+    "_isBless": false
+  },
+  {
+    "Name": "热海",
+    "Code": "JNT3601",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "R*Z2",
+      "G0IY",
+      "G0OY"
+    ],
+    "Priorities": [
+      110,
+      80,
+      0,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方全体手牌上限+1；战斗结束阶段，若此战为水、火、阳属性战斗，我方全体参战者补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "嗜血法阵",
+    "Code": "JNT3602",
+    "Occurs": [
+      "R#BC",
+      "G1CK"
+    ],
+    "Priorities": [
+      150,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段结束时，您可交给一名其它角色1张牌并令其获得「虚弱」；场上每有一枚「虚弱」生效时，您选择HP+2或补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "冷静",
+    "Code": "JNT3701",
+    "Occurs": [
+      "R$Z1"
+    ],
+    "Priorities": [
+      50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗开始阶段，当您支援战斗时，若妨碍者命中，您可令触发者战力+2或其补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "遗信",
+    "Code": "JNT3702",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当我方其他角色受到属性伤害后，其中一名角色可给您1张手牌，然后您获得1枚普通标记。",
+    "_isBless": true
+  },
+  {
+    "Name": "承志",
+    "Code": "JNT3703",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段每名目标限一次，您可将您的1枚标准标记交给一名其他角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "驭界枢",
+    "Code": "JNT3801",
+    "Occurs": [
+      "G0ON"
+    ],
+    "Priorities": [
+      145
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每当一张特殊牌由对方角色区域进入弃牌堆时，您可对自己造成1点阴属性伤害，将此牌作为「龙晶」装备，上限8张。",
+    "_isBless": false
+  },
+  {
+    "Name": "衡道",
+    "Code": "JNT3802",
+    "Occurs": [
+      "G0ZB",
+      "G0OT"
+    ],
+    "Priorities": [
+      140,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的战力增加「龙晶」数。",
+    "_isBless": false
+  },
+  {
+    "Name": "雾魂",
+    "Code": "JNT3803",
+    "Occurs": [
+      "%6",
+      "%4",
+      "R*TM"
+    ],
+    "Priorities": [
+      0,
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "TP02,0",
+      "TP04,0",
+      "TPT1,0",
+      "TPT2,0",
+      "TPT2,1",
+      "TPH1,0",
+      "TPH1,1",
+      "TPH4,0",
+      "TP01,0",
+      "TP02,1",
+      "TP03,0",
+      "TPT1,1",
+      "TPT3,0",
+      "TPT3,1"
+    ],
+    "Descripe": "您可直接使用「龙晶」：如此做后当前回合结束阶段，您弃置所有的「龙晶」。",
+    "_isBless": false
+  },
+  {
+    "Name": "穹极洰傀",
+    "Code": "JNT3901",
+    "Occurs": [
+      "R*ZW",
+      "R*Z2",
+      "G0IS",
+      "G0OS",
+      "R*ZU"
+    ],
+    "Priorities": [
+      0,
+      0,
+      110,
+      80,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方可用【穹极洰傀】进行支援或妨碍（战力2，命中4），若如此做战斗结束阶段您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "机关臂",
+    "Code": "JNT3902",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G1IZ",
+      "G1OZ",
+      "G0ZB"
+    ],
+    "Priorities": [
+      110,
+      80,
+      120,
+      70,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您没有武器槽。您可以典当任意武器牌补2张牌。您的秘宝与防具分别额外战力/命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "银针",
+    "Code": "JNT4001",
+    "Occurs": [
+      "&JPT6&0"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可将1张手牌当【毒龙胆】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "草编",
+    "Code": "JNT4002",
+    "Occurs": [
+      "R#BC",
+      "R*Z1"
+    ],
+    "Priorities": [
+      150,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段结束时，您可将1张手牌交给一名其他角色，该角色获得「脱力」。战斗开始阶段，您可令若干有「脱力」的参战角色强制命中且战力+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "忘却",
+    "Code": "JNT4003",
+    "Occurs": [
+      "G0ZH"
+    ],
+    "Priorities": [
+      -20
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您濒死时依次翻取未加入游戏的NPC牌直至可加入，然后以HP上限一半（向上取整）加入。",
+    "_isBless": false
+  },
+  {
+    "Name": "力拔千钧",
+    "Code": "JNT4101",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若本战为强怪，您的战力+1；若本战为BOSS怪，您的战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "小巧玲珑",
+    "Code": "JNT4102",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗开始阶段，若我方支援者或妨碍者未命中，您可令我方全体未参战者补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "敢爱敢恨",
+    "Code": "JNT4201",
+    "Occurs": [
+      "R#ST",
+      "R#TM",
+      "%3",
+      "%4"
+    ],
+    "Priorities": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "JP01,0",
+      "JP02,0",
+      "JP03,0",
+      "JP04,0",
+      "JP05,0",
+      "JP06,0",
+      "ZP01,0",
+      "ZP02,0",
+      "ZP03,0",
+      "ZP04,0",
+      "TP02,0",
+      "TP04,0",
+      "WQ01,0",
+      "WQ02,0",
+      "WQ03,0",
+      "WQ04,0",
+      "WQ05,0",
+      "FJ01,0",
+      "FJ02,0",
+      "FJ03,0",
+      "FJ04,0",
+      "FJ05,0",
+      "JPT1,0",
+      "JPT2,0",
+      "ZPT1,0",
+      "TPT1,0",
+      "TPT2,0",
+      "TPT2,1",
+      "WQT1,0",
+      "WQT2,0",
+      "FJT1,0",
+      "FJT2,0",
+      "JPT3,0",
+      "JPT4,0",
+      "JPT5,0",
+      "ZPT2,0",
+      "ZPT3,0",
+      "XBT1,0",
+      "XBT2,0",
+      "XBT3,0",
+      "XBT4,0",
+      "JPT6,0",
+      "ZPT4,0",
+      "JPH2,0",
+      "TPH1,0",
+      "TPH4,0",
+      "ZPH1,0",
+      "WQH1,0",
+      "XBH1,0",
+      "TP01,0",
+      "TP02,1",
+      "TP03,0",
+      "TPT1,1",
+      "TPT3,0",
+      "TPT3,1"
+    ],
+    "Descripe": "回合开始阶段，您可抽取一名其他角色的1张手牌并将其明置为「爱恨」，您可如您的手牌般使用此牌；回合结束阶段，若「爱恨」牌仍存在，您须将其归还，并额外交予该角色1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "争宠",
+    "Code": "JNT4202",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗开始阶段，您的战力增加对方手牌最多者的手牌数-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "刚直",
+    "Code": "JNT4301",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      220
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！一次伤害造成后，若此伤害不小于受到伤害的角色的手牌数，该角色HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "残影",
+    "Code": "JNT4302",
+    "Occurs": [
+      "G0ZH"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，您可令一名濒死角色掷骰判定，该角色HP回复骰值并获得「法障」「坚盾」。",
+    "_isBless": false
+  },
+  {
+    "Name": "鲲鹏",
+    "Code": "JNT4401",
+    "Occurs": [
+      "R#BC"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段结束时，您可弃置1张手牌，令我方一名其他角色获得「坚盾」，或令您获得「神行」。",
+    "_isBless": false
+  },
+  {
+    "Name": "魂鱼",
+    "Code": "JNT4402",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段，您可弃置一方的全部标准标记。若为我方则您HP+n，否则HP-n（n为弃置的标记数）。",
+    "_isBless": false
+  },
+  {
+    "Name": "龙潭",
+    "Code": "JNT4501",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏每个位置限一次，技牌阶段限一次，您可令我方一人改为使用场上一名角色的倾慕者，HP不变。然后您再指定我方一人弃置全部手牌与装备，令该角色HP增加所弃牌数。",
+    "_isBless": false
+  },
+  {
+    "Name": "归墟",
+    "Code": "JNT4502",
+    "Occurs": [
+      "G0IY"
+    ],
+    "Priorities": [
+      105
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每一名角色改变使用角色时（同角色变身除外），您选择战力或命中+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "怒龙斩",
+    "Code": "JNE0101",
+    "Occurs": [
+      "R$ST",
+      "R#ED"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！回合结束阶段，您令一名无手牌的角色HP-1；其他角色回合开始阶段，若其无手牌，您令其HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "空间法阵",
+    "Code": "JNE0102",
+    "Occurs": [
+      "G1CH",
+      "G0ZH"
+    ],
+    "Priorities": [
+      120,
+      0
+    ],
+    "IsOnce": [
+      true,
+      false
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！一名角色于其回合内HP回复后，或每有一名角色于一回合内进入濒死状态后，您指定一名角色补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "百无禁忌",
+    "Code": "JNE0201",
+    "Occurs": [
+      "R#BC"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "补牌阶段结束后，您可弃置1张战牌，弃置1枚负面标记，或令一名角色解除横置。",
+    "_isBless": false
+  },
+  {
+    "Name": "蜀中巨富",
+    "Code": "JNE0202",
+    "Occurs": [
+      "G1DI",
+      "G0ON"
+    ],
+    "Priorities": [
+      150,
+      180
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！对方角色于其技牌阶段每补一次牌后，您获得本回合内进入弃牌堆的1张手牌；若无您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "倾国银弹波",
+    "Code": "JNE0203",
+    "Occurs": [
+      "R*VS",
+      "R*ZD"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      false
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您参与我方触发的战斗胜利后，您可将至多等于触发方战力超出怪物方数值一半数量的非装备牌作为「剑意」装备。战牌阶段，您可弃1张「剑意」令我方战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "幻貘",
+    "Code": "JNE0301",
+    "Occurs": [
+      "G0IS",
+      "R#TM"
+    ],
+    "Priorities": [
+      110,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时，您获得2张牌作为「幻」。您的每个回合结束阶段获得1张「幻」。",
+    "_isBless": false
+  },
+  {
+    "Name": "击幻",
+    "Code": "JNE0302",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗开始阶段，您可每弃1张「幻」将怪物闪避调整1点。",
+    "_isBless": false
+  },
+  {
+    "Name": "惊噩幻魇",
+    "Code": "JNE0303",
+    "Occurs": [
+      "G0ZH"
+    ],
+    "Priorities": [
+      -30
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "有人HP为0时，可令其选择：令您HP上限-2，该角色立即死亡退场；或当其有手牌时令您抽取其1张手牌作为「幻」然后其HP上限-2，HP恢复至您的HP上限并横置。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔灵渡生",
+    "Code": "JNE0401",
+    "Occurs": [
+      "G0HQ"
+    ],
+    "Priorities": [
+      130
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当一名其他角色获得另一名角色的手牌后，您可从手牌来源处抽取1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "附魂",
+    "Code": "JNE0402",
+    "Occurs": [
+      "G0HG",
+      "G0HT",
+      "G0HT"
+    ],
+    "Priorities": [
+      110,
+      55,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！获得过阵亡补牌的角色补牌阶段补牌数+1，然后您抽取其1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "虚转幻轮术",
+    "Code": "JNE0403",
+    "Occurs": [
+      "G0TT"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可弃置1张手牌令对方角色掷的骰子翻面。",
+    "_isBless": false
+  },
+  {
+    "Name": "天璇迷局",
+    "Code": "JNE0501",
+    "Occurs": [
+      "G0CC",
+      "G1UE",
+      "R$GE",
+      "R$TM"
+    ],
+    "Priorities": [
+      320,
+      140,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "IsHind": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "NULL"
+    ],
+    "Descripe": "对方角色的技牌阶段结束后，您可展示至少1张手牌，弃置其余手牌。然后当前回合角色选择一项：弃与展示结果之一类型相同的1张手牌或装备；令您命中增加此技牌阶段内其使用的牌数直至回合结束。",
+    "_isBless": false
+  },
+  {
+    "Name": "洞察",
+    "Code": "JNE0502",
+    "Occurs": [
+      "R*PD",
+      "G0IX",
+      "G0OX",
+      "G0OS"
+    ],
+    "Priorities": [
+      0,
+      110,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗中我方战力增加您的命中。",
+    "_isBless": false
+  },
+  {
+    "Name": "封手",
+    "Code": "JNE0503",
+    "Occurs": [
+      "R*CC"
+    ],
+    "Priorities": [
+      50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！战斗开始阶段，若本战怪物闪避与您的命中差值不超过2，您选择一项：补1张牌；令此怪出场效果无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "神偷",
+    "Code": "JNE0701",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若您参战成功，战斗开始阶段，您弃置对方一名参战者1张手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "飞贼团",
+    "Code": "JNE0702",
+    "Occurs": [
+      "G0ON"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每当有怪物牌进入弃牌堆时，您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "阴差",
+    "Code": "JNE0801",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0LA"
+    ],
+    "Priorities": [
+      110,
+      80,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时将5张未加入游戏的NPC作为「魂」，您的HP上限总为「魂」数；您的战力增加女性「魂」数。",
+    "_isBless": false
+  },
+  {
+    "Name": "生发",
+    "Code": "JNE0802",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      91
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当有女性角色受到伤害前，您选择一项：令此伤害值+1，或您HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "离魂汤",
+    "Code": "JNE0803",
+    "Occurs": [
+      "G0YM",
+      "G0ZH"
+    ],
+    "Priorities": [
+      110,
+      180
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当有NPC出场时，您可用「魂」替换之。当其它角色处于濒死状态时，您可弃1张可加入的「魂」，令该角色以HP=1加入，然后您获得其所有手牌或1张非BOSS宠物。",
+    "_isBless": false
+  },
+  {
+    "Name": "气魔焰",
+    "Code": "JNE1001",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段每名角色限一次，我方角色可无视限制条件使用1张战牌，结算后您HP-2（火属性）。",
+    "_isBless": true
+  },
+  {
+    "Name": "火龙掌",
+    "Code": "JNE1002",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方角色参与水、火属性战斗时，战斗开始阶段，对方全体HP-1（火属性）。",
+    "_isBless": false
+  },
+  {
+    "Name": "赤血毒焰",
+    "Code": "JNE1003",
+    "Occurs": [
+      "R*GE",
+      "R*TM",
+      "R*ED"
+    ],
+    "Priorities": [
+      0,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "任意角色的技牌阶段结束时，您可令自身战力与命中翻倍；若如此做，当前回合结束阶段，对方全体HP-2（火属性），您阵亡退场。",
+    "_isBless": false
+  },
+  {
+    "Name": "神乌金翎",
+    "Code": "JNH0101",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段限一次，您参战时可弃置所有手牌以获得等于弃牌类型总数的「金翎」标记，上限8个。",
+    "_isBless": false
+  },
+  {
+    "Name": "九天玄火",
+    "Code": "JNH0102",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段，若您参与BOSS战，您可横置自身并弃掉所有「金翎」标记（至少2枚），令我方战力额外增加标记数；若您命中则额外+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "飞星逐月",
+    "Code": "JNH0103",
+    "Occurs": [
+      "G0DS"
+    ],
+    "Priorities": [
+      95
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若您已横置再次被横置，则您解除横置。",
+    "_isBless": false
+  },
+  {
+    "Name": "烁暗之星",
+    "Code": "JNH0104",
+    "Occurs": [
+      "G0HZ"
+    ],
+    "Priorities": [
+      280
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发的混战结果若为怪物，且战力不小于本场战斗怪物战力值，您直接取胜并改为执行混战怪物的胜利效果，然后弃置所有怪物牌。否则，若为怪物则视同普通混战，NPC则直接弃置。",
+    "_isBless": false
+  },
+  {
+    "Name": "飘零",
+    "Code": "JNH0201",
+    "Occurs": [
+      "G0IS",
+      "G1CK",
+      "G0AX"
+    ],
+    "Priorities": [
+      110,
+      110,
+      50
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时获得您的专属牌，将「紫阳门」正面朝上：您可发动正面朝上的技能，发动后将其翻面。",
+    "_isBless": false
+  },
+  {
+    "Name": "月之心",
+    "Code": "JNH0202",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      350
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若「紫阳门」正面朝上，有队友退场后，视为您使用了一张【还魂香】；若「神剑宗」正面朝上，您的队友全部退场后，您可从弃牌堆找一张战力不超过7的怪物牌直接成为您的宠物，然后变身为拜月教主。",
+    "_isBless": false
+  },
+  {
+    "Name": "幻月神剑",
+    "Code": "JNH0203",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -180
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您已受伤，您可弃1张牌令伤害值额外+1。若剩余HP不足3则改为此伤害值额外加倍。",
+    "_isBless": false
+  },
+  {
+    "Name": "天华神剑",
+    "Code": "JNH0204",
+    "Occurs": [
+      "&ZPT5&0"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可将一张战牌当作【妄念弑心咒】使用。您的回合内则改为一张任意牌均可如此。",
+    "_isBless": false
+  },
+  {
+    "Name": "化形之法",
+    "Code": "JNH0205",
+    "Occurs": [
+      "R#TM"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "回合结束阶段，您可连续展示手牌堆顶一张牌并使用之，直到您不愿或无法使用为止，将此牌收入手牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "胧妖之眼",
+    "Code": "JNH0206",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战斗开始阶段，若您参战，您可展示对方一名参战者1张手牌并视其类型执行：技牌，您与其HP-1；战牌，其战力-2，命中-1；特殊牌，其本战中不能使用牌；装备牌，您装备此牌，其补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "幽垠之月",
+    "Code": "JNH0301",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -55
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您受到伤害时，可弃等同于伤害数量的手牌或装备，将此伤害转移给一名其他角色，然后该角色补等同于其掷骰点数一半数量的牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔舞天轮",
+    "Code": "JNH0302",
+    "Occurs": [
+      "R#TM",
+      "G0OS",
+      "G0OY",
+      "G0IY",
+      "G0LA"
+    ],
+    "Priorities": [
+      0,
+      90,
+      90,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "回合结束阶段，您可对调自己的天赋战力与命中并逆转当前行动顺序。然后可令一名其他角色也如此做（您恢复数值时须指定该角色一并恢复）。",
+    "_isBless": false
+  },
+  {
+    "Name": "千栗鬼噬",
+    "Code": "JNH0303",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      160
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您阵亡后进行掷骰判定，若结果不为6，指定一名角色HP-2（隐蛊无效），或指定一名角色弃置其所有手牌及装备牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "蹑行潜踪",
+    "Code": "JNH0401",
+    "Occurs": [
+      "R*CC"
+    ],
+    "Priorities": [
+      -50
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方触发的战斗开始阶段，您可弃置2张手牌，令怪物闪避-2且出场效果无效。",
+    "_isBless": false
+  },
+  {
+    "Name": "灵智真法",
+    "Code": "JNH0402",
+    "Occurs": [
+      "R*ZC",
+      "G0CE",
+      "G1UE",
+      "R*Z2"
+    ],
+    "Priorities": [
+      0,
+      150,
+      150,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段开始时，您可声明不使用战牌：本战中我方角色每一张牌生效后，我方战力+1。若未曾因此增加，战斗结束阶段您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "月之殇",
+    "Code": "JNH0403",
+    "Occurs": [
+      "G0ZW"
+    ],
+    "Priorities": [
+      170
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当您阵亡后，您令一名角色被月神附身。",
+    "_isBless": false
+  },
+  {
+    "Name": "月神之祈",
+    "Code": "JNH0501",
+    "Occurs": [
+      "G0IS",
+      "G0IY",
+      "G0ZW"
+    ],
+    "Priorities": [
+      120,
+      120,
+      -9
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！附身后，您补3张牌；我方存活角色达到3名或更多时，取消月神的附身。",
+    "_isBless": false
+  },
+  {
+    "Name": "冷月凄霜",
+    "Code": "JNH0502",
+    "Occurs": [
+      "R#TM",
+      "G0IH",
+      "R#ST"
+    ],
+    "Priorities": [
+      0,
+      50,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "回合结束阶段，您可以爆发我方装备区或宠物区内的1张牌，直到您的下个回合开始阶段，对方所有角色回复HP无效（倾慕除外）。",
+    "_isBless": false
+  },
+  {
+    "Name": "镜花水月",
+    "Code": "JNH0503",
+    "Occurs": [
+      "R#TM",
+      "G0DS",
+      "G0OH"
+    ],
+    "Priorities": [
+      0,
+      110,
+      -45
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "回合结束阶段，您可横置自身然后指定一名角色，直到您解除横置为止：该角色主动技失效并免疫所有伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "妙法仁心",
+    "Code": "JNH0601",
+    "Occurs": [
+      "G1DI",
+      "G0HQ",
+      "G1CH"
+    ],
+    "Priorities": [
+      -20,
+      190,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每次您手牌被弃置或被对方获得后，您可展示手牌堆顶1张牌，若非装备牌则装备为「仁心」。当有角色HP回复后，您可弃置1张「仁心」令其中任意名角色HP+1或补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "慈航普渡",
+    "Code": "JNH0602",
+    "Occurs": [
+      "G1TH",
+      "G0OH",
+      "R*ED"
+    ],
+    "Priorities": [
+      115,
+      -150,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每回合限一次，当有角色实际承受伤害后，您可令本回合内此后的伤害值-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "观音咒",
+    "Code": "JNH0603",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      140
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当有角色承受伤害后HP小于3且不为0，您可弃置其中一人的1张手牌或装备区内的牌以令其HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "幻化卷轴",
+    "Code": "JNH0701",
+    "Occurs": [
+      "G0ON",
+      "R*PD",
+      "G0FI",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      30,
+      0,
+      110,
+      110,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "NPC进入弃牌堆后，我方可依行动顺序弃置n张牌将其收为「迷子」，n为NPC战力与已有「迷子」数的较大值。战斗中我方战力增加战力不低于5的「迷子」数；您参战则改为增加所有「迷子」数。",
+    "_isBless": false
+  },
+  {
+    "Name": "幻境萃取",
+    "Code": "JNH0702",
+    "Occurs": [
+      "G1DI"
+    ],
+    "Priorities": [
+      30
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "其他存活角色一次性弃置2张牌时，您可获得其中1张；若弃置更多，您须再返还1张剩余的牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "移形换影",
+    "Code": "JNH0703",
+    "Occurs": [
+      "R#BC"
+    ],
+    "Priorities": [
+      150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "若您未横置，弃牌阶段您可横置自己，将您的全部手牌分配给我方其他角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "天罗地网罩",
+    "Code": "JNH0801",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      170
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "有角色受到属性伤害后，您可弃1张手牌以横置这些角色，然后其补等于场上被横置角色数量的牌，并可依次使用1张技牌或装备牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "天磬鸣",
+    "Code": "JNH0802",
+    "Occurs": [
+      "R$Z1"
+    ],
+    "Priorities": [
+      -150
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您支援或妨碍时，战斗开始阶段您可将支援者或妨碍者由自己更改为一名合理目标。",
+    "_isBless": false
+  },
+  {
+    "Name": "重劈",
+    "Code": "JNH0901",
+    "Occurs": [
+      "G0CC"
+    ],
+    "Priorities": [
+      140
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当对方角色使用【冰心诀】【净衣咒】以外的特殊牌时，您可弃2张非特殊牌令其失效并由您获得之。",
+    "_isBless": false
+  },
+  {
+    "Name": "疾风",
+    "Code": "JNH0902",
+    "Occurs": [
+      "R*ZD",
+      "G0CC"
+    ],
+    "Priorities": [
+      0,
+      320
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段限一次，您可将任意1张手牌当做本战中您使用的上一张战牌使用，此牌不计入战牌使用次数。",
+    "_isBless": false
+  },
+  {
+    "Name": "化幻镜石",
+    "Code": "JNH0903",
+    "Occurs": [
+      "G0CC",
+      "G1DI",
+      "G1UE",
+      "R*TM",
+      "R*ED"
+    ],
+    "Priorities": [
+      320,
+      50,
+      140,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true,
+      true,
+      false,
+      true
+    ],
+    "IsChange": true,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！任意角色回合结束阶段后，若您本回合使用及弃置的牌数大于您当前的HP值，您变身为李剑灵。",
+    "_isBless": false
+  },
+  {
+    "Name": "鼓舞",
+    "Code": "JNH1001",
+    "Occurs": [
+      "G1LY"
+    ],
+    "Priorities": [
+      110
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每回合每个目标限一次，我方角色失去最后的手牌时，您可令其补1张牌，若宠物数大于1则改为2张。",
+    "_isBless": false
+  },
+  {
+    "Name": "灵水咒",
+    "Code": "JNH1002",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS"
+    ],
+    "Priorities": [
+      110,
+      110,
+      120,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方宠物额外获得「主人手牌上限+1」的宠物效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "六龙阵",
+    "Code": "JNH1003",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -65
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方角色即将承受一次伤害前，若伤害值大于等于其HP，您可取消此伤害，然后强制退场并指定我方一名其他角色获得宠物「水菱晶」。 ",
+    "_isBless": false
+  },
+  {
+    "Name": "惊弓",
+    "Code": "JNH1101",
+    "Occurs": [
+      "R*ZC"
+    ],
+    "Priorities": [
+      180
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参战时，战斗开始阶段结束后，所有参战未命中的角色须交给您1张手牌或装备区内的牌；若对方无人参战，则您战力+3。",
+    "_isBless": false
+  },
+  {
+    "Name": "空弦",
+    "Code": "JNH1102",
+    "Occurs": [
+      "R*ZU",
+      "G0CC",
+      "R*ZF",
+      "R*ED"
+    ],
+    "Priorities": [
+      0,
+      160,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您参战时若有手牌，怪物牌翻出前可将所有手牌暗扣：本战中对方使用的首张牌无效。战斗结束阶段您将扣牌收回；若无效化的为战牌，将其返还。",
+    "_isBless": false
+  },
+  {
+    "Name": "罡风盈索",
+    "Code": "JNH1201",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可自每名对方角色手中抽取1张手牌并将其任意分配给对方角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "八方归元",
+    "Code": "JNH1202",
+    "Occurs": [
+      "R#TM"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！回合结束阶段开始前，若您手牌已达到您的上限，则除您外全体角色弃1张手牌，之后我方全体HP+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "熊虎之力",
+    "Code": "JNH1301",
+    "Occurs": [
+      "R*Z1",
+      "R*ZF"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您参战时，战斗开始阶段翻出一张未加入游戏的怪物牌作为「熊虎」，您本战中战力增加该怪牌战力的一半。战斗结束后，若「熊虎」数量达到3张，则全部弃置之。",
+    "_isBless": false
+  },
+  {
+    "Name": "驭灵术",
+    "Code": "JNH1302",
+    "Occurs": [
+      "G0IJ",
+      "G0OJ"
+    ],
+    "Priorities": [
+      120,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您的基础战力增加「熊虎」牌数，命中减少「熊虎」牌闪避值总和的一半（向上取整）。",
+    "_isBless": false
+  },
+  {
+    "Name": "镇卫",
+    "Code": "JNH1303",
+    "Occurs": [
+      "G0FI",
+      "G1YP"
+    ],
+    "Priorities": [
+      110,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！对方放弃触发战斗，或执行由怪牌堆中翻出的NPC效果后，我方全体各补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "天魔封界",
+    "Code": "JNH1401",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0CE"
+    ],
+    "Priorities": [
+      110,
+      80,
+      95
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      true
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      true,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发的战牌无效；您可典当战牌（补1张牌）。",
+    "_isBless": false
+  },
+  {
+    "Name": "倒逆乾坤",
+    "Code": "JNH1402",
+    "Occurs": [
+      "G0HC"
+    ],
+    "Priorities": [
+      20
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！若我方有HP大于您的角色，您触发战斗获得的宠物改为其中一人获得，然后您HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "大魔言咒",
+    "Code": "JNH1403",
+    "Occurs": [
+      "R#ED",
+      "R#ST"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "回合结束阶段，若我方宠物战力和达到30或更高，您可令游戏于您的下个回合开始阶段强制结束。",
+    "_isBless": false
+  },
+  {
+    "Name": "战神诀",
+    "Code": "JNH1501",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0IY",
+      "G0OY"
+    ],
+    "Priorities": [
+      110,
+      80,
+      120,
+      80
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！我方其他非妖魔角色命中+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "亚时空法术",
+    "Code": "JNH1502",
+    "Occurs": [
+      "G0HC",
+      "G0ZW"
+    ],
+    "Priorities": [
+      40,
+      190
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "我方触发战斗获得宠物引发宠物替换前，或有角色阵亡退场时，您可将其一只宠物交给一名其他角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "仙霞阵术",
+    "Code": "JNH1601",
+    "Occurs": [
+      "G0IS",
+      "R#ST",
+      "R*GE"
+    ],
+    "Priorities": [
+      120,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "登场时您获得专属「阵术」牌，我方角色的技牌阶段结束后，您可更换「阵术」牌令其生效，直至您的回合开始阶段，将当前「阵术」牌弃置。",
+    "_isBless": false
+  },
+  {
+    "Name": "凡躯化圣灵",
+    "Code": "JNH1602",
+    "Occurs": [
+      "G0ZH",
+      "R*PD",
+      "G0OS",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      0,
+      0,
+      80,
+      120,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，对方回合内若您或女娲族人濒死，您可令其HP+3，将您的天赋命中调整为4并弃置所有「阵术」。此后敌方宠物数不少于3时，战斗中我方战力额外+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "玄冰阵",
+    "Code": "JNH1603",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场水属性宠物额外获得「主人战力+1，命中+1」的宠物效果，火属性宠物效果暂时失效；战斗中土属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "炎火阵",
+    "Code": "JNH1604",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场火属性宠物额外获得「主人战力+1，命中+1」的宠物效果，雷属性宠物效果暂时失效；战斗中水属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "闪雷阵",
+    "Code": "JNH1605",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场雷属性宠物额外获得「主人战力+1，命中+1」的宠物效果，风属性宠物效果暂时失效；战斗中火属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "狂风阵",
+    "Code": "JNH1606",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场风属性宠物额外获得「主人战力+1，命中+1」的宠物效果，土属性宠物效果暂时失效；战斗中雷属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "厚土阵",
+    "Code": "JNH1607",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场土属性宠物额外获得「主人战力+1，命中+1」的宠物效果，水属性宠物效果暂时失效；战斗中风属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "歙阴阵",
+    "Code": "JNH1608",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场阴属性宠物额外获得「主人战力+1，命中+1」的宠物效果，阳属性宠物效果暂时失效；战斗中阳属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "寰阳阵",
+    "Code": "JNH1609",
+    "Occurs": [
+      "G0IC",
+      "G0OC",
+      "G0IS",
+      "G0OS",
+      "R*CC",
+      "R*CC",
+      "G0HD",
+      "G0HL"
+    ],
+    "Priorities": [
+      80,
+      80,
+      120,
+      90,
+      0,
+      80,
+      70,
+      140
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！全场阳属性宠物额外获得「主人战力+1，命中+1」的宠物效果，阴属性宠物效果暂时失效；战斗中阴属性怪物额外获得「闪避+1」的出场效果。",
+    "_isBless": false
+  },
+  {
+    "Name": "天师符法阵",
+    "Code": "JNH1610",
+    "Occurs": [
+      "&ZP02&0"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "所有角色的战牌均可当【天罡战气】使用。",
+    "_isBless": true
+  },
+  {
+    "Name": "八门金锁阵",
+    "Code": "JNH1611",
+    "Occurs": [
+      "&TPT1&0",
+      "&TPT1&1"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false
+    ],
+    "IsTermini": [
+      false,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "所有角色的特殊牌均可当【TR傀儡虫】使用。",
+    "_isBless": true
+  },
+  {
+    "Name": "诸葛七星阵",
+    "Code": "JNH1612",
+    "Occurs": [
+      "R#GR",
+      "R*ZC"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "全员的技牌均可当【驯化】使用（仅可用于执行「驯化」项）。战牌阶段开始时，全体参战者HP+1。",
+    "_isBless": true
+  },
+  {
+    "Name": "问心水箭",
+    "Code": "JNH1701",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可弃置2张手牌并指定2名其它角色：除非其中有人弃置1张与此牌之一类型相同的牌，否则均HP-1（水属性）。",
+    "_isBless": false
+  },
+  {
+    "Name": "雨恨云愁",
+    "Code": "JNH1702",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      160
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！当有角色实际承受数值为1的伤害后，您弃置这些角色中的任意名与和您各1张手牌，或您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "诀别",
+    "Code": "JNH1703",
+    "Occurs": [
+      "G0ZH"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当有其它角色处于濒死状态时，若您有手牌，您可弃置您装备区所有牌并将您的所有手牌交给目标角色，令其HP回复您当前的HP数值，然后您HP降为0。",
+    "_isBless": false
+  },
+  {
+    "Name": "慧剑诀",
+    "Code": "JNH1801",
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      true
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您支援战斗时，妨碍者命中-4。",
+    "_isBless": false
+  },
+  {
+    "Name": "毁天一剑",
+    "Code": "JNH1802",
+    "Occurs": [
+      "G0HZ",
+      "G0HZ",
+      "R*Z2"
+    ],
+    "Priorities": [
+      220,
+      290,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      true,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": true,
+    "Parasitism": [],
+    "Descripe": "每局游戏限一次，我方触发混战后您可翻开怪物牌堆顶3张牌，可选择1张改为混战结果：若为怪物牌，我方可爆发与之同属性的1只宠物，则此怪改为如NPC般增加我方战力。本场战斗结束阶段，您失去宠物效果并将『凝元劲』中的-4改为+4。",
+    "_isBless": false
+  },
+  {
+    "Name": "噬心",
+    "Code": "JNH1901",
+    "Occurs": [
+      "G0IS",
+      "R#ST",
+      "R#TM"
+    ],
+    "Priorities": [
+      110,
+      0,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时获得5枚「噬心」标记。若消耗完毕，您无法发动『回梦』『扰心』，且于您的回合开始阶段或回合结束阶段强制阵亡退场。",
+    "_isBless": false
+  },
+  {
+    "Name": "回梦",
+    "Code": "JNH1902",
+    "Occurs": [
+      "R#GS",
+      "R*ZC",
+      "G0OJ",
+      "G0IY",
+      "G0OY"
+    ],
+    "Priorities": [
+      0,
+      0,
+      80,
+      120,
+      90
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可跳过您的技牌阶段获得「回梦」状态。此状态下对方女性角色不能使用非装备牌，且其支援或妨碍时，战牌开始阶段退出战斗，然后须弃置1张牌，弃牌后掷骰判定，结果小于5则取消「回梦」并弃1枚「噬心」。",
+    "_isBless": false
+  },
+  {
+    "Name": "扰心",
+    "Code": "JNH1903",
+    "Occurs": [
+      "R*ZC",
+      "G0IA",
+      "G0OA",
+      "G0AX"
+    ],
+    "Priorities": [
+      0,
+      105,
+      105,
+      50
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当您支援或妨碍时，战牌阶段开始时，您可以弃置1枚「噬心」标记，指定一名敌方男性参战者，本场战斗内您与该角色的战力数值始终相同。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔灵守护",
+    "Code": "JNH2001",
+    "Occurs": [
+      "G0ZB",
+      "G0HD",
+      "G0IF"
+    ],
+    "Priorities": [
+      150,
+      150,
+      150
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！每当1张牌进入对方角色的宠物、装备或标准标记区，您补1张牌并将1张手牌暗扣为「魔灵」。",
+    "_isBless": false
+  },
+  {
+    "Name": "魔剑闪空",
+    "Code": "JNH2002",
+    "Occurs": [
+      "R*ZD",
+      "R#GR",
+      "R*ZW",
+      "R#TM",
+      "R#ST"
+    ],
+    "Priorities": [
+      0,
+      0,
+      -50,
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可弃置下列数量「魔灵」牌以执行：1张：战牌阶段令我方战力-2，您额外使用1张战牌；2张：技牌阶段限一次，令1张基础装备返还该角色手牌；3张：我方触发战斗前将怪物弃牌堆顶1张牌放回牌堆顶；4张：回合结束阶段，您补2张牌并获得「神行」；5张：回合开始阶段，您可弃置场上标准标记或令对方获得普通标记，弃置及获得总数至多为对方装备区内牌数与标记总和。本技能不可与『魔灵守护』同时发动。 ",
+    "_isBless": false
+  },
+  {
+    "Name": "天道剑",
+    "Code": "JNR0101",
+    "Occurs": [
+      "&TP04&0"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [
+      "TP04,0"
+    ],
+    "Descripe": "您可将任意手牌当作【洞冥宝镜】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "天循两仪",
+    "Code": "JNR0102",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可将场上的一个负面标记转化为增益标记。",
+    "_isBless": false
+  },
+  {
+    "Name": "长离剑",
+    "Code": "JNR0103",
+    "Occurs": [
+      "R#Z1",
+      "G1CK",
+      "R*Z1"
+    ],
+    "Priorities": [
+      50,
+      110,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您触发的战斗中，战斗开始阶段，若支援未命中或无支援，您战力+3。若您当前回合发动过『天道剑』『天循两仪』，您战力分别+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "追打",
+    "Code": "JNR0201",
+    "Occurs": [
+      "G1TH"
+    ],
+    "Priorities": [
+      190
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "当有角色受到伤害后，若无角色处于濒死状态，您可弃置1张手牌，令全体受伤角色HP-1。",
+    "_isBless": false
+  },
+  {
+    "Name": "连击",
+    "Code": "JNR0202",
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "战牌阶段，您可弃1张非战牌令您战力+2。",
+    "_isBless": false
+  },
+  {
+    "Name": "好胜",
+    "Code": "JNR0203",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "若您参战且我方失败，战斗胜负结算阶段，您可令您HP-2（隐蛊无效），然后补2张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "狡猾",
+    "Code": "JNR0301",
+    "Occurs": [
+      "R#Z1",
+      "R#Z2"
+    ],
+    "Priorities": [
+      -200,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false
+    ],
+    "Lock": [
+      false,
+      true
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "每回合限一次，您触发的战斗开始前，您可由怪物牌堆顶翻出一张，将其改为本战触发怪物。若您放弃发动此效果，本战战斗结束阶段，您补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "拒绝",
+    "Code": "JNR0302",
+    "Occurs": [
+      "&TP01&0&TPT3&1",
+      "&TPT3&0"
+    ],
+    "Priorities": [
+      0,
+      0
+    ],
+    "IsOnce": [
+      false,
+      false
+    ],
+    "IsTermini": [
+      true,
+      true
+    ],
+    "Lock": [
+      false,
+      false
+    ],
+    "IsHind": [
+      false,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您可将一张特殊牌当作【冰心诀】使用；您可将一张技牌当作【净衣咒】使用。",
+    "_isBless": false
+  },
+  {
+    "Name": "占卜",
+    "Code": "JNR0401",
+    "Occurs": [
+      "R#GR"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "技牌阶段限一次，您可观看怪牌堆顶3张牌，放回其中1张，弃置剩余的。若弃置了怪牌，您弃1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "摄灵法阵",
+    "Code": "JNR0402",
+    "Occurs": [
+      "G0HD"
+    ],
+    "Priorities": [
+      140
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您触发战斗并获得宠物后，可弃置对方1张同属性或同战力的宠物。",
+    "_isBless": false
+  },
+  {
+    "Name": "灵音",
+    "Code": "JNR0501",
+    "Occurs": [
+      "G0IS",
+      "G0OS",
+      "G0OJ"
+    ],
+    "Priorities": [
+      110,
+      80,
+      120
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时获得专属「灵音」牌。每回合至多弃置一张「灵音」；「灵音」每减少一张，您战力+1。",
+    "_isBless": false
+  },
+  {
+    "Name": "轮回调",
+    "Code": "JNR0502",
+    "Occurs": [
+      "R*VS"
+    ],
+    "Priorities": [
+      0
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      false
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "若您参战且战斗失败，战斗结束阶段，您可弃置与本战怪物属性对应的「灵音」（阴、阳怪则可弃置任意一张），指定一名角色弃置1张牌然后补1张牌。",
+    "_isBless": false
+  },
+  {
+    "Name": "穹光破阵曲",
+    "Code": "JNR0503",
+    "Occurs": [
+      "G0OH"
+    ],
+    "Priorities": [
+      -100
+    ],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [
+      true
+    ],
+    "Lock": [
+      false
+    ],
+    "IsHind": [
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您受到伤害时，可弃置对应伤害属性的「灵音」，令此伤害-1并转移给一名其他角色。",
+    "_isBless": false
+  },
+  {
+    "Name": "凝冰焚炎",
+    "Code": "JNR0601",
+    "Occurs": [
+      "G0OH",
+      "G0IS",
+      "G0OS",
+      "R#TM"
+    ],
+    "Priorities": [
+      -40,
+      120,
+      90,
+      0
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "IsHind": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "您免疫水、火属性伤害。回合结束阶段，您可令您HP上限-1，额外免疫一种属性伤害。",
+    "_isBless": false
+  },
+  {
+    "Name": "结拜",
+    "Code": "JNR0602",
+    "Occurs": [
+      "G0IS",
+      "R$Z1",
+      "G0OY"
+    ],
+    "Priorities": [
+      110,
+      0,
+      110
+    ],
+    "IsOnce": [
+      true,
+      true,
+      true
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ],
+    "Lock": [
+      true,
+      true,
+      true
+    ],
+    "IsHind": [
+      false,
+      false,
+      true
+    ],
+    "IsChange": false,
+    "IsRestrict": false,
+    "Parasitism": [],
+    "Descripe": "！您登场时指定一名角色，您对其支援或妨碍命中+2。",
+    "_isBless": false
+  }
+]

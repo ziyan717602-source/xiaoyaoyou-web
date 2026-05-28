@@ -1,0 +1,481 @@
+/* === Game Page Layout === */
+
+.game-page {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-template-columns: 1fr 200px;
+  grid-template-areas:
+    "top right"
+    "center right"
+    "bottom right";
+  height: 100vh;
+  overflow: hidden;
+  gap: 0;
+}
+
+.game-top {
+  grid-area: top;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+
+.game-center {
+  grid-area: center;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-right {
+  grid-area: right;
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-bottom {
+  grid-area: bottom;
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.game-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  color: var(--color-text-muted);
+  padding: var(--spacing-xxl);
+}
+
+.game-room-badge {
+  position: fixed;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  font-size: 11px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  z-index: 100;
+}
+
+/* === Battle Area === */
+.battle-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.battle-area-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+}
+
+.battle-info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 12px;
+}
+
+.battle-info-label {
+  color: var(--color-text-muted);
+}
+
+.battle-info-value {
+  color: var(--color-accent-gold);
+  font-weight: bold;
+}
+
+.battle-area-players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+/* === Player Info === */
+.player-info {
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+  padding: var(--spacing-md);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+}
+
+.player-info-turn {
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 8px rgba(212, 165, 116, 0.3);
+}
+
+.player-info-self {
+  border-color: var(--color-primary);
+  background: rgba(139, 69, 19, 0.1);
+}
+
+.player-info-dead {
+  opacity: 0.4;
+}
+
+.player-info-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.player-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-text-bright);
+}
+
+.player-turn-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: var(--color-accent-gold);
+  color: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.player-self-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: var(--color-primary);
+  color: var(--color-text-bright);
+  border-radius: var(--radius-sm);
+}
+
+.player-info-stats {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.player-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.stat-value {
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.stat-hp {
+  color: var(--color-danger);
+}
+
+/* === Hand Area === */
+.hand-area {
+  width: 100%;
+}
+
+.hand-area-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hand-area-title {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.hand-area-count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.hand-area-cards {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-sm);
+  scroll-behavior: smooth;
+}
+
+.hand-area-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hand-area-cards::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-radius: 3px;
+}
+
+.hand-area-cards::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: 3px;
+}
+
+.hand-area-empty {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+/* === Operation Panel === */
+.operation-panel {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  min-width: 280px;
+  max-width: 400px;
+  box-shadow: var(--shadow-md);
+}
+
+.operation-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.operation-panel-title {
+  font-size: 14px;
+  color: var(--color-text-bright);
+  font-weight: bold;
+}
+
+.operation-panel-code {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  padding: 2px 6px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.operation-panel-timer {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-left: auto;
+}
+
+.operation-panel-timer.timer-warning {
+  color: var(--color-danger);
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.operation-panel-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.operation-option {
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 50px;
+}
+
+.operation-panel-input {
+  margin-bottom: var(--spacing-md);
+}
+
+.operation-panel-arg {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.operation-panel-arg-label {
+  margin-right: var(--spacing-xs);
+}
+
+.operation-panel-arg-value {
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+
+.operation-panel-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+/* === Event Log === */
+.event-log {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-log-header {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.event-log-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-sm);
+}
+
+.event-log-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.event-log-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.event-log-content::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.event-log-empty {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.event-log-entry {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: 3px var(--spacing-xs);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.event-log-entry:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.event-log-time {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.event-log-text {
+  color: var(--color-text);
+  word-break: break-all;
+}
+
+.event-log-action .event-log-text {
+  color: var(--color-accent-gold);
+}
+
+.event-log-system .event-log-text {
+  color: var(--color-secondary);
+}
+
+.event-log-error .event-log-text {
+  color: var(--color-danger);
+}
+
+/* === Desktop Game Layout (>= 768px) === */
+@media (min-width: 768px) {
+  .game-page {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 260px;
+    grid-template-areas:
+      "top right"
+      "center right"
+      "bottom right";
+  }
+
+  .game-right {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .battle-area {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+
+  .battle-area-info {
+    min-width: 200px;
+  }
+
+  .player-info {
+    min-width: 160px;
+  }
+
+  .hand-area-cards {
+    justify-content: center;
+  }
+
+  .event-log-entry {
+    font-size: 12px;
+  }
+}
+
+/* === Mobile Game Layout (< 768px) === */
+@media (max-width: 767px) {
+  .game-page {
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "center"
+      "bottom"
+      "right";
+  }
+
+  .game-right {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    max-height: 150px;
+  }
+
+  .battle-area {
+    flex-direction: column;
+  }
+
+  .battle-area-players {
+    flex-direction: column;
+  }
+
+  .player-info {
+    max-width: none;
+  }
+
+  .hand-area-cards {
+    gap: var(--spacing-xs);
+  }
+
+  .operation-panel {
+    min-width: auto;
+    width: 100%;
+  }
+}

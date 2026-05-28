@@ -1,0 +1,3161 @@
+[
+  {
+    "Name": "千杯不醉",
+    "Code": "GS01",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AQUA",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 4,
+    "DBSerial": 1,
+    "DebutText": "您和一名妨碍者手牌对调。",
+    "PetText": "主人战力+1。",
+    "WinText": "",
+    "LoseText": "您的角色横置。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "勇气",
+    "Code": "GS02",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AQUA",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 5,
+    "DBSerial": 2,
+    "DebutText": "",
+    "PetText": "游戏结束时，勇气本体战力变为8。",
+    "WinText": "敌方全体HP-1后，您指定一人HP额外-2。",
+    "LoseText": "您的HP-2，然后失去1件装备。",
+    "EAOccurs": [
+      [
+        "G1WJ"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        60
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "蛇妖男",
+    "Code": "GS03",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AQUA",
+    "Level": "STRONG",
+    "STRb": 9,
+    "AGLb": 2,
+    "DBSerial": 3,
+    "DebutText": "",
+    "PetText": "",
+    "WinText": "妨碍者HP-4。",
+    "LoseText": "您的HP-4。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "水魔兽",
+    "Code": "GS04",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AQUA",
+    "Level": "BOSS",
+    "STRb": 7,
+    "AGLb": 6,
+    "DBSerial": 4,
+    "DebutText": "",
+    "PetText": "主人战力+1，命中+1。",
+    "WinText": "敌人全体HP-1，之后您抽取妨碍者1件装备或手牌。",
+    "LoseText": "您的HP-2，之后妨碍者抽取您的1件装备或手牌。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "赝月",
+    "Code": "GH01",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AGNI",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 1,
+    "DBSerial": 5,
+    "DebutText": "",
+    "PetText": "主人战力+1。",
+    "WinText": "妨碍者HP-2。",
+    "LoseText": "您的HP-3。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "肥肥",
+    "Code": "GH02",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AGNI",
+    "Level": "WEAK",
+    "STRb": 2,
+    "AGLb": 5,
+    "DBSerial": 6,
+    "DebutText": "",
+    "PetText": "爆发：任何打怪战斗中使用，本场战斗本方战力+3。",
+    "WinText": "妨碍者HP-3。",
+    "LoseText": "您的HP-3。",
+    "EAOccurs": [
+      null,
+      [
+        "R*ZD"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        0
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "狐妖女",
+    "Code": "GH03",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AGNI",
+    "Level": "STRONG",
+    "STRb": 6,
+    "AGLb": 1,
+    "DBSerial": 7,
+    "DebutText": "支援者受到伤害，伤害=您的战力-1。",
+    "PetText": "主人战力+2。",
+    "WinText": "妨碍者HP-3。",
+    "LoseText": "由敌方指定两名角色HP-3。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "熔岩兽王",
+    "Code": "GH04",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AGNI",
+    "Level": "BOSS",
+    "STRb": 10,
+    "AGLb": 2,
+    "DBSerial": 8,
+    "DebutText": "全体角色HP-2。",
+    "PetText": "主人战力+2。",
+    "WinText": "敌方全体HP-2。",
+    "LoseText": "您与支援者HP各-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "积粮隐者",
+    "Code": "GL01",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "THUNDER",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 3,
+    "DBSerial": 9,
+    "DebutText": "",
+    "PetText": "",
+    "WinText": "您指定一名玩家HP+2。",
+    "LoseText": "您的HP-3。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "赤鬼王",
+    "Code": "GL02",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "THUNDER",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 5,
+    "DBSerial": 10,
+    "DebutText": "支援者在本场战斗中战力+2。",
+    "PetText": "主人在补牌阶段可多补1张牌。",
+    "WinText": "您指定任意一名玩家补2张牌。",
+    "LoseText": "您的HP-2，失去全部装备并补充失去装备数量的手牌。",
+    "EAOccurs": [
+      [
+        "G0HT"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        50
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "毒娘子",
+    "Code": "GL03",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "THUNDER",
+    "Level": "BOSS",
+    "STRb": 7,
+    "AGLb": 5,
+    "DBSerial": 11,
+    "DebutText": "",
+    "PetText": "主人命中+2。",
+    "WinText": "您可以放弃若干张手牌或装备，每放弃1张，您的HP+2。",
+    "LoseText": "您损失1个装备，之后场上装备最多的角色各损失1个装备。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "邪剑仙",
+    "Code": "GL04",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "THUNDER",
+    "Level": "BOSS",
+    "STRb": 11,
+    "AGLb": 3,
+    "DBSerial": 12,
+    "DebutText": "",
+    "PetText": "敌方全体的武器类装备无效。",
+    "WinText": "我方全体玩家各补n张牌，n=补牌者当前的装备数。",
+    "LoseText": "我方全体HP-2。",
+    "EAOccurs": [
+      [
+        "G0IY"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        50
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "叶灵",
+    "Code": "GF01",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AERO",
+    "Level": "WEAK",
+    "STRb": 2,
+    "AGLb": 2,
+    "DBSerial": 13,
+    "DebutText": "",
+    "PetText": "",
+    "WinText": "您补1张牌。",
+    "LoseText": "您的HP-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "暗香",
+    "Code": "GF02",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AERO",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 6,
+    "DBSerial": 14,
+    "DebutText": "",
+    "PetText": "主人战力+1。",
+    "WinText": "您的HP+2。",
+    "LoseText": "敌方全体HP+2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "句芒",
+    "Code": "GF03",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AERO",
+    "Level": "STRONG",
+    "STRb": 7,
+    "AGLb": 4,
+    "DBSerial": 15,
+    "DebutText": "",
+    "PetText": "爆发：我方技牌阶段或任意战斗的战牌阶段可爆发，之后我方全体从牌堆中交换全部手牌。",
+    "WinText": "您与支援者HP各+2。",
+    "LoseText": "我方全体从牌堆中交换全部手牌，之后各自HP-2。",
+    "EAOccurs": [
+      null,
+      [
+        "R*GR",
+        "R*ZD"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        0,
+        0
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false,
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true,
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        false,
+        false
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false,
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "彩依",
+    "Code": "GF04",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "AERO",
+    "Level": "BOSS",
+    "STRb": 6,
+    "AGLb": 4,
+    "DBSerial": 16,
+    "DebutText": "",
+    "PetText": "爆发：任意角色HP降到0时，您可以放弃彩依，令其满HP复活。",
+    "WinText": "敌方一人HP+2。",
+    "LoseText": "",
+    "EAOccurs": [
+      null,
+      [
+        "G0ZH"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        0
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "璇龟",
+    "Code": "GT01",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "SATURN",
+    "Level": "WEAK",
+    "STRb": 5,
+    "AGLb": 2,
+    "DBSerial": 17,
+    "DebutText": "",
+    "PetText": "",
+    "WinText": "您与支援者HP各-3。",
+    "LoseText": "妨碍者HP-3。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "刑天",
+    "Code": "GT02",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "SATURN",
+    "Level": "WEAK",
+    "STRb": 5,
+    "AGLb": 3,
+    "DBSerial": 18,
+    "DebutText": "参战者以外的所有角色HP-n，n=持有该角色的玩家手牌数。",
+    "PetText": "主人命中+1。",
+    "WinText": "",
+    "LoseText": "",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "金蟾鬼母",
+    "Code": "GT03",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "SATURN",
+    "Level": "STRONG",
+    "STRb": 4,
+    "AGLb": 4,
+    "DBSerial": 19,
+    "DebutText": "金蟾鬼母本场战斗中战力额外+3。",
+    "PetText": "任何战斗，允许选择金蟾鬼母进行支援、妨碍。",
+    "WinText": "敌方全体HP-1。",
+    "LoseText": "我方全体HP-2。",
+    "EAOccurs": [
+      [
+        "R*ZW"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "天鬼皇",
+    "Code": "GT04",
+    "Group": 1,
+    "Genre": 1,
+    "Element": "SATURN",
+    "Level": "BOSS",
+    "STRb": 10,
+    "AGLb": 2,
+    "DBSerial": 20,
+    "DebutText": "",
+    "PetText": "主人战力+2，命中+1。",
+    "WinText": "",
+    "LoseText": "如果敌方有土属性宠物，可以选择用天鬼皇替换该宠物。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR画妖",
+    "Code": "GST1",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AQUA",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 1,
+    "DBSerial": 21,
+    "DebutText": "支援者命中-4。",
+    "PetText": "主人命中+1。",
+    "WinText": "妨碍者选择一项：弃置全部手牌与装备（总数不得少于2张）；或手牌调整至上限然后被定身。",
+    "LoseText": "您的HP-3。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR帝江神兽",
+    "Code": "GST2",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AQUA",
+    "Level": "BOSS",
+    "STRb": 10,
+    "AGLb": 3,
+    "DBSerial": 22,
+    "DebutText": "",
+    "PetText": "主人武器、防具属性数值调整效果额外+1。",
+    "WinText": "妨碍者损失装备数量+2的HP后，弃置1件装备。",
+    "LoseText": "您损失装备数量+2的HP后，弃置1件装备。",
+    "EAOccurs": [
+      [
+        "G0ZS",
+        "G0ZL"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        120,
+        120
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false,
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false,
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR火麒麟",
+    "Code": "GHT1",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AGNI",
+    "Level": "STRONG",
+    "STRb": 5,
+    "AGLb": 3,
+    "DBSerial": 23,
+    "DebutText": "火麒麟实际战力额外增加触发方火属性宠物总战力之和。",
+    "PetText": "任意战斗阶段可令我方战力+3，每局游戏限一次。",
+    "WinText": "妨碍者HP-2。如触发方没有火属性宠物，火麒麟直接弃置，无法通过战斗胜利捕捉。",
+    "LoseText": "您与支援者HP-2。",
+    "EAOccurs": [
+      [
+        "R*ZD"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR镇狱明王",
+    "Code": "GHT2",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AGNI",
+    "Level": "BOSS",
+    "STRb": 9,
+    "AGLb": 4,
+    "DBSerial": 24,
+    "DebutText": "",
+    "PetText": "主人选择一项执行：战力-1，命中+2；或命中-1，战力+2。选定后不可更改。",
+    "WinText": "敌方全体HP-3。",
+    "LoseText": "我方全体HP-3.",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR纸马",
+    "Code": "GLT1",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "THUNDER",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 5,
+    "DBSerial": 25,
+    "DebutText": "",
+    "PetText": "主人战力+1。",
+    "WinText": "您可以弃置1件装备，指定任意一人补2张手牌。",
+    "LoseText": "您的HP-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR菜刀婆婆",
+    "Code": "GLT2",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "THUNDER",
+    "Level": "STRONG",
+    "STRb": 5,
+    "AGLb": 6,
+    "DBSerial": 26,
+    "DebutText": "全体参战者武器、防具本场战斗失效。",
+    "PetText": "主人命中+1。",
+    "WinText": "您选择弃置敌方1件装备。",
+    "LoseText": "敌方选择弃置我方1件装备。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR羽民",
+    "Code": "GFT1",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AERO",
+    "Level": "STRONG",
+    "STRb": 7,
+    "AGLb": 3,
+    "DBSerial": 27,
+    "DebutText": "全体角色HP+1。",
+    "PetText": "主人手牌上限+1。",
+    "WinText": "您指定任意一名角色HP+3。",
+    "LoseText": "您与支援者HP-2，然后分别将手牌弃至1张。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR金翅凤凰",
+    "Code": "GFT2",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "AERO",
+    "Level": "BOSS",
+    "STRb": 9,
+    "AGLb": 5,
+    "DBSerial": 28,
+    "DebutText": "全体角色弃置1张手牌。",
+    "PetText": "主人免疫其他来源的无属性伤害（倾慕除外）。",
+    "WinText": "我方全体HP+2。",
+    "LoseText": "敌方全体HP+1。",
+    "EAOccurs": [
+      [
+        "G0OH"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        -15
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR财神爷",
+    "Code": "GTT1",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "SATURN",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 4,
+    "DBSerial": 29,
+    "DebutText": "",
+    "PetText": "主人补牌阶段可以少补1张牌，然后从任意一名角色处抽取1张手牌。",
+    "WinText": "您与支援者分别弃置2张手牌或装备。",
+    "LoseText": "妨碍者弃置2张手牌或装备。",
+    "EAOccurs": [
+      [
+        "G0HT"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        80
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR罗刹鬼婆",
+    "Code": "GTT2",
+    "Group": 4,
+    "Genre": 5,
+    "Element": "SATURN",
+    "Level": "BOSS",
+    "STRb": 12,
+    "AGLb": 2,
+    "DBSerial": 30,
+    "DebutText": "全体玩家HP减少1/3（伤害值向上取整）。",
+    "PetText": "主人参战时，可指定任意一名角色战力-2。",
+    "WinText": "",
+    "LoseText": "我方全体需弃置战力总值达到4点的宠物（不足则全弃）。",
+    "EAOccurs": [
+      [
+        "R*Z1"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR雪女",
+    "Code": "GST3",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AQUA",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 3,
+    "DBSerial": 31,
+    "DebutText": "本战战牌阶段使用或弃置的牌中若包含非战牌，则须立即弃置其余全部手牌。",
+    "PetText": "主人战力+1。",
+    "WinText": "妨碍者弃置全部手牌后补1张牌。",
+    "LoseText": "您弃置全部手牌后补1张牌。",
+    "EAOccurs": [
+      null,
+      null,
+      [
+        "G1DI",
+        "G0CC"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      null,
+      [
+        210,
+        160
+      ]
+    ],
+    "EALocks": [
+      null,
+      null,
+      [
+        true,
+        true
+      ]
+    ],
+    "EAOnces": [
+      null,
+      null,
+      [
+        true,
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      null,
+      [
+        false,
+        false
+      ]
+    ],
+    "EAHinds": [
+      null,
+      null,
+      [
+        false,
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "TR冰麟",
+    "Code": "GST4",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AQUA",
+    "Level": "STRONG",
+    "STRb": 6,
+    "AGLb": 5,
+    "DBSerial": 32,
+    "DebutText": "全体角色横置。",
+    "PetText": "主人免疫横置，且其宠物不可成为【TR傀儡虫】夺宠目标。",
+    "WinText": "妨碍者HP-3，您可弃置全部手牌并解除横置。",
+    "LoseText": "您的HP-3，妨碍者可弃置全部手牌并解除横置。",
+    "EAOccurs": [
+      [
+        "G0DS"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        90
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR厉鬼",
+    "Code": "GHT3",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AGNI",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 6,
+    "DBSerial": 33,
+    "DebutText": "",
+    "PetText": "",
+    "WinText": "妨碍者HP-2。",
+    "LoseText": "您的HP-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR炎舞",
+    "Code": "GHT4",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AGNI",
+    "Level": "STRONG",
+    "STRb": 9,
+    "AGLb": 1,
+    "DBSerial": 34,
+    "DebutText": "全体角色HP-1。",
+    "PetText": "主人选择免疫一种属性伤害（选定后不可更改）。",
+    "WinText": "我方指定敌方两人拼点，负者HP-3，平局各-2。",
+    "LoseText": "敌方指定我方两人拼点，负者HP-3，平局各-2。",
+    "EAOccurs": [
+      [
+        "G0OH"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        -50
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR丝萝",
+    "Code": "GLT3",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "THUNDER",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 4,
+    "DBSerial": 35,
+    "DebutText": "全体参战者与牌堆交换至少2张手牌。",
+    "PetText": "主人受到属性伤害后补1张牌。",
+    "WinText": "您指定一人补1张牌。",
+    "LoseText": "您的HP-2。",
+    "EAOccurs": [
+      [
+        "G1TH"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        120
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR穹武",
+    "Code": "GLT4",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "THUNDER",
+    "Level": "STRONG",
+    "STRb": 5,
+    "AGLb": 4,
+    "DBSerial": 36,
+    "DebutText": "穹武本场战斗战力额外加全场宠物数。",
+    "PetText": "整局游戏限一次，主人可令一张事件牌无效。",
+    "WinText": "我方全体补1张牌。如触发方宠物不少于敌方，穹武直接弃置，无法捕捉；使用傀儡虫夺宠时亦如此。",
+    "LoseText": "由敌方指定一人HP减少其宠物数量。",
+    "EAOccurs": [
+      [
+        "G1EV"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        150
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR流萤",
+    "Code": "GFT3",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AERO",
+    "Level": "WEAK",
+    "STRb": 5,
+    "AGLb": 5,
+    "DBSerial": 37,
+    "DebutText": "全体角色补1张牌。",
+    "PetText": "爆发：任意角色HP降到0时，您可放弃流萤，令其复活并恢复2点HP。",
+    "WinText": "我方总计HP+4，按照行动顺序依次任意分配。",
+    "LoseText": "敌方总计HP+4，按照行动顺序依次任意分配。",
+    "EAOccurs": [
+      null,
+      [
+        "G0ZH"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        0
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "TR岚翼",
+    "Code": "GFT4",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "AERO",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 3,
+    "DBSerial": 38,
+    "DebutText": "全体角色本场战斗可额外使用1张战牌。",
+    "PetText": "主人HP上限+2。",
+    "WinText": "您与支援者HP恢复各自手牌数。",
+    "LoseText": "我方全体HP减少各自手牌数。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR槐妖",
+    "Code": "GTT3",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "SATURN",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 2,
+    "DBSerial": 39,
+    "DebutText": "",
+    "PetText": "主人命中+1。",
+    "WinText": "全体参战者HP-2。",
+    "LoseText": "全体未参战者HP-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR峰龟",
+    "Code": "GTT4",
+    "Group": 4,
+    "Genre": 6,
+    "Element": "SATURN",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 2,
+    "DBSerial": 40,
+    "DebutText": "双方各选对方一人HP-2。",
+    "PetText": "主人若参战，战斗结束阶段HP+1。",
+    "WinText": "妨碍者选择与我方一名参战者手牌对调。",
+    "LoseText": "",
+    "EAOccurs": [
+      [
+        "R*Z2"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "浮游神",
+    "Code": "GSH1",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AQUA",
+    "Level": "WEAK",
+    "STRb": 2,
+    "AGLb": 3,
+    "DBSerial": 41,
+    "DebutText": "浮游神本场战斗中战力额外增加主人方宠物数的2倍。",
+    "PetText": "主人战力+1，命中+1；主人触发的普通战斗以浮游神为本战怪物。",
+    "WinText": "触发者可弃置任意数量的手牌，令一名其他角色补等量的牌。",
+    "LoseText": "触发者HP-2，妨碍者HP+2，触发者可弃置自己的所有宠物及装备牌。",
+    "EAOccurs": [
+      [
+        "R#ZW"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        -30
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "冰煌",
+    "Code": "GSH2",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AQUA",
+    "Level": "STRONG",
+    "STRb": 6,
+    "AGLb": 5,
+    "DBSerial": 42,
+    "DebutText": "未参战者不可使用任何手牌且助战无效。",
+    "PetText": "每局游戏限一次，若于一次伤害中有未受伤与受伤角色性别、HP及手牌数均相同，可取消此伤害。",
+    "WinText": "妨碍方选择一名妨碍方角色HP-4，隐蛊无效。",
+    "LoseText": "触发方选择一名触发方角色HP-4，隐蛊无效。",
+    "EAOccurs": [
+      [
+        "G0OH"
+      ],
+      null,
+      [
+        "G0FI"
+      ]
+    ],
+    "EAProperties": [
+      [
+        -190
+      ],
+      null,
+      [
+        110
+      ]
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null,
+      [
+        true
+      ]
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null,
+      [
+        false
+      ]
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null,
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "Name": "小青龙",
+    "Code": "GHH1",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AGNI",
+    "Level": "STRONG",
+    "STRb": 8,
+    "AGLb": 1,
+    "DBSerial": 43,
+    "DebutText": "",
+    "PetText": "主人回合结束阶段可弃1张手牌，令一名角色HP-2。",
+    "WinText": "妨碍方全体HP-2，然后妨碍者可弃n张手牌令妨碍方全体HP+n。",
+    "LoseText": "触发方全体HP-2，然后触发者可弃n张手牌令触发方全体HP+n。",
+    "EAOccurs": [
+      [
+        "R#TM"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "毕方",
+    "Code": "GHH2",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AGNI",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 4,
+    "DBSerial": 44,
+    "DebutText": "全体角色交给其右边玩家2张手牌（按照1->3->5->6->4->2->1的标准座次顺序交予）。",
+    "PetText": "爆发：主人受到水、火属性伤害后对方全体HP-2。",
+    "WinText": "触发者弃置所有手牌，妨碍者HP-2。",
+    "LoseText": "全体角色HP-1。",
+    "EAOccurs": [
+      null,
+      [
+        "G1TH"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        195
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "雷刑",
+    "Code": "GLH1",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "THUNDER",
+    "Level": "BOSS",
+    "STRb": 9,
+    "AGLb": 6,
+    "DBSerial": 45,
+    "DebutText": "雷刑本战中闪避减少已受伤或阵亡角色数。",
+    "PetText": "主人在补牌阶段结束后执行一个额外的技牌阶段。",
+    "WinText": "触发方全体各补等同于其宠物数量的牌。",
+    "LoseText": "触发方全体交给其对位角色1张手牌。",
+    "EAOccurs": [
+      [
+        "R#BC",
+        "R#GE"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        220,
+        150
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false,
+        true
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "幻影戟兵",
+    "Code": "GLH2",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "THUNDER",
+    "Level": "WEAK",
+    "STRb": 2,
+    "AGLb": 7,
+    "DBSerial": 46,
+    "DebutText": "",
+    "PetText": "爆发：战牌阶段，触发者命中不少于怪物闪避时，可令触发者战力增加对方一名未参战者的战力数值。",
+    "WinText": "触发者可每弃置2张手牌令一名角色横置。",
+    "LoseText": "妨碍方选择一名角色，除该角色外其他角色横置。",
+    "EAOccurs": [
+      null,
+      [
+        "R*ZD"
+      ]
+    ],
+    "EAProperties": [
+      null,
+      [
+        0
+      ]
+    ],
+    "EALocks": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAOnces": [
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      null,
+      [
+        false
+      ]
+    ],
+    "EAHinds": [
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "无相天妖",
+    "Code": "GFH1",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AERO",
+    "Level": "BOSS",
+    "STRb": 11,
+    "AGLb": 3,
+    "DBSerial": 47,
+    "DebutText": "本场战斗禁止混战。",
+    "PetText": "",
+    "WinText": "无相天妖无法捕捉直接弃置；触发方可与妨碍方交换1只同属性或同战力宠物。",
+    "LoseText": "妨碍方可与触发方交换1只同属性或同战力宠物。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "大眼蛙",
+    "Code": "GFH2",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AERO",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 4,
+    "DBSerial": 48,
+    "DebutText": "",
+    "PetText": "主人战斗开始阶段掷骰，若为偶数选择战力或命中+1；战斗中有BOSS怪翻出时，主人弃置一半手牌。",
+    "WinText": "触发方HP最少的已受伤角色HP+2。",
+    "LoseText": "触发方HP最多的角色HP-2。",
+    "EAOccurs": [
+      [
+        "R*Z1",
+        "R*Z1",
+        "G0HZ"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0,
+        20,
+        240
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false,
+        true,
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false,
+        false,
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false,
+        false,
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "木桩",
+    "Code": "GTH1",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "SATURN",
+    "Level": "WEAK",
+    "STRb": 0,
+    "AGLb": 0,
+    "DBSerial": 49,
+    "DebutText": "全体依次将1张装备区里的牌放回牌堆。",
+    "PetText": "游戏结束时，若主人无其它宠物，木桩战力增加主人战力。",
+    "WinText": "触发者补1张牌并强制以木桩替换其土属性弱宠物。",
+    "LoseText": "支援者HP-3；若我方有土属性宠物，对方可选择用木桩替换之。",
+    "EAOccurs": [
+      [
+        "G1WJ"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        60
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "蚩尤魄",
+    "Code": "GTH2",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "SATURN",
+    "Level": "STRONG",
+    "STRb": 7,
+    "AGLb": 2,
+    "DBSerial": 50,
+    "DebutText": "支援者与妨碍者退出战斗，两人可分别展示1张战牌以额外参战，并使用此牌。",
+    "PetText": "战牌阶段限一次，主人需使用战牌时可观看手牌堆顶1张：若是可弃一半牌（至少1张）使用之。",
+    "WinText": "全体角色与牌堆交换全部手牌，然后调整为3张。",
+    "LoseText": "全体角色手牌调整为3张，然后与牌堆全部交换。",
+    "EAOccurs": [
+      [
+        "%8"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "水菱晶",
+    "Code": "GSH3",
+    "Group": 7,
+    "Genre": 9,
+    "Element": "AQUA",
+    "Level": "BOSS",
+    "STRb": 4,
+    "AGLb": 6,
+    "DBSerial": 51,
+    "DebutText": "本战直接结束。",
+    "PetText": "主人参战时我方战力增加其他参战者宠物属性数。",
+    "WinText": "",
+    "LoseText": "",
+    "EAOccurs": [
+      [
+        "R*Z1",
+        "G0FI"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0,
+        110
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false,
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false,
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR鬼将军",
+    "Code": "GIT1",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "WEAK",
+    "STRb": 6,
+    "AGLb": 2,
+    "DBSerial": 61,
+    "DebutText": "本场战斗支援者战力+1。",
+    "PetText": "主人补牌阶段多补1张牌，然后从手牌中弃置1张。",
+    "WinText": "我方其他角色各补1张牌。",
+    "LoseText": "您HP-3；若您有装备则弃置1件并补1张牌。",
+    "EAOccurs": [
+      [
+        "G0HT",
+        "G0HT"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        70,
+        190
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true,
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false,
+        true
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR虞蛇",
+    "Code": "GIT2",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "WEAK",
+    "STRb": 5,
+    "AGLb": 1,
+    "DBSerial": 62,
+    "DebutText": "",
+    "PetText": "主人可将2张特殊牌当作【冰心诀】使用。",
+    "WinText": "妨碍者HP-3。",
+    "LoseText": "您HP-3。",
+    "EAOccurs": [
+      [
+        "G0CD"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR魔骨",
+    "Code": "GIT3",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "STRONG",
+    "STRb": 6,
+    "AGLb": 6,
+    "DBSerial": 63,
+    "DebutText": "您与妨碍者基础装备对调。",
+    "PetText": "主人选择战力+1或命中+1（不可更改）。",
+    "WinText": "妨碍方全体HP减少其基础装备数。",
+    "LoseText": "触发方全体HP减少其基础装备数。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR魅召",
+    "Code": "GIT4",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "WEAK",
+    "STRb": 2,
+    "AGLb": 4,
+    "DBSerial": 64,
+    "DebutText": "本场战斗TR魅召战力增加骰数一半（向上取整）。",
+    "PetText": "主人战力+1。",
+    "WinText": "妨碍者HP-2。",
+    "LoseText": "您与支援者HP-2。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR淮南王",
+    "Code": "GIT5",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "STRONG",
+    "STRb": 1,
+    "AGLb": 5,
+    "DBSerial": 65,
+    "DebutText": "本场战斗TR淮南王战力增加在场人数。",
+    "PetText": "游戏结束时，TR淮南王战力增加在场人数。",
+    "WinText": "妨碍方全体HP-1。",
+    "LoseText": "我方全体HP-1。",
+    "EAOccurs": [
+      [
+        "G1WJ"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        60
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR骨蛇",
+    "Code": "GIT6",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "BOSS",
+    "STRb": 11,
+    "AGLb": 2,
+    "DBSerial": 66,
+    "DebutText": "本场战斗中每张战牌的使用者HP-2。",
+    "PetText": "主人参战强制命中。",
+    "WinText": "妨碍者HP减少骰数。",
+    "LoseText": "您HP减少骰数。",
+    "EAOccurs": [
+      [
+        "G09P"
+      ],
+      null,
+      [
+        "G0CC"
+      ]
+    ],
+    "EAProperties": [
+      [
+        40
+      ],
+      null,
+      [
+        160
+      ]
+    ],
+    "EALocks": [
+      [
+        true
+      ],
+      null,
+      [
+        true
+      ]
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null,
+      [
+        true
+      ]
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null,
+      [
+        false
+      ]
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null,
+      [
+        false
+      ]
+    ]
+  },
+  {
+    "Name": "TR戾枭",
+    "Code": "GIT7",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "BOSS",
+    "STRb": 10,
+    "AGLb": 4,
+    "DBSerial": 67,
+    "DebutText": "",
+    "PetText": "战牌开始阶段，主人可选择战力或命中增加其手牌数与手牌上限差值的绝对值且至多为3。",
+    "WinText": "妨碍方全体角色HP减少其手牌数。",
+    "LoseText": "我方全体角色HP减少其手牌数。",
+    "EAOccurs": [
+      [
+        "R*ZC"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR楼兰王",
+    "Code": "GIT8",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "YINN",
+    "Level": "STRONG",
+    "STRb": 7,
+    "AGLb": 2,
+    "DBSerial": 68,
+    "DebutText": "本场战斗TR楼兰王闪避增加掷骰结果的一半。",
+    "PetText": "主人于技牌阶段内每使用2张牌，可补1张牌。",
+    "WinText": "触发者抽取对方一名角色1张手牌，该角色HP-2。",
+    "LoseText": "妨碍者抽取我方一名角色1张手牌，该角色HP-2。",
+    "EAOccurs": [
+      [
+        "G0CC",
+        "G1UE",
+        "G1CK"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        160,
+        150,
+        110
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        true,
+        true,
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true,
+        true,
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false,
+        false,
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        true,
+        true,
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR衔烛之龙",
+    "Code": "GYT1",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "BOSS",
+    "STRb": 8,
+    "AGLb": 6,
+    "DBSerial": 69,
+    "DebutText": "手牌数未达上限的角色补2张牌。",
+    "PetText": "主人战力+1，命中+2。",
+    "WinText": "您可指定至多3名角色各获得1枚普通标记。",
+    "LoseText": "妨碍者可指定至多3名角色各获得1枚普通标记。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR包子",
+    "Code": "GYT2",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "WEAK",
+    "STRb": 1,
+    "AGLb": 4,
+    "DBSerial": 70,
+    "DebutText": "",
+    "PetText": "主人受到无属性的标准伤害时，可将此伤害变成1点转给其对位角色，然后主人获得「虚弱」。",
+    "WinText": "妨碍者获得「脱力」。",
+    "LoseText": "您获得「脱力」。",
+    "EAOccurs": [
+      [
+        "G0OH"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        -115
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR三皇",
+    "Code": "GYT3",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "BOSS",
+    "STRb": 12,
+    "AGLb": 3,
+    "DBSerial": 71,
+    "DebutText": "全体角色手牌调整为3。",
+    "PetText": "主人战力、命中及手牌上限各+1。",
+    "WinText": "您补3张牌，并将其任意分配。",
+    "LoseText": "妨碍者补3张牌，并将其任意分配。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR噬珊鬼蛰",
+    "Code": "GYT4",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "STRONG",
+    "STRb": 7,
+    "AGLb": 1,
+    "DBSerial": 72,
+    "DebutText": "全体角色弃置非专属增益标记。",
+    "PetText": "主人参战且战斗失败，战斗结束阶段可获得1枚普通增益标记。",
+    "WinText": "您弃置对方一人1张手牌或装备，然后令该角色获得1枚普通负面标记。",
+    "LoseText": "妨碍者弃置我方一人1张手牌或装备，然后妨碍者获得1枚普通增益标记。",
+    "EAOccurs": [
+      [
+        "R*VS"
+      ],
+      null
+    ],
+    "EAProperties": [
+      [
+        0
+      ],
+      null
+    ],
+    "EALocks": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAOnces": [
+      [
+        true
+      ],
+      null
+    ],
+    "EAIsTermini": [
+      [
+        false
+      ],
+      null
+    ],
+    "EAHinds": [
+      [
+        false
+      ],
+      null
+    ]
+  },
+  {
+    "Name": "TR虹鼯",
+    "Code": "GYT5",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "WEAK",
+    "STRb": 3,
+    "AGLb": 5,
+    "DBSerial": 73,
+    "DebutText": "全体角色随机弃置1张手牌。",
+    "PetText": "主人命中+1。",
+    "WinText": "您指定妨碍方一人随机弃置1张手牌。",
+    "LoseText": "妨碍者指定我方一人随机弃置1张手牌。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR鳄齿巨蜥",
+    "Code": "GYT6",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "WEAK",
+    "STRb": 4,
+    "AGLb": 5,
+    "DBSerial": 74,
+    "DebutText": "全体未参战者弃置1件装备。",
+    "PetText": "主人战力+1。",
+    "WinText": "妨碍方弃置1件装备，若无装备则妨碍者获得「脱力」。",
+    "LoseText": "我方弃置1件装备，若无装备则您获得「脱力」。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR忘尘司命",
+    "Code": "GYT7",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "STRONG",
+    "STRb": 6,
+    "AGLb": 3,
+    "DBSerial": 75,
+    "DebutText": "全体手牌超过上限的角色随机弃置手牌至其上限。",
+    "PetText": "主人命中+1。",
+    "WinText": "您指定我方一人补牌至上限。",
+    "LoseText": "妨碍者指定对方一人补牌至上限。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  },
+  {
+    "Name": "TR归墟界督",
+    "Code": "GYT8",
+    "Group": 5,
+    "Genre": 7,
+    "Element": "SOLARIS",
+    "Level": "STRONG",
+    "STRb": 9,
+    "AGLb": 3,
+    "DBSerial": 76,
+    "DebutText": "全体角色获得「虚弱」。",
+    "PetText": "",
+    "WinText": "您指定一名角色掷骰判定，n为掷骰结果：若n大于4，其补n-4张牌；否则弃4-n张牌。",
+    "LoseText": "妨碍者指定一名角色掷骰判定，n为掷骰结果：若n大于4，其补n-4张牌；否则弃4-n张牌。",
+    "EAOccurs": [
+      null,
+      null
+    ],
+    "EAProperties": [
+      null,
+      null
+    ],
+    "EALocks": [
+      null,
+      null
+    ],
+    "EAOnces": [
+      null,
+      null
+    ],
+    "EAIsTermini": [
+      null,
+      null
+    ],
+    "EAHinds": [
+      null,
+      null
+    ]
+  }
+]

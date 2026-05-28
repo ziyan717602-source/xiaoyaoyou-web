@@ -1,0 +1,1348 @@
+[
+  {
+    "Name": "李逍遥",
+    "Code": "NC101",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10101,
+    "DebutText": ""
+  },
+  {
+    "Name": "赵灵儿",
+    "Code": "NC102",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10102,
+    "DebutText": ""
+  },
+  {
+    "Name": "赵灵儿·梦蛇",
+    "Code": "NC103",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ07",
+      "NJ09"
+    ],
+    "Hero": 10103,
+    "DebutText": ""
+  },
+  {
+    "Name": "林月如",
+    "Code": "NC104",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 10104,
+    "DebutText": ""
+  },
+  {
+    "Name": "阿奴",
+    "Code": "NC105",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10105,
+    "DebutText": ""
+  },
+  {
+    "Name": "酒剑仙",
+    "Code": "NC106",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 10106,
+    "DebutText": ""
+  },
+  {
+    "Name": "拜月教主",
+    "Code": "NC107",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 10107,
+    "DebutText": ""
+  },
+  {
+    "Name": "王小虎",
+    "Code": "NC201",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 10201,
+    "DebutText": ""
+  },
+  {
+    "Name": "苏媚",
+    "Code": "NC202",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ05"
+    ],
+    "Hero": 10202,
+    "DebutText": ""
+  },
+  {
+    "Name": "沈欺霜",
+    "Code": "NC203",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 10203,
+    "DebutText": ""
+  },
+  {
+    "Name": "孔璘",
+    "Code": "NC206",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ05"
+    ],
+    "Hero": 10206,
+    "DebutText": ""
+  },
+  {
+    "Name": "魔尊",
+    "Code": "NC207",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 8,
+    "Skills": [
+      "NJ04",
+      "NJ05"
+    ],
+    "Hero": 10207,
+    "DebutText": ""
+  },
+  {
+    "Name": "唐雪见",
+    "Code": "NC302",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 10302,
+    "DebutText": ""
+  },
+  {
+    "Name": "紫萱",
+    "Code": "NC305",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 10305,
+    "DebutText": ""
+  },
+  {
+    "Name": "重楼",
+    "Code": "NC306",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10306,
+    "DebutText": ""
+  },
+  {
+    "Name": "南宫煌",
+    "Code": "N3W01",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 10401,
+    "DebutText": ""
+  },
+  {
+    "Name": "温慧",
+    "Code": "N3W02",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10402,
+    "DebutText": ""
+  },
+  {
+    "Name": "星璇",
+    "Code": "N3W03",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 10403,
+    "DebutText": ""
+  },
+  {
+    "Name": "王蓬絮",
+    "Code": "N3W04",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 10404,
+    "DebutText": ""
+  },
+  {
+    "Name": "云天河",
+    "Code": "NC401",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10501,
+    "DebutText": ""
+  },
+  {
+    "Name": "韩菱纱",
+    "Code": "NC402",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ08"
+    ],
+    "Hero": 10502,
+    "DebutText": ""
+  },
+  {
+    "Name": "柳梦璃",
+    "Code": "NC403",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 10503,
+    "DebutText": ""
+  },
+  {
+    "Name": "慕容紫英",
+    "Code": "NC404",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 10504,
+    "DebutText": ""
+  },
+  {
+    "Name": "玄霄",
+    "Code": "NC405",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 10505,
+    "DebutText": ""
+  },
+  {
+    "Name": "龙幽",
+    "Code": "NC503",
+    "Group": 1,
+    "Gender": "M",
+    "Genre": 1,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10603,
+    "DebutText": ""
+  },
+  {
+    "Name": "小蛮",
+    "Code": "NC504",
+    "Group": 1,
+    "Gender": "F",
+    "Genre": 1,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ08"
+    ],
+    "Hero": 10604,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR龙葵·蓝",
+    "Code": "NC303",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 10303,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR龙葵·红",
+    "Code": "NC304",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 5,
+    "Skills": [
+      "NJ05",
+      "NJ07"
+    ],
+    "Hero": 10304,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR姜云凡",
+    "Code": "NC501",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ08"
+    ],
+    "Hero": 10601,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR唐雨柔",
+    "Code": "NC502",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 10602,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR姜世离",
+    "Code": "NC505",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 6,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 10605,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR魔翳",
+    "Code": "NC506",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 10606,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR湮世穹兵",
+    "Code": "NC507",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 6,
+    "Skills": [
+      "NJ03",
+      "NJ09"
+    ],
+    "Hero": 10607,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR欧阳慧",
+    "Code": "NC508",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 10608,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR夙玉",
+    "Code": "NCT01",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 17001,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR徐长卿",
+    "Code": "NCT02",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17002,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR云天青",
+    "Code": "NCT03",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17003,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR凌音",
+    "Code": "NCT04",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17004,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR凌波",
+    "Code": "NCT05",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17005,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR欧阳倩",
+    "Code": "NCT06",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 17006,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR李忆如",
+    "Code": "NCT07",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 5,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17007,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR夏侯瑾轩",
+    "Code": "NCT08",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 17008,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR瑕",
+    "Code": "NCT09",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 6,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17009,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR暮菖兰",
+    "Code": "NCT10",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 6,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 17010,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR姜承",
+    "Code": "NCT11",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 17011,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR皇甫卓",
+    "Code": "NCT12",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 17012,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR谢沧行",
+    "Code": "NCT13",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17013,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR结萝",
+    "Code": "NCT14",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 6,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJT1"
+    ],
+    "Hero": 17014,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR厉岩",
+    "Code": "NCT15",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ05"
+    ],
+    "Hero": 17015,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR璇玑",
+    "Code": "NCT16",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 6,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 17016,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR怀朔",
+    "Code": "NCT17",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 6,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17017,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR琴姬",
+    "Code": "NCT18",
+    "Group": 4,
+    "Gender": "F",
+    "Genre": 6,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJT1"
+    ],
+    "Hero": 17018,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR景天",
+    "Code": "NCT19",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 17019,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR雷元戈",
+    "Code": "NCT20",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17020,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR龙溟",
+    "Code": "NCT21",
+    "Group": 4,
+    "Gender": "M",
+    "Genre": 5,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJT1"
+    ],
+    "Hero": 17021,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR夏初临",
+    "Code": "NCT22",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17022,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR越今朝",
+    "Code": "NCT23",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17023,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR越祈",
+    "Code": "NCT24",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17024,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR燎日",
+    "Code": "NCT25",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJT1"
+    ],
+    "Hero": 17025,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR花楹",
+    "Code": "NCT26",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17026,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR千叶禅师",
+    "Code": "NCT27",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 0,
+    "Skills": [
+      "NJ01",
+      "NJ08"
+    ],
+    "Hero": 17027,
+    "DebutText": "当前回合角色可用弃牌堆中1张NPC牌替换此牌。"
+  },
+  {
+    "Name": "TR巫后",
+    "Code": "NCT28",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 17028,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR闲卿",
+    "Code": "NCT29",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 17029,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR洛昭言·男",
+    "Code": "NCT30",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 17030,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR洛昭言",
+    "Code": "NCT31",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 5,
+    "Skills": [
+      "NJ06",
+      "NJ09"
+    ],
+    "Hero": 17031,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR居十方",
+    "Code": "NCT32",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 0,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 17032,
+    "DebutText": "若此时处于战斗内，当前回合角色可额外使用1张战牌。"
+  },
+  {
+    "Name": "TR豆包",
+    "Code": "NCT33",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 0,
+    "Skills": [
+      "NJ05",
+      "NJ09"
+    ],
+    "Hero": 17033,
+    "DebutText": "TR豆包战力增加5-当前回合角色手牌数。"
+  },
+  {
+    "Name": "TR明绣",
+    "Code": "NCT34",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17034,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR顾寒江",
+    "Code": "NCT35",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 17035,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR洛埋名",
+    "Code": "NCT36",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17036,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR藏锋",
+    "Code": "NCT37",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ08"
+    ],
+    "Hero": 17037,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR嬴旭危",
+    "Code": "NCT38",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 17038,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR葛清霏",
+    "Code": "NCT39",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 17039,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR扁络桓",
+    "Code": "NCT40",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 17040,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR绮里小媛",
+    "Code": "NCT41",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ05"
+    ],
+    "Hero": 17041,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR朔漩",
+    "Code": "NCT42",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 0,
+    "Skills": [
+      "NJ01",
+      "NJT1"
+    ],
+    "Hero": 17042,
+    "DebutText": "TR朔漩战力为触发者对方手牌数最多者的手牌数-1。"
+  },
+  {
+    "Name": "TR临渊",
+    "Code": "NCT43",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17043,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR柷敔",
+    "Code": "NCT44",
+    "Group": 5,
+    "Gender": "F",
+    "Genre": 7,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJT2"
+    ],
+    "Hero": 17044,
+    "DebutText": ""
+  },
+  {
+    "Name": "TR宿何",
+    "Code": "NCT45",
+    "Group": 5,
+    "Gender": "M",
+    "Genre": 7,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 17045,
+    "DebutText": ""
+  },
+  {
+    "Name": "赵玟",
+    "Code": "NCH01",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 9,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ02"
+    ],
+    "Hero": 19006,
+    "DebutText": ""
+  },
+  {
+    "Name": "阮英扬",
+    "Code": "NCH02",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 4,
+    "Skills": [
+      "NJH1"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "沈小蝶",
+    "Code": "NCH03",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 9,
+    "STRb": 2,
+    "Skills": [
+      "NJH2"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "柒月",
+    "Code": "NCH04",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 9,
+    "STRb": 3,
+    "Skills": [
+      "NJH3"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "伍阳",
+    "Code": "NCH05",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 6,
+    "Skills": [
+      "NJH4"
+    ],
+    "Hero": "",
+    "DebutText": "横置全体手牌数不为3的角色。"
+  },
+  {
+    "Name": "璇英",
+    "Code": "NCH06",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 5,
+    "Skills": [
+      "NJH5"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "共工魄",
+    "Code": "NCH07",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 0,
+    "Skills": [],
+    "Hero": "",
+    "DebutText": "将未使用的2张怪牌和2张NPC加入怪牌堆并立即洗混。"
+  },
+  {
+    "Name": "蜀云飞",
+    "Code": "NCH08",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 4,
+    "Skills": [
+      "NJH6"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "魔界使者",
+    "Code": "NCH09",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 1,
+    "Skills": [
+      "NJH7"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "月柔霞",
+    "Code": "NCH10",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 9,
+    "STRb": 2,
+    "Skills": [
+      "NJ05",
+      "NJ09"
+    ],
+    "Hero": "",
+    "DebutText": "触发者须爆发场上装备区内1张武器，月柔霞战力增加此牌战力调整值+1。"
+  },
+  {
+    "Name": "水鉴长老",
+    "Code": "NCH11",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 9,
+    "STRb": 1,
+    "Skills": [
+      "NJH8"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "红依",
+    "Code": "NCH12",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 9,
+    "STRb": 3,
+    "Skills": [
+      "NJH9"
+    ],
+    "Hero": "",
+    "DebutText": ""
+  },
+  {
+    "Name": "皇甫卓",
+    "Code": "NCR01",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 10,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ03"
+    ],
+    "Hero": 20001,
+    "DebutText": ""
+  },
+  {
+    "Name": "唐雪见",
+    "Code": "NCR02",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 10,
+    "STRb": 2,
+    "Skills": [
+      "NJ01",
+      "NJ06"
+    ],
+    "Hero": 20002,
+    "DebutText": ""
+  },
+  {
+    "Name": "苏媚",
+    "Code": "NCR03",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 10,
+    "STRb": 3,
+    "Skills": [
+      "NJ01",
+      "NJ05"
+    ],
+    "Hero": 20003,
+    "DebutText": ""
+  },
+  {
+    "Name": "南宫煌",
+    "Code": "NCR04",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 10,
+    "STRb": 4,
+    "Skills": [
+      "NJ01",
+      "NJ07"
+    ],
+    "Hero": 20004,
+    "DebutText": ""
+  },
+  {
+    "Name": "凌音",
+    "Code": "NCR05",
+    "Group": 7,
+    "Gender": "F",
+    "Genre": 10,
+    "STRb": 1,
+    "Skills": [
+      "NJ01",
+      "NJ09"
+    ],
+    "Hero": 20005,
+    "DebutText": ""
+  },
+  {
+    "Name": "玄霄",
+    "Code": "NCR06",
+    "Group": 7,
+    "Gender": "M",
+    "Genre": 10,
+    "STRb": 5,
+    "Skills": [
+      "NJ01",
+      "NJ04"
+    ],
+    "Hero": 20006,
+    "DebutText": ""
+  }
+]
