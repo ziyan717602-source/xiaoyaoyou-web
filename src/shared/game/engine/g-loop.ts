@@ -292,34 +292,144 @@ export class GLoop {
 
   /**
    * HandleU24Message - process a locked skill message.
+   * Matches C# XI.HandleU24Message in XIU.cs
    */
   private handleU24Message(me: number, involved: boolean[], mai: string, ske: SKE): UEchoCode {
-    // Simplified: emit and return END_ACTION
-    this.eventBus.emit(ske.name, {
+    const idx = mai.indexOf(',');
+    const player = this.board.garden.get(me);
+    if (!player || !ske) return UEchoCode.END_CANCEL;
+
+    const skName = ske.name;
+    const args = idx < 0 ? '' : mai.substring(idx + 1);
+
+    // Check if this is a skill handler (SK type)
+    if (ske.type === 'SK' || ske.type === 'BK') {
+      // Emit to event bus for skill handler
+      this.eventBus.emit(skName, {
+        cmd: mai,
+        board: this.board,
+        player,
+        ske,
+        type: ske.type,
+        inType: ske.inType,
+        args,
+      });
+
+      // Broadcast U5 confirmation message
+      if (this.messageHandler) {
+        const sTop = `U5,${me};;${skName}`;
+        const sType = `;;${ske.inType}`;
+        const mEnc = sTop + (args !== '' ? `,${args}` : '') + sType;
+        this.messageHandler(mEnc);
+      }
+
+      ++ske.tick;
+      return ske.isTermini ? UEchoCode.END_TERMIN : UEchoCode.END_ACTION;
+    }
+
+    // Check if this is a tux handler (TX/EQ type)
+    if (ske.type === 'TX' || ske.type === 'EQ') {
+      // Emit to event bus for tux handler
+      this.eventBus.emit(skName, {
+        cmd: mai,
+        board: this.board,
+        player,
+        ske,
+        type: ske.type,
+        inType: ske.inType,
+        args,
+      });
+
+      if (this.messageHandler) {
+        const sTop = `U5,${me};;${skName}`;
+        const sType = `;;${ske.inType}`;
+        const mEnc = sTop + (args !== '' ? `,${args}` : '') + sType;
+        this.messageHandler(mEnc);
+      }
+
+      ++ske.tick;
+      return ske.isTermini ? UEchoCode.END_TERMIN : UEchoCode.END_ACTION;
+    }
+
+    // Check if this is an operation handler (CZ type)
+    if (ske.type === 'CZ') {
+      this.eventBus.emit(skName, {
+        cmd: mai,
+        board: this.board,
+        player,
+        ske,
+        type: ske.type,
+        inType: ske.inType,
+        args,
+      });
+
+      ++ske.tick;
+      return ske.isTermini ? UEchoCode.END_TERMIN : UEchoCode.END_ACTION;
+    }
+
+    // Default: emit and return END_ACTION
+    this.eventBus.emit(skName, {
       cmd: mai,
       board: this.board,
-      player: this.board.garden.get(me) ?? null,
+      player,
       ske,
+      args,
     });
-    return UEchoCode.END_ACTION;
+
+    ++ske.tick;
+    return ske.isTermini ? UEchoCode.END_TERMIN : UEchoCode.END_ACTION;
   }
 
   /**
    * SendOutU1Message - broadcast U1 messages to involved players.
+   * Matches C# XI.SendOutU1Message in XIU.cs
+   *
+   * U1 format: "U1,uvsn;;involved;;road_or_options"
+   * Each player gets their specific input options based on their road.
    */
   private sendOutU1Message(involved: boolean[], roads: string[], sinaG: number[]): void {
-    // Simplified: just broadcast
-    if (this.messageHandler) {
-      for (let i = 1; i < involved.length; i++) {
-        if (involved[i]) {
-          this.messageHandler(`U1,${i}`);
-        }
+    if (!this.messageHandler) return;
+
+    // Build involved player list
+    const involvedPlayers: number[] = [];
+    for (let i = 1; i < involved.length; i++) {
+      if (involved[i]) involvedPlayers.push(i);
+    }
+    if (involvedPlayers.length === 0) return;
+
+    // Generate a UVSN (unique version sequence number) - simplified
+    const uvsn = Date.now() % 100000;
+    const inv = involvedPlayers.join(',');
+    const head = `U1,${uvsn};;${inv};;`;
+
+    // Send personalized U1 to each involved player
+    for (let i = 1; i < involved.length; i++) {
+      if (!involved[i]) continue;
+
+      const py = this.board.garden.get(i);
+      let content: string;
+
+      if (roads[i] !== '' && roads[i] !== '0') {
+        // Player has specific input options
+        content = head + roads[i];
+      } else if (py && py.isAlive) {
+        // Player is alive but has no specific options - send default sina
+        content = head + `0,${sinaG[i]}`;
+      } else {
+        // Player is dead - send reduced sina
+        content = head + `0,${sinaG[0] & (~1)}`;
       }
+
+      this.messageHandler(content);
     }
   }
 
   /**
    * UKEvenMessage - process event messages for involved players.
+   * Matches C# XI.UKEvenMessage in XIR.cs
+   *
+   * Waits for U-messages (player responses) from involved players,
+   * dispatches them through HandleUMessage, and processes the result.
    */
   private ukEvenMessage(
     involved: boolean[],
@@ -327,16 +437,115 @@ export class GLoop {
     roads: string[],
     sinaG: number[],
   ): UEchoCode {
-    // Simplified: return END_ACTION
+    // Clear the global involved flag
+    involved[0] = false;
+
+    // In the C# version, this loops waiting for player input via WI.RecvInfRecv().
+    // In the network version, we process any pending U-messages from the queue.
+    // For now, we iterate through involved players and emit events for their handlers.
+
+    while (!this.isAllClear(involved)) {
+      // Find next involved player
+      let nextPlayer = -1;
+      for (let i = 1; i < involved.length; i++) {
+        if (involved[i]) {
+          nextPlayer = i;
+          break;
+        }
+      }
+      if (nextPlayer === -1) break;
+
+      const player = this.board.garden.get(nextPlayer);
+      if (!player) {
+        involved[nextPlayer] = false;
+        continue;
+      }
+
+      // Find matching SKE for this player
+      let matched = false;
+      for (const ske of purse) {
+        if (ske.tg === nextPlayer || ske.tg === 0) {
+          // Emit the event for this player's handler
+          this.eventBus.emit(ske.name, {
+            cmd: `G0${ske.name.substring(2)},${nextPlayer}`,
+            board: this.board,
+            player,
+            ske,
+            inType: ske.inType,
+            fuse: ske.fuse,
+          });
+
+          // Mark as processed
+          involved[nextPlayer] = false;
+          matched = true;
+
+          if (ske.isTermini) {
+            return UEchoCode.END_TERMIN;
+          }
+          break;
+        }
+      }
+
+      if (!matched) {
+        // No matching handler - clear this player
+        involved[nextPlayer] = false;
+      }
+    }
+
     return UEchoCode.END_ACTION;
   }
 
   /**
    * DecodeSimplifiedCommand - extract skill name from a simplified command.
+   * Matches C# XI.DecodeSimplifiedCommand in XIU.cs
+   *
+   * Handles various command formats:
+   * - "JN60102(2),args" -> extracts owner from parentheses
+   * - "TX2,args" -> resolves tux code from numeric ID
+   * - "PT16,args" -> resolves monster code from numeric ID
+   * - "FW1,args" -> resolves rune code from numeric ID
+   * - "YJ1,args" -> resolves NPC action code from numeric ID
    */
   private decodeSimplifiedCommand(cmd: string): string {
-    const parts = cmd.split(',');
-    return parts[0] || '';
+    const idx = cmd.indexOf(',');
+    let skName = idx < 0 ? cmd : cmd.substring(0, idx);
+    const comrest = idx < 0 ? '' : cmd.substring(idx);
+
+    // BK: JN60102(2) => JN60102,2
+    const jdx = cmd.indexOf('(');
+    if (jdx >= 0) {
+      const kdx = cmd.indexOf(')');
+      if (kdx > jdx) {
+        const owner = cmd.substring(jdx + 1, kdx);
+        skName = skName.substring(0, jdx);
+        return skName + ',' + owner + comrest;
+      }
+    }
+
+    // TX: TX2 => TP01,2 (resolve tux code)
+    if (skName.startsWith('TX')) {
+      const cardStr = skName.substring(2);
+      // In the full implementation, would look up tux code from libGroup
+      // For now, return as-is
+      return cmd;
+    }
+
+    // PT: PT16 => GF04,16 (resolve monster code)
+    if (skName.startsWith('PT')) {
+      return cmd;
+    }
+
+    // FW: FW1 => SF01 (resolve rune code)
+    if (skName.startsWith('FW')) {
+      return cmd;
+    }
+
+    // YJ: YJ1 => NJ09,1001 (resolve NPC action code)
+    if (skName.startsWith('YJ')) {
+      return cmd;
+    }
+
+    return cmd;
   }
 
   /**

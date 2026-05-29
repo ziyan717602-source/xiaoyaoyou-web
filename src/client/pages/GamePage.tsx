@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import type { ServerMessage } from '@shared/network';
 import { useWebSocket } from '../hooks/useWebSocket';
 import { useGameState } from '../hooks/useGameState';
+import { useRoom } from '../hooks/useRoom';
 import HandArea from '../components/game/HandArea';
 import BattleArea from '../components/game/BattleArea';
 import OperationPanel from '../components/game/OperationPanel';
@@ -14,10 +15,11 @@ const GamePage: React.FC = () => {
   const navigate = useNavigate();
   const websocket = useWebSocket();
   const { gameState, gameResult, inputRequest, clearInputRequest, error, clearError } = useGameState(websocket);
+  const room = useRoom(websocket);
 
-  const [selectedCards, setSelectedCards] = useState<number[]>([]);
+  const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [logEntries, setLogEntries] = useState<LogEntry[]>([]);
-  const [playerUid] = useState(() => Math.floor(Math.random() * 100000)); // Temporary: will be assigned by server
+  const playerUid = room.myUid ?? 0;
 
   // Log counter
   const logIdRef = React.useRef(0);
@@ -67,11 +69,11 @@ const GamePage: React.FC = () => {
     }
   }, [gameResult, navigate, roomId]);
 
-  const handleCardSelect = useCallback((cardId: number) => {
+  const handleCardSelect = useCallback((cardCode: string) => {
     setSelectedCards(prev =>
-      prev.includes(cardId)
-        ? prev.filter(id => id !== cardId)
-        : [...prev, cardId]
+      prev.includes(cardCode)
+        ? prev.filter(c => c !== cardCode)
+        : [...prev, cardCode]
     );
   }, []);
 

@@ -55,7 +55,7 @@ const RoomPage: React.FC = () => {
   }
 
   const { players } = room.currentRoom;
-  const isHost = players.length > 0 && players[0].isReady === false; // First player is host by convention
+  const isHost = players.length > 0 && room.myUid === players[0].uid;
   const canStart = players.length >= 2;
 
   return (

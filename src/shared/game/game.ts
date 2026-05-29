@@ -211,26 +211,26 @@ export class Game {
       this.getInput(uid, format, code, arg);
 
     // Tux effects (hand cards, equipment)
-    const tuxCottage = new TuxCottage(this.board, raiseGMessage, innerGMessage, asyncInput);
+    const tuxCottage = new TuxCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
     this.effectRegistry.registerAll(tuxCottage.registerAll());
 
     // Skill effects (hero skills)
-    const skillCottage = new SkillCottage(this.board, raiseGMessage, innerGMessage, asyncInput);
+    const skillCottage = new SkillCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
     this.effectRegistry.registerAll(skillCottage.registerAll());
 
     // NPC effects
-    const npcCottage = new NpcCottage(this.board, raiseGMessage, innerGMessage, asyncInput);
+    const npcCottage = new NpcCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
     const npcRegs = npcCottage.registerAll();
     // NPC effects use a separate registry type; store for future use
     void npcRegs;
 
     // Rune effects
-    const runeCottage = new RuneCottage(this.board, raiseGMessage, innerGMessage, asyncInput);
+    const runeCottage = new RuneCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
     const runeRegs = runeCottage.registerAll();
     void runeRegs;
 
     // Evenement effects
-    const eveCottage = new EveCottage(this.board, raiseGMessage, innerGMessage, asyncInput);
+    const eveCottage = new EveCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
     const eveRegs = eveCottage.registerAll();
     void eveRegs;
 

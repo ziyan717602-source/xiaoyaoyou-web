@@ -9,7 +9,7 @@
 // === Client -> Server Messages ===
 
 export type ClientMessage =
-  | { type: 'create_room'; payload: { playerCount: number; packages: number[] } }
+  | { type: 'create_room'; payload: { playerCount: number; packages: number[]; playerName?: string } }
   | { type: 'join_room'; payload: { roomId: string; playerName: string } }
   | { type: 'leave_room' }
   | { type: 'list_rooms' }
@@ -21,7 +21,7 @@ export type ClientMessage =
 // === Server -> Client Messages ===
 
 export type ServerMessage =
-  | { type: 'room_created'; payload: { roomId: string } }
+  | { type: 'room_created'; payload: { roomId: string; players: PlayerInfo[] } }
   | { type: 'room_joined'; payload: { roomId: string; players: PlayerInfo[] } }
   | { type: 'room_left'; payload: { roomId: string } }
   | { type: 'room_list'; payload: { rooms: RoomInfo[] } }
@@ -63,7 +63,7 @@ export interface PlayerState {
   uid: number;
   name: string;
   hp: number;
-  hand: number[]; // Card IDs (numeric), client resolves to display codes via LibGroup
+  hand: string[]; // Card codes (e.g. "JP01", "HL001"), resolved server-side
   team: number;
 }
 

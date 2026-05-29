@@ -9,15 +9,17 @@ import { Board } from '../board';
 import { FiveElement } from '@shared/types/enums';
 import { FiveElementHelper, HPEvoMask } from '../card/five-element';
 import type { RuneEffectRegistration } from './types';
+import type { LibGroup } from '../lib-group';
 
 export class RuneCottage extends JNSBase {
   constructor(
     board: Board,
+    libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
     asyncInput: (uid: number, format: string, code: string, arg: string) => string,
   ) {
-    super(board, raiseGMessage, innerGMessage, asyncInput);
+    super(board, libGroup, raiseGMessage, innerGMessage, asyncInput);
   }
 
   /** Register all rune effects */

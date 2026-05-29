@@ -1,20 +1,21 @@
 import React, { useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import GameOverResult from '../components/game/GameOverResult';
-import type { GameResultPayload } from '@shared/network';
+import { useWebSocket } from '../hooks/useWebSocket';
+import { useGameState } from '../hooks/useGameState';
 
 const GameOverPage: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const navigate = useNavigate();
+  const websocket = useWebSocket();
+  const { gameResult } = useGameState(websocket);
 
-  // In a real app, gameResult would come from context/state
-  // For now, we use a placeholder that will be populated by the game flow
-  const result: GameResultPayload = {
+  const result = gameResult || {
     winner: null,
     totalRounds: 0,
     akaScore: 0,
     aoScore: 0,
-    reason: 'victory',
+    reason: 'victory' as const,
   };
 
   const handleReturnToLobby = useCallback(() => {

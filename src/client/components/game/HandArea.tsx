@@ -2,12 +2,12 @@ import React from 'react';
 import CardImage from '../common/CardImage';
 
 interface HandAreaProps {
-  /** Card IDs (numeric) from game state */
-  cards: number[];
-  /** Currently selected card IDs */
-  selectedCards: number[];
+  /** Card codes (e.g. "JP01", "HL001") from game state */
+  cards: string[];
+  /** Currently selected card codes */
+  selectedCards: string[];
   /** Handler when a card is clicked */
-  onCardSelect: (cardId: number) => void;
+  onCardSelect: (cardCode: string) => void;
   /** Whether the hand area is disabled */
   disabled?: boolean;
 }
@@ -28,15 +28,15 @@ const HandArea: React.FC<HandAreaProps> = ({
         {cards.length === 0 && (
           <div className="hand-area-empty">暂无手牌</div>
         )}
-        {cards.map((cardId) => (
+        {cards.map((cardCode) => (
           <CardImage
-            key={cardId}
-            cardCode={String(cardId)}
+            key={cardCode}
+            cardCode={cardCode}
             size="medium"
-            selected={selectedCards.includes(cardId)}
+            selected={selectedCards.includes(cardCode)}
             disabled={disabled}
-            onClick={() => onCardSelect(cardId)}
-            tooltip={`卡牌 #${cardId}`}
+            onClick={() => onCardSelect(cardCode)}
+            tooltip={cardCode}
           />
         ))}
       </div>

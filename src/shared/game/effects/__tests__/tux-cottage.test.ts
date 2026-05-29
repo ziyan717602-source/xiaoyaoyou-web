@@ -7,6 +7,7 @@ import { Player } from '../../player';
 import { Board } from '../../board';
 import { FiveElement } from '@shared/types/enums';
 import { HPEvoMask } from '../../card/five-element';
+import { LibGroup } from '../../lib-group';
 
 describe('TuxCottage', () => {
   let cottage: TuxCottage;
@@ -23,9 +24,10 @@ describe('TuxCottage', () => {
 
     cottage = new TuxCottage(
       board,
-      (msg) => messages.push(msg),
-      (msg, prior) => innerMessages.push({ msg, prior }),
-      (uid, format, code, arg) => {
+      new LibGroup(),
+      (msg: string) => messages.push(msg),
+      (msg: string, prior: number) => innerMessages.push({ msg, prior }),
+      (_uid: number, _format: string, _code: string, _arg: string) => {
         if (asyncInputResults.length > 0) {
           return asyncInputResults.shift()!;
         }

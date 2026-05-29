@@ -6,6 +6,7 @@ import { JNSBase } from '../base';
 import { Player } from '../../player';
 import { Board } from '../../board';
 import { FiveElement } from '@shared/types/enums';
+import { LibGroup } from '../../lib-group';
 
 class TestJNSBase extends JNSBase {
   publicTestHarm(src: Player | null, py: Player, n: number, five?: FiveElement, mask?: number) {
@@ -57,6 +58,7 @@ describe('JNSBase', () => {
     asyncInputs = [];
     base = new TestJNSBase(
       board,
+      new LibGroup(),
       (msg) => messages.push(msg),
       (msg, prior) => innerMessages.push({ msg, prior }),
       (uid, format, code, arg) => {

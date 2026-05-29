@@ -4,6 +4,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Player } from '../../player';
 import { Board } from '../../board';
+import { LibGroup } from '../../lib-group';
 import {
   CardEffectRegistry,
   OperationEffectRegistry,
@@ -51,7 +52,7 @@ describe('Cottage Integration', () => {
   };
 
   it('should register all TuxCottage effects', () => {
-    const cottage = new TuxCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const cottage = new TuxCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new CardEffectRegistry();
     registry.registerAll(regs);
@@ -81,7 +82,7 @@ describe('Cottage Integration', () => {
   });
 
   it('should register all SkillCottage effects', () => {
-    const cottage = new SkillCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const cottage = new SkillCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new CardEffectRegistry();
     registry.registerAll(regs);
@@ -93,10 +94,14 @@ describe('Cottage Integration', () => {
     expect(registry.has('JN10201')).toBe(true);
     expect(registry.has('JN10501')).toBe(true);
     expect(registry.has('JN20101')).toBe(true);
+    expect(registry.has('JN20301')).toBe(true);
+    expect(registry.has('JN20302')).toBe(true);
+    expect(registry.has('JN20601')).toBe(true);
+    expect(registry.has('JN20602')).toBe(true);
   });
 
   it('should register all NpcCottage effects', () => {
-    const cottage = new NpcCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const cottage = new NpcCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new NpcEffectRegistry();
     registry.registerAll(regs);
@@ -107,7 +112,7 @@ describe('Cottage Integration', () => {
   });
 
   it('should register all RuneCottage effects', () => {
-    const cottage = new RuneCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const cottage = new RuneCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new RuneEffectRegistry();
     registry.registerAll(regs);
@@ -119,7 +124,7 @@ describe('Cottage Integration', () => {
   });
 
   it('should register all EveCottage effects', () => {
-    const cottage = new EveCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const cottage = new EveCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new EveEffectRegistry();
     registry.registerAll(regs);
@@ -131,8 +136,8 @@ describe('Cottage Integration', () => {
   });
 
   it('should have non-overlapping codes across registries', () => {
-    const tuxCottage = new TuxCottage(board, raiseGMessage, innerGMessage, asyncInput);
-    const skillCottage = new SkillCottage(board, raiseGMessage, innerGMessage, asyncInput);
+    const tuxCottage = new TuxCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
+    const skillCottage = new SkillCottage(board, new LibGroup(), raiseGMessage, innerGMessage, asyncInput);
 
     const tuxRegs = tuxCottage.registerAll();
     const skillRegs = skillCottage.registerAll();

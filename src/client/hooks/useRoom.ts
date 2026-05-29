@@ -5,6 +5,7 @@ import type { UseWebSocketReturn } from './useWebSocket';
 export interface RoomManager {
   rooms: RoomInfo[];
   currentRoom: { roomId: string; players: PlayerInfo[] } | null;
+  myUid: number | null;
   createRoom: (playerCount: number, packages: number[]) => void;
   joinRoom: (roomId: string, playerName: string) => void;
   leaveRoom: () => void;
@@ -15,6 +16,7 @@ export interface RoomManager {
 export function useRoom(websocket: UseWebSocketReturn): RoomManager {
   const [rooms, setRooms] = useState<RoomInfo[]>([]);
   const [currentRoom, setCurrentRoom] = useState<{ roomId: string; players: PlayerInfo[] } | null>(null);
+  const [myUid, setMyUid] = useState<number | null>(null);
   const currentRoomRef = useRef(currentRoom);
   currentRoomRef.current = currentRoom;
 
@@ -32,9 +34,15 @@ export function useRoom(websocket: UseWebSocketReturn): RoomManager {
             roomId: message.payload.roomId,
             players: message.payload.players,
           });
+          // The joining player's UID is the last in the list (assigned sequentially)
+          if (message.payload.players.length > 0) {
+            const lastPlayer = message.payload.players[message.payload.players.length - 1];
+            setMyUid(lastPlayer.uid);
+          }
           break;
         case 'room_left':
           setCurrentRoom(null);
+          setMyUid(null);
           break;
         case 'player_joined':
         case 'player_left':
@@ -84,6 +92,7 @@ export function useRoom(websocket: UseWebSocketReturn): RoomManager {
   return {
     rooms,
     currentRoom,
+    myUid,
     createRoom,
     joinRoom,
     leaveRoom,

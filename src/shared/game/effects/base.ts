@@ -11,6 +11,7 @@ import { FiveElement } from '@shared/types/enums';
 import { Player } from '../player';
 import { Board } from '../board';
 import { FiveElementHelper } from '../card/five-element';
+import type { LibGroup } from '../lib-group';
 
 /**
  * Abstract base class for JNS effects.
@@ -19,17 +20,20 @@ import { FiveElementHelper } from '../card/five-element';
  */
 export abstract class JNSBase {
   protected board: Board;
+  protected libGroup: LibGroup;
   protected raiseGMessage: (msg: string) => void;
   protected innerGMessage: (msg: string, prior: number) => void;
   protected asyncInput: (uid: number, format: string, code: string, arg: string) => string;
 
   constructor(
     board: Board,
+    libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
     asyncInput: (uid: number, format: string, code: string, arg: string) => string,
   ) {
     this.board = board;
+    this.libGroup = libGroup;
     this.raiseGMessage = raiseGMessage;
     this.innerGMessage = innerGMessage;
     this.asyncInput = asyncInput;

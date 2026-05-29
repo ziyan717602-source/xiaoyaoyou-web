@@ -153,12 +153,16 @@ export class GameSession {
 
     const roundManager = this.game.getRoundManager();
 
+    const libGroup = this.game.getLibGroup();
     return {
       players: Array.from(players.values()).map((p) => ({
         uid: p.uid,
         name: p.name,
         hp: p.hp,
-        hand: [...p.tux],
+        hand: p.tux.map(id => {
+          const tux = libGroup.tl.encodeTuxDbSerial(id);
+          return tux ? tux.code : String(id);
+        }),
         team: p.team,
       })),
       currentTurn: roundManager.currentPlayer.uid,
