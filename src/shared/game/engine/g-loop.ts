@@ -17,6 +17,8 @@ import { type GMessage, SimpleGMessage, extractEventKey, parseGCommand } from '.
 import { SkillRegistry, type SKE } from './skill-registry';
 import type { Board } from '../board';
 import type { Player } from '../player';
+import { LibGroup } from '../lib-group';
+import { NMBLib } from '../card/nmb';
 
 /** G-Loop configuration */
 export interface GLoopConfig {
@@ -44,21 +46,25 @@ export class GLoop {
   private eventBus: EventBus;
   private board: Board;
   private skillRegistry: SkillRegistry;
+  private libGroup: LibGroup;
   private config: GLoopConfig;
   private queue: GMessage[] = [];
   private running = false;
   private processing = false;
   private messageHandler: ((msg: string) => void) | null = null;
+  private uvsnCounter = 0;
 
   constructor(
     eventBus: EventBus,
     board: Board,
     skillRegistry: SkillRegistry,
+    libGroup?: LibGroup,
     config?: Partial<GLoopConfig>,
   ) {
     this.eventBus = eventBus;
     this.board = board;
     this.skillRegistry = skillRegistry;
+    this.libGroup = libGroup ?? new LibGroup();
     this.config = {
       maxQueueSize: 1000,
       processTimeout: 5000,
@@ -77,7 +83,7 @@ export class GLoop {
   /**
    * Send a raw G-command string. This is the primary entry point (RaiseGMessage equivalent).
    */
-  raiseGMessage(cmd: string): void {
+  async raiseGMessage(cmd: string): Promise<void> {
     if (!cmd.startsWith('G')) return;
 
     if (this.config.enableLogging) {
@@ -86,9 +92,9 @@ export class GLoop {
 
     // G2 messages go through SimpleGMessage100 path
     if (cmd.startsWith('G2')) {
-      this.simpleGMessage100(cmd);
+      await this.simpleGMessage100(cmd);
     } else {
-      this.innerGMessage(cmd, Number.MIN_SAFE_INTEGER);
+      await this.innerGMessage(cmd, Number.MIN_SAFE_INTEGER);
     }
   }
 
@@ -96,7 +102,7 @@ export class GLoop {
    * InnerGMessage - process with priority control.
    * This is the core dispatch loop from XIG.cs.
    */
-  innerGMessage(cmd: string, priorty: number): void {
+  async innerGMessage(cmd: string, priorty: number): Promise<void> {
     if (!cmd || !cmd.startsWith('G')) return;
 
     const zero = extractEventKey(cmd);
@@ -131,7 +137,7 @@ export class GLoop {
         if (!isAnySet || ske.priorty === priorty) {
           if (ske.name.startsWith('~')) {
             // Basic handler - pass through to SimpleGMessage
-            this.simpleGMessage(cmd, ske.priorty);
+            await this.simpleGMessage(cmd, ske.priorty);
             return;
           }
 
@@ -147,7 +153,7 @@ export class GLoop {
 
       if (!isAnySet) {
         // No handlers matched - send ACK
-        this.raiseGMessage('G2AS,0');
+        await this.raiseGMessage('G2AS,0');
         return;
       }
 
@@ -163,14 +169,14 @@ export class GLoop {
 
         const ske = purse.find(s => s.name === skName && s.tg === me);
         if (ske) {
-          const echo = this.handleU24Message(me, involved, mai, ske);
+          const echo = await this.handleU24Message(me, involved, mai, ske);
           if (echo === UEchoCode.END_TERMIN) {
             isTermini = true;
           } else if (echo === UEchoCode.END_ACTION) {
             isAnySet = true;
           }
         }
-        this.raiseGMessage('G2AS,0');
+        await this.raiseGMessage('G2AS,0');
         involved[me] = true;
         continue;
       }
@@ -194,7 +200,7 @@ export class GLoop {
         }
 
         this.sendOutU1Message(involved, roads, sinaG);
-        const echo = this.ukEvenMessage(involved, purse, roads, sinaG);
+        const echo = await this.ukEvenMessage(involved, purse, roads, sinaG);
         if (echo === UEchoCode.END_TERMIN) {
           isTermini = true;
         } else if (echo === UEchoCode.END_ACTION) {
@@ -203,9 +209,9 @@ export class GLoop {
       }
     } while (!this.isAllClear(involved) && !isTermini);
 
-    this.raiseGMessage('G2AS,0');
+    await this.raiseGMessage('G2AS,0');
     if (!isTermini) {
-      this.innerGMessage(cmd, priorty + 1);
+      await this.innerGMessage(cmd, priorty + 1);
     }
   }
 
@@ -213,12 +219,12 @@ export class GLoop {
    * SimpleGMessage - basic handling without skill invocation.
    * Handles the default behavior for each message type.
    */
-  simpleGMessage(cmd: string, priority: number): void {
+  async simpleGMessage(cmd: string, priority: number): Promise<void> {
     const args = cmd.split(',');
     const cmdType = args[0];
 
     // Emit to event bus for downstream handlers
-    this.eventBus.emit(cmdType, {
+    await this.eventBus.emitAsync(cmdType, {
       cmd,
       args,
       priority,
@@ -234,11 +240,11 @@ export class GLoop {
   /**
    * SimpleGMessage100 - for G2 messages.
    */
-  simpleGMessage100(cmd: string): void {
+  async simpleGMessage100(cmd: string): Promise<void> {
     const args = cmd.split(',');
     const cmdType = args[0];
 
-    this.eventBus.emit(cmdType, {
+    await this.eventBus.emitAsync(cmdType, {
       cmd,
       args,
       board: this.board,
@@ -294,7 +300,7 @@ export class GLoop {
    * HandleU24Message - process a locked skill message.
    * Matches C# XI.HandleU24Message in XIU.cs
    */
-  private handleU24Message(me: number, involved: boolean[], mai: string, ske: SKE): UEchoCode {
+  private async handleU24Message(me: number, involved: boolean[], mai: string, ske: SKE): Promise<UEchoCode> {
     const idx = mai.indexOf(',');
     const player = this.board.garden.get(me);
     if (!player || !ske) return UEchoCode.END_CANCEL;
@@ -305,7 +311,7 @@ export class GLoop {
     // Check if this is a skill handler (SK type)
     if (ske.type === 'SK' || ske.type === 'BK') {
       // Emit to event bus for skill handler
-      this.eventBus.emit(skName, {
+      await this.eventBus.emitAsync(skName, {
         cmd: mai,
         board: this.board,
         player,
@@ -330,7 +336,7 @@ export class GLoop {
     // Check if this is a tux handler (TX/EQ type)
     if (ske.type === 'TX' || ske.type === 'EQ') {
       // Emit to event bus for tux handler
-      this.eventBus.emit(skName, {
+      await this.eventBus.emitAsync(skName, {
         cmd: mai,
         board: this.board,
         player,
@@ -353,7 +359,7 @@ export class GLoop {
 
     // Check if this is an operation handler (CZ type)
     if (ske.type === 'CZ') {
-      this.eventBus.emit(skName, {
+      await this.eventBus.emitAsync(skName, {
         cmd: mai,
         board: this.board,
         player,
@@ -368,7 +374,7 @@ export class GLoop {
     }
 
     // Default: emit and return END_ACTION
-    this.eventBus.emit(skName, {
+    await this.eventBus.emitAsync(skName, {
       cmd: mai,
       board: this.board,
       player,
@@ -397,8 +403,8 @@ export class GLoop {
     }
     if (involvedPlayers.length === 0) return;
 
-    // Generate a UVSN (unique version sequence number) - simplified
-    const uvsn = Date.now() % 100000;
+    // Generate a UVSN (unique version sequence number)
+    const uvsn = this.uvsnCounter++;
     const inv = involvedPlayers.join(',');
     const head = `U1,${uvsn};;${inv};;`;
 
@@ -431,12 +437,12 @@ export class GLoop {
    * Waits for U-messages (player responses) from involved players,
    * dispatches them through HandleUMessage, and processes the result.
    */
-  private ukEvenMessage(
+  private async ukEvenMessage(
     involved: boolean[],
     purse: SKE[],
     roads: string[],
     sinaG: number[],
-  ): UEchoCode {
+  ): Promise<UEchoCode> {
     // Clear the global involved flag
     involved[0] = false;
 
@@ -466,7 +472,7 @@ export class GLoop {
       for (const ske of purse) {
         if (ske.tg === nextPlayer || ske.tg === 0) {
           // Emit the event for this player's handler
-          this.eventBus.emit(ske.name, {
+          await this.eventBus.emitAsync(ske.name, {
             cmd: `G0${ske.name.substring(2)},${nextPlayer}`,
             board: this.board,
             player,
@@ -524,24 +530,52 @@ export class GLoop {
 
     // TX: TX2 => TP01,2 (resolve tux code)
     if (skName.startsWith('TX')) {
-      const cardStr = skName.substring(2);
-      // In the full implementation, would look up tux code from libGroup
-      // For now, return as-is
+      const card = parseInt(skName.substring(2), 10);
+      const tux = this.libGroup.tl.decodeTux(card);
+      if (tux) {
+        skName = tux.code;
+        return skName + ',' + card + comrest;
+      }
       return cmd;
     }
 
     // PT: PT16 => GF04,16 (resolve monster code)
     if (skName.startsWith('PT')) {
+      const card = parseInt(skName.substring(2), 10);
+      const mon = this.libGroup.ml.decode(card);
+      if (mon) {
+        skName = mon.code;
+        return skName + ',' + card + comrest;
+      }
       return cmd;
     }
 
     // FW: FW1 => SF01 (resolve rune code)
     if (skName.startsWith('FW')) {
+      const card = parseInt(skName.substring(2), 10);
+      const rune = this.libGroup.rl.decode(card);
+      if (rune) {
+        skName = rune.code;
+        return skName + comrest;
+      }
       return cmd;
     }
 
     // YJ: YJ1 => NJ09,1001 (resolve NPC action code)
     if (skName.startsWith('YJ')) {
+      const card = parseInt(skName.substring(2), 10);
+      const npc = this.libGroup.nl.decode(card);
+      if (npc) {
+        // Find the first skill with NCAction branches
+        const skill = npc.skills.find(s => {
+          const nc = this.libGroup.nl2.encodeNCAction(s);
+          return nc && nc.branches.length > 0;
+        });
+        if (skill) {
+          skName = skill;
+          return skName + ',' + NMBLib.codeOfNPC(card) + comrest;
+        }
+      }
       return cmd;
     }
 

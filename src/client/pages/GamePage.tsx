@@ -1,24 +1,26 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import type { ServerMessage } from '@shared/network';
-import { useWebSocket } from '../hooks/useWebSocket';
+import type { ServerMessage, HeroInfo } from '@shared/network';
+import { useWebSocketContext } from '../contexts/WebSocketContext';
 import { useGameState } from '../hooks/useGameState';
 import { useRoom } from '../hooks/useRoom';
 import HandArea from '../components/game/HandArea';
 import BattleArea from '../components/game/BattleArea';
 import OperationPanel from '../components/game/OperationPanel';
+import HeroSelectDialog from '../components/game/HeroSelectDialog';
 import EventLog, { type LogEntry } from '../components/game/EventLog';
 import ErrorToast from '../components/common/ErrorToast';
 
 const GamePage: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const navigate = useNavigate();
-  const websocket = useWebSocket();
+  const websocket = useWebSocketContext();
   const { gameState, gameResult, inputRequest, clearInputRequest, error, clearError } = useGameState(websocket);
   const room = useRoom(websocket);
 
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [logEntries, setLogEntries] = useState<LogEntry[]>([]);
+  const [heroSelectRequest, setHeroSelectRequest] = useState<{ uid: number; availableHeroes: HeroInfo[] } | null>(null);
   const playerUid = room.myUid ?? 0;
 
   // Log counter
@@ -45,6 +47,18 @@ const GamePage: React.FC = () => {
         case 'input_request':
           addLog(`操作请求: ${msg.payload.code}`, 'action');
           break;
+        case 'hero_select_request':
+          if (msg.payload.uid === playerUid) {
+            setHeroSelectRequest(msg.payload);
+            addLog('请选择英雄', 'system');
+          }
+          break;
+        case 'hero_select_response':
+          if (msg.payload.success) {
+            addLog(`玩家 ${msg.payload.uid} 选择了英雄`, 'info');
+          }
+          setHeroSelectRequest(null);
+          break;
         case 'game_over':
           addLog('游戏结束!', 'system');
           break;
@@ -60,7 +74,7 @@ const GamePage: React.FC = () => {
       }
     });
     return unsub;
-  }, [websocket, addLog]);
+  }, [websocket, addLog, playerUid]);
 
   // Navigate to game over when result received
   useEffect(() => {
@@ -92,9 +106,21 @@ const GamePage: React.FC = () => {
     setSelectedCards([]);
   }, [clearInputRequest]);
 
+  const handleHeroSelect = useCallback((heroId: number) => {
+    websocket.send({
+      type: 'hero_select',
+      payload: { heroId },
+    });
+    setHeroSelectRequest(null);
+    addLog(`选择了英雄 #${heroId}`, 'action');
+  }, [websocket, addLog]);
+
   // Current player info
   const currentPlayer = gameState?.players.find(p => p.uid === playerUid) || gameState?.players[0];
   const currentHand = currentPlayer?.hand || [];
+
+  // Only show operation panel if the input request targets this player
+  const myInputRequest = inputRequest && inputRequest.uid === playerUid ? inputRequest : null;
 
   return (
     <div className="game-page">
@@ -123,13 +149,13 @@ const GamePage: React.FC = () => {
 
       {/* Center: Operation Panel */}
       <div className="game-center">
-        {inputRequest && (
+        {myInputRequest && (
           <OperationPanel
-            format={inputRequest.format}
-            code={inputRequest.code}
-            arg={inputRequest.arg}
+            format={myInputRequest.format}
+            code={myInputRequest.code}
+            arg={myInputRequest.arg}
             onSubmit={handleOperationSubmit}
-            onCancel={onCancelAvailable(inputRequest) ? handleOperationCancel : undefined}
+            onCancel={onCancelAvailable(myInputRequest) ? handleOperationCancel : undefined}
             timeout={30}
           />
         )}
@@ -152,6 +178,13 @@ const GamePage: React.FC = () => {
 
       {error && (
         <ErrorToast message={error} onDismiss={clearError} />
+      )}
+
+      {heroSelectRequest && (
+        <HeroSelectDialog
+          availableHeroes={heroSelectRequest.availableHeroes}
+          onSelect={handleHeroSelect}
+        />
       )}
     </div>
   );

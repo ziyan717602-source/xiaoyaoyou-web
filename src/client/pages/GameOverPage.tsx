@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import GameOverResult from '../components/game/GameOverResult';
-import { useWebSocket } from '../hooks/useWebSocket';
+import { useWebSocketContext } from '../contexts/WebSocketContext';
 import { useGameState } from '../hooks/useGameState';
 
 const GameOverPage: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const navigate = useNavigate();
-  const websocket = useWebSocket();
+  const websocket = useWebSocketContext();
   const { gameResult } = useGameState(websocket);
 
   const result = gameResult || {

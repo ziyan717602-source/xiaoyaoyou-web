@@ -18,7 +18,7 @@ export class TuxCottage extends JNSBase {
     libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     super(board, libGroup, raiseGMessage, innerGMessage, asyncInput);
   }
@@ -40,6 +40,7 @@ export class TuxCottage extends JNSBase {
       this.tp03Effect(),
       this.tp04Effect(),
       this.wq02Effect(),
+      this.wq04Effect(),
       this.fj01Effect(),
       this.fj02Effect(),
       this.fj03Effect(),
@@ -80,18 +81,18 @@ export class TuxCottage extends JNSBase {
   private jp01Effect(): EffectRegistration {
     return {
       code: 'JP01',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const invs = [...this.board.garden.values()]
           .filter(p => p.uid !== player.uid && p.isTared && p.tux.length > 0)
           .map(p => p.uid);
         const inputFormat = invs.length > 0
           ? `#获得其手牌,T1(p${invs.join('p')})`
           : '/';
-        const ai = this.asyncInput(player.uid, inputFormat, 'JP01', '0');
+        const ai = await this.asyncInput(player.uid, inputFormat, 'JP01', '0');
         if (!ai.startsWith('/')) {
           const from = parseInt(ai, 10);
           this.targetPlayer(player.uid, from);
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `#获得的,C1(${this.board.garden.get(from)!.tux.map(() => 'p0').join('')})`,
             'JP01',
@@ -143,9 +144,9 @@ export class TuxCottage extends JNSBase {
   private jp04Effect(): EffectRegistration {
     return {
       code: 'JP04',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const to = parseInt(
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `#获得2张补牌,T1${this.formatPlayers(p => p.isTared)}`,
             'JP04',
@@ -163,10 +164,10 @@ export class TuxCottage extends JNSBase {
   private jp05Effect(): EffectRegistration {
     return {
       code: 'JP05',
-      action: (player, type, fuse, _argst) => {
+      action: async (player, type, fuse, _argst) => {
         if (type === 0) {
           const to = parseInt(
-            this.asyncInput(
+            await this.asyncInput(
               player.uid,
               `#攻击,T1${this.formatPlayers(p => p.isTared)}`,
               'JP05',
@@ -189,11 +190,11 @@ export class TuxCottage extends JNSBase {
   private jp06Effect(): EffectRegistration {
     return {
       code: 'JP06',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const targets = [...this.board.garden.values()]
           .filter(p => p.isTared && p.listOutAllCards().some(c => !this.board.protectedTux.includes(c)))
           .map(p => p.uid);
-        const first = this.asyncInput(
+        const first = await this.asyncInput(
           player.uid,
           targets.length > 0
             ? `#弃置,T1(p${targets.join('p')})`
@@ -210,7 +211,7 @@ export class TuxCottage extends JNSBase {
           const secondStr = secondFormat.length > 0
             ? `#弃置的,C1(p${secondFormat.join('p')})`
             : '/';
-          const second = this.asyncInput(player.uid, secondStr, `JP06,${first}`, '0');
+          const second = await this.asyncInput(player.uid, secondStr, `JP06,${first}`, '0');
           if (!second.startsWith('/')) {
             const card = parseInt(second, 10);
             this.targetPlayer(player.uid, owner);
@@ -287,7 +288,7 @@ export class TuxCottage extends JNSBase {
   private tp02Effect(): EffectRegistration {
     return {
       code: 'TP02',
-      action: (player, type, _fuse, _args) => {
+      action: async (player, type, _fuse, _args) => {
         if (type === 0) {
           this.cure(player, player, 2);
         } else if (type === 1) {
@@ -295,7 +296,7 @@ export class TuxCottage extends JNSBase {
             .filter(p => p.isTared && p.hp === 0)
             .map(p => p.uid);
           const ic = invs.length > 0 ? `T1(p${invs.join('p')})` : '/';
-          const tg = parseInt(this.asyncInput(player.uid, ic, 'TP02', '0'), 10);
+          const tg = parseInt(await this.asyncInput(player.uid, ic, 'TP02', '0'), 10);
           if (invs.includes(tg)) {
             this.targetPlayer(player.uid, tg);
             this.cure(player, this.board.garden.get(tg)!, 2);
@@ -364,9 +365,9 @@ export class TuxCottage extends JNSBase {
   private tp04Effect(): EffectRegistration {
     return {
       code: 'TP04',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const gamer = parseInt(
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `T1${this.aTeammatesTared(player)}`,
             'TP04',
@@ -425,6 +426,32 @@ export class TuxCottage extends JNSBase {
           }
           this.innerGMessage(modified.join(';'), 11);
         }
+      },
+    };
+  }
+
+  /** WQ04 - MoJian (Magic Sword) 典当: Discard to draw 2 cards */
+  private wq04Effect(): EffectRegistration {
+    // WQ04 numeric ID is 50 (from tux.json Range: [50, 50])
+    const WQ04_ID = 50;
+    return {
+      code: 'WQ04',
+      valid: (player, _type, _fuse) => {
+        // 典当 is valid if player has WQ04 in hand or as equipped weapon
+        return player.tux.includes(WQ04_ID) || player.weapon === WQ04_ID;
+      },
+      action: async (player, _type, _fuse, _argst) => {
+        // Discard WQ04 from hand (priority) or weapon slot
+        if (player.tux.includes(WQ04_ID)) {
+          const idx = player.tux.indexOf(WQ04_ID);
+          player.tux.splice(idx, 1);
+          this.raiseGMessage(`G0QZ,${player.uid},${WQ04_ID}`);
+        } else if (player.weapon === WQ04_ID) {
+          player.weapon = 0;
+          this.raiseGMessage(`G0QZ,${player.uid},${WQ04_ID}`);
+        }
+        // Draw 2 cards
+        this.raiseGMessage(`G0DH,${player.uid},0,2`);
       },
     };
   }
@@ -681,8 +708,8 @@ export class TuxCottage extends JNSBase {
   private zp04Effect(): EffectRegistration {
     return {
       code: 'ZP04',
-      action: (player, _type, _fuse, _argst) => {
-        const side = parseInt(this.asyncInput(player.uid, 'S', 'ZP04', '0'), 10);
+      action: async (player, _type, _fuse, _argst) => {
+        const side = parseInt(await this.asyncInput(player.uid, 'S', 'ZP04', '0'), 10);
         this.raiseGMessage(`G0IP,${side},2`);
       },
     };
@@ -696,7 +723,7 @@ export class TuxCottage extends JNSBase {
   private jpt1Effect(): EffectRegistration {
     return {
       code: 'JPT1',
-      action: (player, type, _fuse, _argst) => {
+      action: async (player, type, _fuse, _argst) => {
         const domestOnly = type === 1;
         const b1 = [...this.board.garden.values()].some(p => p.isAlive && p.getPetCount() > 0) && !domestOnly;
         const b2 = (player.tux.length > 0 || !_argst.startsWith('0')) &&
@@ -710,11 +737,11 @@ export class TuxCottage extends JNSBase {
         else if (b1) costr = '#请选择【驯化】执行项。##开牌,Y1';
         else if (b2) costr = '#请选择【驯化】执行项。##驯化,Y1';
         if (costr !== '') {
-          const choice = this.asyncInput(player.uid, costr, 'JPT1', '0');
+          const choice = await this.asyncInput(player.uid, costr, 'JPT1', '0');
           if (choice === '2' || (choice === '1' && b2 && !b1)) {
             // Tame mode: transfer pet
             if (player.tux.length > 0) {
-              const qzStr = this.asyncInput(
+              const qzStr = await this.asyncInput(
                 player.uid,
                 `#弃置的,Q1(p${player.tux.join('p')})`,
                 'JPT1',
@@ -760,9 +787,9 @@ export class TuxCottage extends JNSBase {
   private zpt1Effect(): EffectRegistration {
     return {
       code: 'ZPT1',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const val = (this.board.isAttendWarSucc(player) || !this.board.isAttendWar(player)) ? 1 : 4;
-        const side = parseInt(this.asyncInput(player.uid, 'S', 'ZPT1', '0'), 10);
+        const side = parseInt(await this.asyncInput(player.uid, 'S', 'ZPT1', '0'), 10);
         this.raiseGMessage(`G0IP,${side},${val}`);
       },
     };
@@ -772,7 +799,7 @@ export class TuxCottage extends JNSBase {
   private tpt1Effect(): EffectRegistration {
     return {
       code: 'TPT1',
-      action: (player, type, fuse, _argst) => {
+      action: async (player, type, fuse, _argst) => {
         if (type === 0) {
           // Steal pet mode
           const targets = [...this.board.garden.values()]
@@ -780,7 +807,7 @@ export class TuxCottage extends JNSBase {
             .filter(p => !this.board.petProtectedPlayer.includes(p.uid))
             .map(p => p.uid);
           if (targets.length > 0) {
-            const whoStr = this.asyncInput(
+            const whoStr = await this.asyncInput(
               player.uid,
               `#夺宠,T1(p${targets.join('p')})`,
               'TPT1',
@@ -806,7 +833,7 @@ export class TuxCottage extends JNSBase {
           }
           if (invs.size > 0) {
             const who = parseInt(
-              this.asyncInput(
+              await this.asyncInput(
                 player.uid,
                 `T1(p${[...invs].join('p')})`,
                 'TPT1',
@@ -870,10 +897,10 @@ export class TuxCottage extends JNSBase {
   private tpt2Effect(): EffectRegistration {
     return {
       code: 'TPT2',
-      action: (player, type, _fuse, _argst) => {
+      action: async (player, type, _fuse, _argst) => {
         if (type === 1) {
           const who = parseInt(
-            this.asyncInput(
+            await this.asyncInput(
               player.uid,
               `#获得补牌的,T1${this.aAllTareds(player)}`,
               'TPT2Action',
@@ -1027,7 +1054,7 @@ export class TuxCottage extends JNSBase {
   private jpt3Effect(): EffectRegistration {
     return {
       code: 'JPT3',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const g = this.board.garden;
         const xgTuxValid = [...g.values()].filter(
           p => p.isTared && p.team === player.team && p.tux.length > 0,
@@ -1039,9 +1066,9 @@ export class TuxCottage extends JNSBase {
         if (xgTuxValid) hint += '##交换手牌';
         if (xgPetValid) hint += '##交换宠物';
         const cnt = 1 + (xgTuxValid ? 1 : 0) + (xgPetValid ? 1 : 0);
-        const input = this.asyncInput(player.uid, hint + ',Y' + cnt, 'JPT3', '0');
+        const input = await this.asyncInput(player.uid, hint + ',Y' + cnt, 'JPT3', '0');
         if (input === '2' && xgTuxValid) {
-          const targets = this.asyncInput(
+          const targets = await this.asyncInput(
             player.uid,
             `#交换手牌,T2(p${[...g.values()].filter(
               p => p.isTared && p.team === player.team && p.tux.length > 0,
@@ -1069,9 +1096,9 @@ export class TuxCottage extends JNSBase {
   private jpt4Effect(): EffectRegistration {
     return {
       code: 'JPT4',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const to = parseInt(
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `T1${this.formatPlayers(p => p.isTared)}`,
             'JPT4',
@@ -1090,9 +1117,9 @@ export class TuxCottage extends JNSBase {
   private jpt5Effect(): EffectRegistration {
     return {
       code: 'JPT5',
-      action: (player, _type, _fuse, _argst) => {
+      action: async (player, _type, _fuse, _argst) => {
         const to = parseInt(
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `#【JPT5】作用,T1${this.aAllTareds(player)}`,
             'JPT5',
@@ -1112,8 +1139,8 @@ export class TuxCottage extends JNSBase {
   private zpt2Effect(): EffectRegistration {
     return {
       code: 'ZPT2',
-      action: (player, _type, _fuse, _argst) => {
-        const input = this.asyncInput(
+      action: async (player, _type, _fuse, _argst) => {
+        const input = await this.asyncInput(
           player.uid,
           '#请选择执行项##命中+3##战力+2,Y2',
           'ZPT2',
@@ -1135,15 +1162,15 @@ export class TuxCottage extends JNSBase {
   private zpt3Effect(): EffectRegistration {
     return {
       code: 'ZPT3',
-      action: (player, _type, _fuse, _argst) => {
-        const input = this.asyncInput(
+      action: async (player, _type, _fuse, _argst) => {
+        const input = await this.asyncInput(
           player.uid,
           '#请选择执行项##任意命中+1##自战力加成##自命中加成,Y3',
           'ZPT3',
           '0',
         );
         if (input === '1') {
-          const target = this.asyncInput(
+          const target = await this.asyncInput(
             player.uid,
             `T1${this.aAllTareds(player)}`,
             'ZPT3',

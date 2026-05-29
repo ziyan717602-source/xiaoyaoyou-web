@@ -237,8 +237,10 @@ export class SelectHero {
    * Map selection mode code to mode string.
    */
   private getModeFromSelCode(selCode: number): SelectHeroConfig['mode'] {
-    // Simplified mapping based on common codes
-    if (selCode === 0) return 'pick';
+    if (selCode >= 0 && selCode <= 10) return 'pick';
+    if (selCode >= 11 && selCode <= 20) return 'table';
+    if (selCode >= 21 && selCode <= 30) return 'public';
+    if (selCode >= 31 && selCode <= 40) return 'congress';
     return 'pick';
   }
 

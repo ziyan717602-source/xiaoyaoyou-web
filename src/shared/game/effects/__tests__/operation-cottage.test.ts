@@ -5,6 +5,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { OperationCottage } from '../operation-cottage';
 import { Player } from '../../player';
 import { Board } from '../../board';
+import { LibGroup } from '../../lib-group';
 
 describe('OperationCottage', () => {
   let cottage: OperationCottage;
@@ -19,12 +20,13 @@ describe('OperationCottage', () => {
 
     cottage = new OperationCottage(
       board,
+      new LibGroup(),
       (msg) => messages.push(msg),
       (uid, format, code, arg) => {
         if (asyncInputResults.length > 0) {
-          return asyncInputResults.shift()!;
+          return Promise.resolve(asyncInputResults.shift()!);
         }
-        return '/';
+        return Promise.resolve('/');
       },
     );
 

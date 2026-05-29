@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import type { ServerMessage } from '@shared/network';
-import { useWebSocket } from '../hooks/useWebSocket';
+import { useWebSocketContext } from '../contexts/WebSocketContext';
 import { useRoom } from '../hooks/useRoom';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorToast from '../components/common/ErrorToast';
@@ -9,7 +9,7 @@ import ErrorToast from '../components/common/ErrorToast';
 const RoomPage: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const navigate = useNavigate();
-  const websocket = useWebSocket();
+  const websocket = useWebSocketContext();
   const room = useRoom(websocket);
   const [error, setError] = React.useState('');
 

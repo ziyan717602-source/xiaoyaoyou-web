@@ -17,7 +17,7 @@ export class RuneCottage extends JNSBase {
     libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     super(board, libGroup, raiseGMessage, innerGMessage, asyncInput);
   }
@@ -127,7 +127,7 @@ export class RuneCottage extends JNSBase {
   private sf04Effect(): RuneEffectRegistration {
     return {
       code: 'SF04',
-      action: (player, fuse, _args) => {
+      action: async (player, fuse, _args) => {
         const parts = fuse.split(';');
         let isAvoid = false;
         for (const part of parts) {
@@ -141,7 +141,7 @@ export class RuneCottage extends JNSBase {
           if (who === player.uid && n > 0 && source !== player.uid &&
             elem === FiveElementHelper.elem2Int(FiveElement.A) &&
             !FiveElementHelper.isSet(mask, HPEvoMask.IMMUNE_INVAO) && !FiveElementHelper.isSet(mask, HPEvoMask.DECR_INVAO)) {
-            const select = this.asyncInput(
+            const select = await this.asyncInput(
               player.uid,
               '#是否抵御此伤害？##是##否,Y2',
               'SF04',

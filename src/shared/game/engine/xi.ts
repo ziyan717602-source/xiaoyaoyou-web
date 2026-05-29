@@ -57,8 +57,8 @@ export class XI {
     this.board = new Board();
     this.eventBus = new EventBus();
     this.skillRegistry = new SkillRegistry(this.eventBus);
-    this.gLoop = new GLoop(this.eventBus, this.board, this.skillRegistry);
-    this.roundManager = new RoundManager(this.board, this.eventBus);
+    this.gLoop = new GLoop(this.eventBus, this.board, this.skillRegistry, this.libGroup);
+    this.roundManager = new RoundManager(this.board, this.eventBus, this.libGroup);
     this.selectHero = new SelectHero(this.board, this.eventBus, libGroup, config.levelCode);
   }
 
@@ -136,19 +136,33 @@ export class XI {
     this.board.tuxPiles.enqueueRange(tuxCodes);
     this.board.tuxPiles.shuffle();
 
-    // Monster/NPC piles
-    const monIds = this.libGroup.ml.listAllSeleable(this.config.levelCode);
-    const npcIds = this.libGroup.nl.listAllSeleable(this.config.levelCode);
+    // Monster/NPC piles - 10 rounds × (2 monsters + 1 NPC) = 20 mon + 10 npc
+    const monIds = this.libGroup.ml.listAllSeleable(this.config.levelCode)
+      .map(id => NMBLib.codeOfMonster(id));
+    const npcIds = this.libGroup.nl.listAllSeleable(this.config.levelCode)
+      .map(id => NMBLib.codeOfNPC(id));
 
-    // Interleave monsters and NPCs (simplified)
+    monIds.sort(() => Math.random() - 0.5);
+    npcIds.sort(() => Math.random() - 0.5);
+
     const nmbList: number[] = [];
-    for (let i = 0; i < Math.min(10, monIds.length / 2, npcIds.length); i++) {
+    for (let i = 0; i < 10; i++) {
       if (i * 2 < monIds.length) nmbList.push(monIds[i * 2]);
       if (i * 2 + 1 < monIds.length) nmbList.push(monIds[i * 2 + 1]);
-      if (i < npcIds.length) nmbList.push(NMBLib.codeOfNPC(npcIds[i]));
+      if (i < npcIds.length) nmbList.push(npcIds[i]);
     }
     this.board.monPiles.enqueueRange(nmbList);
     this.board.monPiles.shuffle();
+
+    // Rest NPCs (index 10+)
+    const restNpc = npcIds.slice(10);
+    restNpc.sort(() => Math.random() - 0.5);
+    this.board.restNpcPiles.enqueueRange(restNpc);
+
+    // Rest Monsters (index 20+)
+    const restMon = monIds.slice(20);
+    restMon.sort(() => Math.random() - 0.5);
+    this.board.restMonPiles.enqueueRange(restMon);
 
     // Eve piles
     const eveIds = this.libGroup.el.listAllSeleable(this.config.levelCode);

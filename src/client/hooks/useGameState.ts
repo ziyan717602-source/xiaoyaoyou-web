@@ -3,6 +3,7 @@ import type { GameState, GameResultPayload } from '@shared/network';
 import type { UseWebSocketReturn } from './useWebSocket';
 
 export interface InputRequest {
+  uid: number;
   format: string;
   code: string;
   arg: string;

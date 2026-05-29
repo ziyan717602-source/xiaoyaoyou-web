@@ -29,9 +29,9 @@ describe('TuxCottage', () => {
       (msg: string, prior: number) => innerMessages.push({ msg, prior }),
       (_uid: number, _format: string, _code: string, _arg: string) => {
         if (asyncInputResults.length > 0) {
-          return asyncInputResults.shift()!;
+          return Promise.resolve(asyncInputResults.shift()!);
         }
-        return '/';
+        return Promise.resolve('/');
       },
     );
 
@@ -239,6 +239,97 @@ describe('TuxCottage', () => {
       board.hinderSucc = false;
       board.supportSucc = false;
       expect(zp02.valid!(p1, 0, '')).toBe(true);
+    });
+  });
+
+  // ─── WQ04 - MoJian (Magic Sword) 典当 Effect ───
+
+  describe('WQ04 - MoJian DianDang', () => {
+    // WQ04 numeric ID is 50 (from tux.json Range: [50, 50])
+    const WQ04_ID = 50;
+
+    it('should be valid when player has WQ04 in hand cards', () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.tux.push(WQ04_ID);
+      expect(wq04.valid!(p1, 0, '')).toBe(true);
+    });
+
+    it('should be valid when player has WQ04 as equipped weapon', () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.weapon = WQ04_ID;
+      expect(wq04.valid!(p1, 0, '')).toBe(true);
+    });
+
+    it('should be valid when WQ04 is in either hand or equipped', () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.tux.push(WQ04_ID);
+      p1.weapon = WQ04_ID;
+      expect(wq04.valid!(p1, 0, '')).toBe(true);
+    });
+
+    it('should be invalid when player has no WQ04', () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      expect(wq04.valid!(p1, 0, '')).toBe(false);
+    });
+
+    it('should discard WQ04 from hand and draw 2 cards', async () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.tux.push(WQ04_ID);
+
+      await wq04.action!(p1, 0, '', '');
+
+      // Should raise G0QZ (discard) and G0DH (draw 2)
+      expect(messages.some(m => m.includes('G0QZ'))).toBe(true);
+      const qzMsg = messages.find(m => m.includes('G0QZ'))!;
+      expect(qzMsg).toContain(`${WQ04_ID}`);
+
+      expect(messages.some(m => m.includes('G0DH'))).toBe(true);
+      const dhMsg = messages.find(m => m.includes('G0DH'))!;
+      expect(dhMsg).toContain(`${p1.uid}`);
+      expect(dhMsg).toContain('0,2'); // draw 2 cards
+    });
+
+    it('should discard WQ04 from weapon slot and draw 2 cards', async () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.weapon = WQ04_ID;
+
+      await wq04.action!(p1, 0, '', '');
+
+      expect(messages.some(m => m.includes('G0QZ'))).toBe(true);
+      const qzMsg = messages.find(m => m.includes('G0QZ'))!;
+      expect(qzMsg).toContain(`${WQ04_ID}`);
+
+      expect(messages.some(m => m.includes('G0DH'))).toBe(true);
+      const dhMsg = messages.find(m => m.includes('G0DH'))!;
+      expect(dhMsg).toContain(`${p1.uid}`);
+      expect(dhMsg).toContain('0,2');
+    });
+
+    it('should only send one discard message when WQ04 is in both hand and weapon', async () => {
+      const regs = cottage.registerAll();
+      const wq04 = regs.find(r => r.code === 'WQ04')!;
+      const p1 = board.garden.get(1)!;
+      p1.tux.push(WQ04_ID);
+      p1.weapon = WQ04_ID;
+
+      await wq04.action!(p1, 0, '', '');
+
+      // Should only discard one WQ04 (from hand takes priority)
+      const qzMsgs = messages.filter(m => m.includes('G0QZ'));
+      expect(qzMsgs).toHaveLength(1);
+      expect(qzMsgs[0]).toContain(`${WQ04_ID}`);
     });
   });
 });

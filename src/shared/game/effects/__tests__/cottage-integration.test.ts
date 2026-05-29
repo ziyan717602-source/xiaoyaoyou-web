@@ -46,9 +46,9 @@ describe('Cottage Integration', () => {
 
   const raiseGMessage = (msg: string) => messages.push(msg);
   const innerGMessage = (msg: string, prior: number) => innerMessages.push({ msg, prior });
-  const asyncInput = (uid: number, format: string, code: string, arg: string) => {
-    if (asyncInputResults.length > 0) return asyncInputResults.shift()!;
-    return '/';
+  const asyncInput = (uid: number, format: string, code: string, arg: string): Promise<string> => {
+    if (asyncInputResults.length > 0) return Promise.resolve(asyncInputResults.shift()!);
+    return Promise.resolve('/');
   };
 
   it('should register all TuxCottage effects', () => {
@@ -69,7 +69,7 @@ describe('Cottage Integration', () => {
   });
 
   it('should register all OperationCottage effects', () => {
-    const cottage = new OperationCottage(board, raiseGMessage, asyncInput);
+    const cottage = new OperationCottage(board, new LibGroup(), raiseGMessage, asyncInput);
     const regs = cottage.registerAll();
     const registry = new OperationEffectRegistry();
     registry.registerAll(regs);
@@ -98,6 +98,32 @@ describe('Cottage Integration', () => {
     expect(registry.has('JN20302')).toBe(true);
     expect(registry.has('JN20601')).toBe(true);
     expect(registry.has('JN20602')).toBe(true);
+    // HL expansion heroes
+    expect(registry.has('JNH0401')).toBe(true);
+    expect(registry.has('JNH0501')).toBe(true);
+    expect(registry.has('JNH0601')).toBe(true);
+    expect(registry.has('JNH0701')).toBe(true);
+    expect(registry.has('JNH0801')).toBe(true);
+    expect(registry.has('JNH0901')).toBe(true);
+    expect(registry.has('JNH1001')).toBe(true);
+    expect(registry.has('JNH1101')).toBe(true);
+    expect(registry.has('JNH1201')).toBe(true);
+    expect(registry.has('JNH1301')).toBe(true);
+    // TR expansion heroes
+    expect(registry.has('JNT0101')).toBe(true);
+    expect(registry.has('JNT0201')).toBe(true);
+    expect(registry.has('JNT0301')).toBe(true);
+    expect(registry.has('JNT0401')).toBe(true);
+    expect(registry.has('JNT0501')).toBe(true);
+    expect(registry.has('JNT0601')).toBe(true);
+    expect(registry.has('JNT0701')).toBe(true);
+    expect(registry.has('JNT0801')).toBe(true);
+    expect(registry.has('JNT0901')).toBe(true);
+    expect(registry.has('JNT1001')).toBe(true);
+    expect(registry.has('JNT1101')).toBe(true);
+    expect(registry.has('JNT1201')).toBe(true);
+    expect(registry.has('JNT1301')).toBe(true);
+    expect(registry.has('JNT1401')).toBe(true);
   });
 
   it('should register all NpcCottage effects', () => {
@@ -133,6 +159,16 @@ describe('Cottage Integration', () => {
     expect(registry.has('SJ102')).toBe(true);
     expect(registry.has('SJ201')).toBe(true);
     expect(registry.has('SJ301')).toBe(true);
+    // Holiday events
+    expect(registry.has('SJH01')).toBe(true);
+    expect(registry.has('SJH02')).toBe(true);
+    expect(registry.has('SJH03')).toBe(true);
+    expect(registry.has('SJH04')).toBe(true);
+    expect(registry.has('SJH05')).toBe(true);
+    expect(registry.has('SJH06')).toBe(true);
+    expect(registry.has('SJH07')).toBe(true);
+    expect(registry.has('SJH10')).toBe(true);
+    expect(registry.has('SJH11')).toBe(true);
   });
 
   it('should have non-overlapping codes across registries', () => {

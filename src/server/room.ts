@@ -89,7 +89,7 @@ export class RoomManager {
   joinRoom(
     roomId: string,
     playerName: string,
-  ): { success: boolean; error?: string; message?: string; players?: PlayerInfo[] } {
+  ): { success: boolean; error?: string; message?: string; players?: PlayerInfo[]; uid?: number } {
     const room = this.rooms.get(roomId);
 
     if (!room) {
@@ -124,7 +124,7 @@ export class RoomManager {
     room.playerCount++;
 
     this.eventHandler?.({ type: 'player_joined', roomId, playerName, uid });
-    return { success: true, players: this.getPlayerList(roomId) };
+    return { success: true, players: this.getPlayerList(roomId), uid };
   }
 
   /**

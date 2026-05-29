@@ -8,20 +8,20 @@ import type { Player } from '../player';
 
 // ─── Hand Card / Skill Effect Delegates (Action, Valid, Input) ───
 
-/** Action delegate for hand card and skill effects */
+/** Action delegate for hand card and skill effects (supports async for network input) */
 export type ActionDelegate = (
   player: Player, type: number, fuse: string, argst: string,
-) => void;
+) => Promise<void> | void;
 
 /** Valid delegate for hand card and skill effects */
 export type ValidDelegate = (
   player: Player, type: number, fuse: string,
 ) => boolean;
 
-/** Input delegate for hand card and skill effects */
+/** Input delegate for hand card and skill effects (supports async for network input) */
 export type InputDelegate = (
   player: Player, type: number, fuse: string, prev: string,
-) => string;
+) => Promise<string> | string;
 
 /** Bribe delegate (card activation condition) */
 export type BribeDelegate = (
@@ -91,69 +91,69 @@ export type InputHolderDelegate = (
 
 // ─── Operation Effect Delegates ───
 
-/** Operation action (no type parameter) */
+/** Operation action (no type parameter, supports async for network input) */
 export type OpActionDelegate = (
   player: Player, fuse: string, args: string,
-) => void;
+) => Promise<void> | void;
 
 /** Operation valid */
 export type OpValidDelegate = (
   player: Player, fuse: string,
 ) => boolean;
 
-/** Operation input */
+/** Operation input (supports async for network input) */
 export type OpInputDelegate = (
   player: Player, fuse: string, prev: string,
-) => string;
+) => Promise<string> | string;
 
 // ─── NPC Effect Delegates ───
 
-/** NPC action delegate */
+/** NPC action delegate (supports async for network input) */
 export type NpcActionDelegate = (
   player: Player, fuse: string, args: string,
-) => void;
+) => Promise<void> | void;
 
 /** NPC valid delegate */
 export type NpcValidDelegate = (
   player: Player, fuse: string,
 ) => boolean;
 
-/** NPC input delegate */
+/** NPC input delegate (supports async for network input) */
 export type NpcInputDelegate = (
   player: Player, fuse: string, prev: string,
-) => string;
+) => Promise<string> | string;
 
-/** NPC escue action */
+/** NPC escue action (supports async for network input) */
 export type NpcEscueActionDelegate = (
   player: Player, npcUt: number, type: number, fuse: string, args: string,
-) => void;
+) => Promise<void> | void;
 
 /** NPC escue valid */
 export type NpcEscueValidDelegate = (
   player: Player, npcUt: number, type: number, fuse: string,
 ) => boolean;
 
-/** NPC escue input */
+/** NPC escue input (supports async for network input) */
 export type NpcEscueInputDelegate = (
   player: Player, npcUt: number, type: number, fuse: string, prev: string,
-) => string;
+) => Promise<string> | string;
 
 // ─── Rune Effect Delegates ───
 
-/** Rune action delegate */
+/** Rune action delegate (supports async for network input) */
 export type RuneActionDelegate = (
   player: Player, fuse: string, args: string,
-) => void;
+) => Promise<void> | void;
 
 /** Rune valid delegate */
 export type RuneValidDelegate = (
   player: Player, fuse: string,
 ) => boolean;
 
-/** Rune input delegate */
+/** Rune input delegate (supports async for network input) */
 export type RuneInputDelegate = (
   player: Player, fuse: string, prev: string,
-) => string;
+) => Promise<string> | string;
 
 // ─── Event Effect Delegates ───
 
@@ -211,6 +211,7 @@ export interface OpEffectRegistration {
  */
 export interface NpcEffectRegistration {
   code: string;
+  debut?: (trigger: Player) => void;
   action?: NpcActionDelegate;
   valid?: NpcValidDelegate;
   input?: NpcInputDelegate;

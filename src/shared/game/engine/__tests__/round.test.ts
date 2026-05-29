@@ -3,6 +3,7 @@ import { RoundManager, RoundPhase, PHASE_TRANSITIONS } from '../round';
 import { EventBus } from '../event-bus';
 import { Board } from '../../board';
 import { Player } from '../../player';
+import { LibGroup } from '../../lib-group';
 
 function makePlayer(uid: number, team: number): Player {
   const p = new Player(`p${uid}`, uid * 1000, uid);
@@ -61,7 +62,7 @@ describe('RoundManager', () => {
     board.garden.set(1, p1);
     board.garden.set(2, p2);
     board.rounder = p1;
-    roundManager = new RoundManager(board, eventBus);
+    roundManager = new RoundManager(board, eventBus, new LibGroup());
   });
 
   it('should construct with initial state', () => {

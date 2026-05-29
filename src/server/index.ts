@@ -42,13 +42,13 @@ export async function createServer(port: number) {
       // Mark player as disconnected
       roomManager.markPlayerDisconnected(roomId, uid);
 
-      // Notify other players in the room
+      // Notify other players in the room with updated player list
       const players = roomManager.getPlayerList(roomId);
       const player = players.find((p) => p.uid === uid);
       if (player) {
         connectionManager.broadcast(roomId, {
           type: 'player_disconnected',
-          payload: { playerName: player.name },
+          payload: { playerName: player.name, players },
         });
       }
 
@@ -74,9 +74,11 @@ export async function createServer(port: number) {
         // Auto-join the creator as the first player (host)
         const hostName = playerName || '房主';
         const joinResult = roomManager.joinRoom(roomId, hostName);
+        let hostUid = 1;
         if (joinResult.success && joinResult.players) {
           const host = joinResult.players.find((p) => p.name === hostName);
           if (host) {
+            hostUid = host.uid;
             connectionToPlayer.set(connectionId, { roomId, uid: host.uid });
             const conn = connectionManager.getConnection(connectionId);
             if (conn) {
@@ -88,7 +90,7 @@ export async function createServer(port: number) {
 
         connectionManager.send(connectionId, {
           type: 'room_created',
-          payload: { roomId, players: joinResult.players || [] },
+          payload: { roomId, players: joinResult.players || [], myUid: hostUid },
         });
         break;
       }
@@ -115,7 +117,7 @@ export async function createServer(port: number) {
 
           connectionManager.send(connectionId, {
             type: 'room_joined',
-            payload: { roomId, players: result.players },
+            payload: { roomId, players: result.players, myUid: result.uid! },
           });
 
           // Notify other players in the room
@@ -131,6 +133,69 @@ export async function createServer(port: number) {
               result.message || 'Unknown error',
             ),
           );
+        }
+        break;
+      }
+
+      case 'reconnect': {
+        const { roomId, playerName } = message.payload;
+        const room = roomManager.getRoom(roomId);
+
+        if (!room) {
+          connectionManager.send(
+            connectionId,
+            createErrorMessage('ROOM_NOT_FOUND', 'Room not found'),
+          );
+          break;
+        }
+
+        // Find the player by name in the room
+        const existingPlayer = Array.from(room.players.values())
+          .find(p => p.name === playerName);
+
+        if (!existingPlayer) {
+          connectionManager.send(
+            connectionId,
+            createErrorMessage('PLAYER_NOT_FOUND', 'Player not in this room'),
+          );
+          break;
+        }
+
+        // Update connection mapping
+        connectionToPlayer.set(connectionId, {
+          roomId,
+          uid: existingPlayer.uid,
+        });
+        const conn = connectionManager.getConnection(connectionId);
+        if (conn) {
+          conn.roomId = roomId;
+          conn.playerName = playerName;
+        }
+
+        // Mark player as reconnected
+        roomManager.markPlayerReconnected(roomId, existingPlayer.uid);
+
+        // Send reconnect success with player list and uid
+        const players = roomManager.getPlayerList(roomId);
+        connectionManager.send(connectionId, {
+          type: 'room_joined',
+          payload: { roomId, players, myUid: existingPlayer.uid },
+        });
+
+        // Notify other players with updated player list
+        const updatedPlayers = roomManager.getPlayerList(roomId);
+        connectionManager.broadcast(roomId, {
+          type: 'player_reconnected',
+          payload: { playerName, players: updatedPlayers },
+        });
+
+        // If game is in progress, send current game state
+        if (room.gameSession) {
+          const state = room.gameSession.getState();
+          connectionManager.send(connectionId, {
+            type: 'game_state',
+            payload: { state },
+          });
         }
         break;
       }
@@ -232,14 +297,34 @@ export async function createServer(port: number) {
         break;
       }
 
-      case 'get_state': {
+      case 'hero_select': {
         const mapping = connectionToPlayer.get(connectionId);
         if (mapping) {
-          const { roomId } = mapping;
+          const { roomId, uid } = mapping;
           const room = roomManager.getRoom(roomId);
 
           if (room && room.gameSession) {
-            const state = room.gameSession.getState();
+            const { heroId } = message.payload;
+            const success = room.gameSession.handleHeroSelect(uid, heroId);
+
+            // Broadcast selection response to all players
+            connectionManager.broadcast(roomId, {
+              type: 'hero_select_response',
+              payload: { uid, heroId, success },
+            });
+          }
+        }
+        break;
+      }
+
+      case 'get_state': {
+        const mapping = connectionToPlayer.get(connectionId);
+        if (mapping) {
+          const { roomId, uid } = mapping;
+          const room = roomManager.getRoom(roomId);
+
+          if (room && room.gameSession) {
+            const state = room.gameSession.getState(uid);
             connectionManager.send(connectionId, {
               type: 'game_state',
               payload: { state },

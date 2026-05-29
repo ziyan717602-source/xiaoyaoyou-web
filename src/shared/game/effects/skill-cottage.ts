@@ -20,7 +20,7 @@ export class SkillCottage extends JNSBase {
     libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     super(board, libGroup, raiseGMessage, innerGMessage, asyncInput);
   }
@@ -102,6 +102,54 @@ export class SkillCottage extends JNSBase {
       ...this.registerXJ107(),
       // XJ207 - Mozun (魔尊)
       ...this.registerXJ207(),
+      // HL004 - YeFengling (叶风铃)
+      ...this.registerHL004(),
+      // HL005 - Lunar Deity (月神)
+      ...this.registerHL005(),
+      // HL006 - ZhaoWen (赵文)
+      ...this.registerHL006(),
+      // HL007 - Yingyue (映月)
+      ...this.registerHL007(),
+      // HL008 - Yingyu (映雨)
+      ...this.registerHL008(),
+      // HL009 - Lingjian (灵剑)
+      ...this.registerHL009(),
+      // HL010 - ShuiLingjing (水菱精)
+      ...this.registerHL010(),
+      // HL011 - ShuiGang (水缸)
+      ...this.registerHL011(),
+      // HL012 - LiuYing'er (柳莺儿)
+      ...this.registerHL012(),
+      // HL013 - Xiongshanjun (熊山君)
+      ...this.registerHL013(),
+      // TR001 - Suyu (素玉)
+      ...this.registerTR001(),
+      // TR002 - XuChangqing (徐长卿)
+      ...this.registerTR002(),
+      // TR003 - YunTianqing (云天青)
+      ...this.registerTR003(),
+      // TR004 - Lingyin (凌音)
+      ...this.registerTR004(),
+      // TR005 - Lingbo (凌波)
+      ...this.registerTR005(),
+      // TR006 - OuyangQian (欧阳倩)
+      ...this.registerTR006(),
+      // TR007 - LiYiru (李忆如)
+      ...this.registerTR007(),
+      // TR008 - XiahouJinxuan (夏侯瑾轩)
+      ...this.registerTR008(),
+      // TR009 - Xia (瑕)
+      ...this.registerTR009(),
+      // TR010 - MuChanglan (暮菖兰)
+      ...this.registerTR010(),
+      // TR011 - JiangCheng (姜承)
+      ...this.registerTR011(),
+      // TR012 - HuangfuZhuo (皇甫卓)
+      ...this.registerTR012(),
+      // TR013 - XieCangxing (谢沧行)
+      ...this.registerTR013(),
+      // TR014 - Jieluo (结萝)
+      ...this.registerTR014(),
     ];
   }
 
@@ -118,9 +166,10 @@ export class SkillCottage extends JNSBase {
           let cnt = 0;
           const types = new Set<string>();
           for (const ut of player.tux) {
-            // Would need libGroup to decode tux types
-            // Simplified: count distinct card types
-            types.add(String(ut));
+            const tux = this.libGroup.tl.decodeTux(ut);
+            if (tux) {
+              types.add(String(tux.type));
+            }
           }
           cnt = types.size;
           this.raiseGMessage(`G0DH,${player.uid},2,${player.tux.length}`);
@@ -263,12 +312,12 @@ export class SkillCottage extends JNSBase {
       // JNH0206 - Peek at enemy card
       {
         code: 'JNH0206',
-        action: (player, _type, _fuse, argst) => {
+        action: async (player, _type, _fuse, argst) => {
           const ut = parseInt(argst, 10);
           this.raiseGMessage(`G1MT,${player.uid},${ut}`);
           const tar = this.board.garden.get(ut)!;
           this.targetPlayer(player.uid, tar.uid);
-          this.asyncInput(
+          await this.asyncInput(
             player.uid,
             `#展示的,C1(${tar.tux.map(() => 'p0').join('')})`,
             'JNH0206',
@@ -347,17 +396,20 @@ export class SkillCottage extends JNSBase {
           return this.board.rounder.gender === 'F' && this.board.rounder.team === player.team;
         },
       },
-      // JN10102 - Steal from hinder
+      // JN10102 - Steal from hinder (飞龙探云手)
       {
         code: 'JN10102',
-        action: (player, _type, _fuse, _argst) => {
+        action: async (player, _type, _fuse, _argst) => {
           const hinder = this.board.hinder;
           this.targetPlayer(player.uid, hinder.uid);
-          this.asyncInput(player.uid, `#获得的,T1(${hinder.uid})`, 'JN10102', '0');
+          await this.asyncInput(player.uid, `#获得的,T1(${hinder.uid})`, 'JN10102', '0');
+          const c0 = 'p0'.repeat(hinder.tux.length);
+          await this.asyncInput(player.uid, `#获得的,C1(${c0})`, 'JN10102', '0');
           this.raiseGMessage(`G0HQ,0,${player.uid},${hinder.uid},2,1`);
         },
         valid: (player, _type, _fuse) => {
           return this.board.isAttendWar(player) && this.board.rounder.team === player.team &&
+            this.board.battler !== null && this.board.battler.agl <= 2 &&
             this.board.hinder.isTared && this.board.hinder.tux.length > 0;
         },
       },
@@ -588,9 +640,9 @@ export class SkillCottage extends JNSBase {
       // JN20201 - Reroll monster
       {
         code: 'JN20201',
-        action: (player, _type, _fuse, _argst) => {
+        action: async (player, _type, _fuse, _argst) => {
           this.raiseGMessage('G1SG,0');
-          const yes = this.asyncInput(
+          const yes = await this.asyncInput(
             player.uid,
             '#是否放弃此怪，翻出新怪？##不翻出##翻出,Y2',
             'JN20201',
@@ -700,8 +752,11 @@ export class SkillCottage extends JNSBase {
         },
         input: (player, _type, _fuse, prev) => {
           if (prev === '') {
-            // Simplified: all tux cards (would filter by TuxType.ZP in full version)
-            if (player.tux.length > 0) return `/Q1(p${player.tux.join('p')})`;
+            const nonZpCards = player.tux.filter(ut => {
+              const tux = this.libGroup.tl.decodeTux(ut);
+              return tux && tux.type !== TuxType.ZP;
+            });
+            if (nonZpCards.length > 0) return `/Q1(p${nonZpCards.join('p')})`;
             else return '/';
           }
           return '';
@@ -896,7 +951,7 @@ export class SkillCottage extends JNSBase {
       // JN30501 - When teammate gets pet, give 2 draws to a teammate
       {
         code: 'JN30501',
-        action: (player, _type, fuse, _argst) => {
+        action: async (player, _type, fuse, _argst) => {
           // Parse ObtainPet from fuse: format is like "G0OP,who,land,..."
           const parts = fuse.split(',');
           const farmer = parseInt(parts[1], 10);
@@ -904,7 +959,7 @@ export class SkillCottage extends JNSBase {
           // For each pet obtained, ask who to give 2 draws to
           const petCount = parts.length > 3 ? parts.length - 3 : 1;
           for (let i = 0; i < petCount; i++) {
-            const input = this.asyncInput(
+            const input = await this.asyncInput(
               player.uid,
               `#获得2张补牌,T1${this.aTeammatesTared(player)}`,
               'JN30501',
@@ -1158,7 +1213,7 @@ export class SkillCottage extends JNSBase {
       // JN50203 - 盗墓: Steal from all players in battle
       {
         code: 'JN50203',
-        action: (player, _type, fuse, _argst) => {
+        action: async (player, _type, fuse, _argst) => {
           const args = fuse.split(',');
           const possiCards: number[] = [];
           for (let i = 1; i < args.length; ++i) {
@@ -1175,7 +1230,7 @@ export class SkillCottage extends JNSBase {
               ? `/+Q1~${possiCards.length}(p${possiCards.join('p')})`
               : `/+Q1(p${possiCards.join('p')})`;
             const targ = `/T1${this.formatPlayers(p => p.isTared && p.uid !== player.uid)}`;
-            const select = this.asyncInput(player.uid, carg + ',' + targ, 'JN50203', '0');
+            const select = await this.asyncInput(player.uid, carg + ',' + targ, 'JN50203', '0');
             if (select === '0' || select === '/0' || select === '') break;
             const idx = select.lastIndexOf(',');
             const to = parseInt(select.substring(idx + 1), 10);
@@ -1245,7 +1300,7 @@ export class SkillCottage extends JNSBase {
         },
         valid: (player, type, fuse) => {
           if (type >= 0 && type <= 2) {
-            return true; // Simplified - always valid when pets change
+            return player.getPetCount() > 0;
           } else if (type === 3) {
             return this.isMathISOS('JN50301', player, fuse) && [...this.board.garden.values()].some(p =>
               p.team === player.team && player.rom.getOrSetDiva('Enhanced').getInt(p.uid.toString()) > 0,
@@ -1335,8 +1390,10 @@ export class SkillCottage extends JNSBase {
       // JN50402 - Increase tux limit by 2
       {
         code: 'JN50402',
-        action: (player, _type, _fuse, _argst) => {
-          player.tuxLimit += 2;
+        action: (player, type, _fuse, _argst) => {
+          if (type === 1) {
+            player.tuxLimit += 2;
+          }
         },
         valid: (player, type, fuse) => {
           if (type === 0) {
@@ -1404,9 +1461,9 @@ export class SkillCottage extends JNSBase {
       // JN50502 - 结拜: Bond with a player for STR bonus
       {
         code: 'JN50502',
-        action: (player, type, _fuse, _argst) => {
+        action: async (player, type, _fuse, _argst) => {
           if (type === 0) {
-            const target = this.asyncInput(
+            const target = await this.asyncInput(
               player.uid,
               `#『结拜』的,/T1${this.aOthersTared(player)}`,
               'JN50502',
@@ -1473,7 +1530,7 @@ export class SkillCottage extends JNSBase {
       // JN40102 - When capturing pet, force opponent to discard matching pet
       {
         code: 'JN40102',
-        action: (player, _type, fuse, _argst) => {
+        action: async (player, _type, fuse, _argst) => {
           // Parse ObtainPet from fuse: format is "G0EP,uid,1,pet1,pet2,..."
           // parts[1] = farmer uid, parts[2] = 1 (trophy), parts[3..] = pet card ids
           const parts = fuse.split(',');
@@ -1493,7 +1550,7 @@ export class SkillCottage extends JNSBase {
               }
             }
             if (oppPets.length === 0) continue;
-            const input = this.asyncInput(
+            const input = await this.asyncInput(
               player.uid,
               `#弃置的,/M1(p${oppPets.join('p')})`,
               'JN40102',
@@ -1622,7 +1679,7 @@ export class SkillCottage extends JNSBase {
       // JN40302 - Give cards to teammates (兄弟)
       {
         code: 'JN40302',
-        action: (player, _type, _fuse, _argst) => {
+        action: async (player, _type, _fuse, _argst) => {
           // Get cards from teammates first
           const getGroup = [...this.board.garden.values()]
             .filter(p => p.uid !== player.uid && p.isAlive && p.team === player.team && p.tux.length > 0)
@@ -1637,7 +1694,7 @@ export class SkillCottage extends JNSBase {
               ? `/+Q1~${player.tux.length}(p${player.tux.join('p')})`
               : `/+Q1(p${player.tux.join('p')})`;
             const targ = `/T1${this.formatPlayers(p => p.isTared && p.uid !== player.uid && p.team === player.team)}`;
-            const select = this.asyncInput(player.uid, carg + ',' + targ, 'JN40302', '0');
+            const select = await this.asyncInput(player.uid, carg + ',' + targ, 'JN40302', '0');
             if (select === '0' || select === '/0' || select === '') break;
             const idx = select.lastIndexOf(',');
             const to = parseInt(select.substring(idx + 1), 10);
@@ -1694,7 +1751,10 @@ export class SkillCottage extends JNSBase {
         },
         input: (player, _type, _fuse, prev) => {
           if (prev === '') {
-            const cds = player.tux; // simplified: all tux cards
+            const cds = player.tux.filter(ut => {
+              const tux = this.libGroup.tl.decodeTux(ut);
+              return tux && (tux.type === TuxType.WQ || tux.type === TuxType.FJ);
+            });
             const count = (cds.length + player.exCards.length <= 5)
               ? cds.length
               : (5 - player.exCards.length);
@@ -1793,8 +1853,10 @@ export class SkillCottage extends JNSBase {
             if (!player.ram.getBool('STR+3') && notin) return true;
             if (player.ram.getBool('STR+3') && !notin) return true;
           } else if (type === 1 && this.board.poolEnabled) {
-            // PondRefresh parse: check if the fuse indicates a pool refresh event
-            // Simplified: fuse for G2YS with pool context contains 'P' or similar
+            // Parse G2YS fuse to check pool context
+            const fuseParts = fuse.split(',');
+            const isPoolRefresh = fuseParts.some(p => p === 'P');
+            if (!isPoolRefresh) return false;
             const notin = computeNotIn();
             if (!player.ram.getBool('STR+3') && notin) return true;
             if (player.ram.getBool('STR+3') && !notin) return true;
@@ -1960,10 +2022,10 @@ export class SkillCottage extends JNSBase {
       // type 2: set AllowNoSupport = false
       {
         code: 'JN10602',
-        action: (player, type, fuse, _argst) => {
+        action: async (player, type, fuse, _argst) => {
           if (type === 0) {
             this.raiseGMessage('G1SG,0');
-            const yes = this.asyncInput(
+            const yes = await this.asyncInput(
               player.uid,
               '#是否进行第二次战斗？##不进行##进行,Y2',
               'JN10602',
@@ -2177,7 +2239,7 @@ export class SkillCottage extends JNSBase {
 
   private registerXJ502(): EffectRegistration[] {
     return [
-      // JN60201 - Use cards on behalf of others (simplified)
+      // JN60201 - Use cards on behalf of others (delegation context)
       {
         code: 'JN60201',
         action: (player, _type, fuse, argst) => {
@@ -2188,7 +2250,7 @@ export class SkillCottage extends JNSBase {
           const decoded = this.libGroup.tl.decodeTux(ut);
           const code = decoded ? decoded.code : `TP${String(ut).padStart(4, '0')}`;
           this.targetPlayer(player.uid, to);
-          this.raiseGMessage(`G0CC,${player.uid},0,${to},${code},${ut};0,${fuse}`);
+          this.raiseGMessage(`G0CC,${player.uid},0,${to},${code},${ut};0,${fuse};DELEGATE,${player.uid}`);
         },
         valid: (player, _type, _fuse) => {
           return player.tux.length > 0;
@@ -2600,10 +2662,1229 @@ export class SkillCottage extends JNSBase {
     ];
   }
 
+  // ═══════════════════════════════════════════════
+  // HL004 - YeFengling (叶风铃)
+  // ═══════════════════════════════════════════════
+
+  private registerHL004(): EffectRegistration[] {
+    return [
+      // JNH0401 - Discard 2 cards to boost monster damage
+      {
+        code: 'JNH0401',
+        action: (player, _type, _fuse, argst) => {
+          const ut = parseInt(argst, 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          this.raiseGMessage(`G0OW,${this.board.monster1},2`);
+          this.raiseGMessage(`G1TH,${player.uid},0,0,0,0`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length >= 2 && player.team === this.board.rounder.team;
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q2(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+      // JNH0402 - TokenAwake: team draw on ally harm/cure
+      {
+        code: 'JNH0402',
+        action: (player, type, _fuse, _argst) => {
+          if (type === 0) {
+            this.raiseGMessage(`G1MA,${player.uid}`);
+            player.ram.set('+1tux', true);
+          } else if (type === 1 || type === 2) {
+            player.ram.set('+1tux', false);
+            this.raiseGMessage(`G0IP,${player.team},1`);
+          } else if (type === 3) {
+            this.raiseGMessage(`G1MD,${player.uid}`);
+            if (player.ram.getBool('+1tux')) {
+              this.raiseGMessage(`G0DH,${player.uid},0,1`);
+            }
+            player.ram.set('+1tux', null);
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return true;
+          if ((type === 1 || type === 2) && player.tokenAwake) {
+            const who = parseInt(fuse.split(',')[1], 10);
+            const py = this.board.garden.get(who);
+            return py !== undefined && py.team === player.team;
+          }
+          if (type === 3) return player.tokenAwake;
+          return false;
+        },
+      },
+      // JNH0403 - Transform target into HL005 (月神附身)
+      {
+        code: 'JNH0403',
+        action: async (player, _type, fuse, _argst) => {
+          const target = await this.asyncInput(
+            player.uid, '#月神附身,T1' + this.aOthersTared(player), 'JNH0403', '0',
+          );
+          const who = parseInt(target, 10);
+          const orgHero = this.board.garden.get(who)?.selectHero ?? 0;
+          this.raiseGMessage(`G0OY,0,${who}`);
+          this.raiseGMessage(`G0IY,0,${who},19005`);
+          this.raiseGMessage(`G0IV,${who},${orgHero}`);
+          this.board.bannedHero.push(orgHero);
+        },
+        valid: (player, _type, fuse) => {
+          const blocks = fuse.split(',');
+          for (let i = 1; i < blocks.length; ++i) {
+            if (blocks[i] === player.uid.toString()) {
+              return [...this.board.garden.values()].some(
+                p => p.uid !== player.uid && p.isTared,
+              );
+            }
+          }
+          return false;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL005 - Lunar Deity (月神)
+  // ═══════════════════════════════════════════════
+
+  private registerHL005(): EffectRegistration[] {
+    return [
+      // JNH0501 - Draw 3 on IS; transform back on G0IY/G0ZW
+      {
+        code: 'JNH0501',
+        action: (player, type, _fuse, _argst) => {
+          if (type === 0) {
+            this.raiseGMessage(`G0DH,${player.uid},0,3`);
+          } else if (type === 1) {
+            const orgHero = player.cossPeek() ?? 0;
+            this.board.bannedHero.splice(this.board.bannedHero.indexOf(orgHero), 1);
+            this.raiseGMessage(`G0OV,${player.uid},${orgHero}`);
+            this.raiseGMessage(`G0OY,0,${player.uid}`);
+            this.raiseGMessage(`G0IY,0,${player.uid},${orgHero}`);
+          } else if (type === 2) {
+            const blocks = _fuse.split(',');
+            let zw = '';
+            for (let i = 1; i < blocks.length; ++i) {
+              if (blocks[i] !== player.uid.toString()) zw += ',' + blocks[i];
+            }
+            const orgHero = player.cossPeek() ?? 0;
+            this.board.bannedHero.splice(this.board.bannedHero.indexOf(orgHero), 1);
+            this.raiseGMessage(`G0OV,${player.uid},${orgHero}`);
+            this.raiseGMessage(`G0OY,0,${player.uid}`);
+            this.raiseGMessage(`G0IY,0,${player.uid},${orgHero}`);
+            if (zw !== '') this.innerGMessage('G0ZW' + zw, -8);
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return this.isMathISOS('JNH0501', player, fuse);
+          if (type === 1) {
+            return [...this.board.garden.values()].filter(
+              p => p.isAlive && p.team === player.team,
+            ).length >= 3;
+          }
+          if (type === 2) {
+            const blocks = fuse.split(',');
+            for (let i = 1; i < blocks.length; ++i) {
+              if (blocks[i] === player.uid.toString()) return true;
+            }
+          }
+          return false;
+        },
+      },
+      // JNH0502 - Burst pet/equip for TokenAwake; block enemy cure
+      {
+        code: 'JNH0502',
+        action: (player, type, _fuse, argst) => {
+          if (type === 0) {
+            const args = argst.split(',');
+            if (args[0] === '1') {
+              this.raiseGMessage(`G0HI,${args[1]},${args[2]}`);
+            } else if (args[0] === '2') {
+              this.raiseGMessage(`G0ZI,${args[1]},${args[2]}`);
+            }
+            this.raiseGMessage(`G1MA,${player.uid}`);
+          } else if (type === 1) {
+            // Filter G0IH by team - only remove enemy cures
+            const fuseParts = _fuse.split(';');
+            const filtered = fuseParts.filter(part => {
+              if (!part.startsWith('G0IH')) return true;
+              const args = part.split(',');
+              const targetId = parseInt(args[1], 10);
+              const target = this.board.garden.get(targetId);
+              return target && target.team === player.team;
+            });
+            this.innerGMessage(filtered.join(';'), 51);
+          } else if (type === 2) {
+            this.raiseGMessage(`G1MD,${player.uid}`);
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) {
+            return [...this.board.garden.values()].some(
+              p => p.isTared && p.team === player.team && (p.hasAnyEquips() || p.getPetCount() > 0),
+            );
+          }
+          if (type === 1 && player.tokenAwake) {
+            return fuse.includes('G0IH');
+          }
+          if (type === 2) return player.tokenAwake;
+          return false;
+        },
+        input: (player, type, _fuse, prev) => {
+          if (type === 0) {
+            if (prev === '') return '#请选择爆发项目##宠物##装备,/Y2';
+            if (!prev.includes(',')) {
+              const sel = parseInt(prev, 10);
+              if (sel === 1) {
+                const pys = [...this.board.garden.values()].filter(
+                  p => p.isAlive && p.team === player.team && p.getPetCount() > 0,
+                );
+                if (pys.length > 0) return `#爆发宠物,/T1(p${pys.map(p => p.uid).join('p')})`;
+              } else {
+                const pys = [...this.board.garden.values()].filter(
+                  p => p.isAlive && p.team === player.team && p.hasAnyEquips(),
+                );
+                if (pys.length > 0) return `#爆发装备,/T1(p${pys.map(p => p.uid).join('p')})`;
+              }
+            }
+          }
+          return '';
+        },
+      },
+      // JNH0503 - Silence target and block damage
+      {
+        code: 'JNH0503',
+        action: (player, type, _fuse, argst) => {
+          if (type === 0) {
+            this.raiseGMessage(`G0DS,${player.uid},0,1`);
+            const tar = parseInt(argst, 10);
+            this.raiseGMessage(`G1MT,${player.uid},${tar}`);
+            this.board.garden.get(tar)?.setSilence('JNH0503');
+          } else if (type === 1) {
+            const tar = player.singleTokenTar;
+            this.board.garden.get(tar)?.resetSilence('JNH0503');
+            this.raiseGMessage(`G1MR,${player.uid},${tar}`);
+          } else if (type === 2) {
+            // Block harm to silenced target
+            const harms = this.parseHarmFuse(_fuse);
+            const filtered = harms.filter(h =>
+              h.who !== player.singleTokenTar || h.n <= 0 ||
+              FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO),
+            );
+            if (filtered.length > 0) {
+              this.innerGMessage(this.harmsToMessage(filtered), -44);
+            }
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return player.tux.length > 0 && [...this.board.garden.values()].some(p => p.isTared);
+          if (type === 1 && player.tokenTars.length > 0) {
+            const g0ds = fuse.split(',');
+            return g0ds[1] === player.uid.toString() && g0ds[2] === '1';
+          }
+          if (type === 2 && player.tokenTars.length > 0) {
+            const harms = this.parseHarmFuse(fuse);
+            return harms.some(h => h.who === player.singleTokenTar && h.n > 0 &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO));
+          }
+          return false;
+        },
+        input: (player, type, _fuse, prev) => {
+          if (type === 0 && prev === '') return '/T1' + this.aAllTareds(player);
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL006 - ZhaoWen (赵文)
+  // ═══════════════════════════════════════════════
+
+  private registerHL006(): EffectRegistration[] {
+    return [
+      // JNH0601 - Draw from tux pile when receiving cards
+      {
+        code: 'JNH0601',
+        action: (player, type, _fuse, _argst) => {
+          if (type === 0) {
+            const ut = this.board.tuxPiles.dequeue() as number;
+            if (ut) {
+              this.raiseGMessage('G2IN,0,1');
+              player.exCards.push(ut);
+            }
+          } else if (type === 1) {
+            const ut = this.board.tuxPiles.dequeue() as number;
+            if (ut) {
+              this.raiseGMessage('G2IN,0,1');
+              player.exCards.push(ut);
+            }
+          } else if (type === 2) {
+            const args = _argst.split(',');
+            const ut = parseInt(args[0], 10);
+            this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+            if (args[1] === '1') {
+              const targets = args.slice(2).map(s => this.board.garden.get(parseInt(s, 10))!);
+              this.cureMultiple(player, targets, 1);
+            } else if (args[1] === '2') {
+              const targets = args.slice(2);
+              this.raiseGMessage(`G0DH,${targets.map(t => `${t},0,1`).join(',')}`);
+            }
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (!player.isAlive) return false;
+          if (type === 0) {
+            const blocks = fuse.split(',');
+            for (let j = 1; j < blocks.length;) {
+              const who = parseInt(blocks[j], 10);
+              const inOut = parseInt(blocks[j + 1], 10);
+              const ntx = parseInt(blocks[j + 3], 10);
+              if (who === player.uid && inOut === 1 && ntx > 0) return true;
+              j += (parseInt(blocks[j + 2], 10) + 4);
+            }
+          }
+          if (type === 2) {
+            return player.exCards.length > 0;
+          }
+          return false;
+        },
+        input: (player, type, _fuse, prev) => {
+          if (type === 2 && prev === '') {
+            return `#弃置「仁心」,/Q1(p${player.exCards.join('p')}),#请选择执行项##HP+1##补1张牌,Y2`;
+          }
+          return '';
+        },
+      },
+      // JNH0602 - TokenAwake: reduce incoming damage by 1
+      {
+        code: 'JNH0602',
+        action: (player, type, _fuse, _argst) => {
+          if (type === 0) {
+            this.raiseGMessage(`G1MA,${player.uid}`);
+          } else if (type === 1) {
+            const harms = this.parseHarmFuse(_fuse);
+            for (const h of harms) {
+              if (!FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO) &&
+                  !FiveElementHelper.isSet(h.mask, HPEvoMask.TERMIN_AT)) {
+                h.n--;
+              }
+            }
+            const filtered = harms.filter(h => h.n > 0);
+            if (filtered.length > 0) this.innerGMessage(this.harmsToMessage(filtered), -149);
+          } else if (type === 2) {
+            this.raiseGMessage(`G1MD,${player.uid}`);
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return !player.tokenAwake;
+          if (type === 1 && player.tokenAwake) {
+            const harms = this.parseHarmFuse(fuse);
+            return harms.some(h => h.n > 0 &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO) &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.TERMIN_AT));
+          }
+          if (type === 2) return player.tokenAwake;
+          return false;
+        },
+      },
+      // JNH0603 - Cure low-HP allies by discarding their cards
+      {
+        code: 'JNH0603',
+        action: (player, _type, _fuse, argst) => {
+          const idx = argst.indexOf(',');
+          const tar = parseInt(argst.substring(0, idx), 10);
+          const ut = parseInt(argst.substring(idx + 1), 10);
+          if (ut !== 0) {
+            this.raiseGMessage(`G0QZ,${tar},${ut}`);
+          } else {
+            this.raiseGMessage(`G0DH,${tar},2,1`);
+          }
+          this.cure(null, this.board.garden.get(tar)!, 1);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return harms.some(h => {
+            const py = this.board.garden.get(h.who);
+            return py !== undefined && py.isTared && py.hp > 0 && py.hp < 3 && py.listOutAllCards().length > 0;
+          });
+        },
+        input: (player, _type, fuse, prev) => {
+          if (prev === '') {
+            const harms = this.parseHarmFuse(fuse);
+            const invs = [...new Set(harms.filter(h => {
+              const py = this.board.garden.get(h.who);
+              return py !== undefined && py.isTared && py.hp > 0 && py.hp < 3 && py.listOutAllCards().length > 0;
+            }).map(h => h.who))];
+            return `/T1(p${invs.join('p')})`;
+          }
+          if (!prev.includes(',')) {
+            const tar = parseInt(prev, 10);
+            const py = this.board.garden.get(tar)!;
+            if (tar === player.uid) return `/Q1(p${py.listOutAllCards().join('p')})`;
+            return `C1(p${py.listOutAllCards().join('p')})`;
+          }
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL007 - Yingyue (映月)
+  // ═══════════════════════════════════════════════
+
+  private registerHL007(): EffectRegistration[] {
+    return [
+      // JNH0701 - Absorb NPCs as Charm tokens; STR bonus
+      {
+        code: 'JNH0701',
+        action: (player, type, _fuse, argst) => {
+          if (type === 0) {
+            const npcUt = parseInt(argst, 10);
+            player.tokenExcl.push(`M${npcUt}`);
+          } else if (type === 1) {
+            this.raiseGMessage(`G0IP,${player.team},1`);
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return fuse.includes('NMB');
+          if (type === 1) {
+            return this.board.isAttendWar(player) && player.tokenExcl.length > 0;
+          }
+          return false;
+        },
+      },
+      // JNH0702 - Block enemy card plays when attending war
+      {
+        code: 'JNH0702',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IP,${player.team},1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player) && player.tokenExcl.length > 0;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL008 - Yingyu (映雨)
+  // ═══════════════════════════════════════════════
+
+  private registerHL008(): EffectRegistration[] {
+    return [
+      // JNH0801 - Discard card to let elemental damage targets use spells/equips
+      {
+        code: 'JNH0801',
+        action: (player, _type, _fuse, argst) => {
+          const ut = parseInt(argst, 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          this.raiseGMessage(`G0IP,${player.team},1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length > 0;
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q1(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL009 - Lingjian (灵剑)
+  // ═══════════════════════════════════════════════
+
+  private registerHL009(): EffectRegistration[] {
+    return [
+      // JNH0901 - Counter opponent's ZP by discarding 2 cards
+      {
+        code: 'JNH0901',
+        action: (player, _type, _fuse, argst) => {
+          const parts = argst.split(',');
+          for (const p of parts) {
+            const ut = parseInt(p, 10);
+            this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          }
+          this.raiseGMessage(`G0IP,${player.team},2`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length >= 2 && this.board.isAttendWar(player);
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q2(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL010 - ShuiLingjing (水菱精)
+  // ═══════════════════════════════════════════════
+
+  private registerHL010(): EffectRegistration[] {
+    return [
+      // JNH1001 - Draw cards for empty-handed allies
+      {
+        code: 'JNH1001',
+        action: (player, _type, _fuse, _argst) => {
+          const allies = [...this.board.garden.values()].filter(
+            p => p.isAlive && p.team === player.team && p.tux.length === 0,
+          );
+          for (const a of allies) {
+            this.raiseGMessage(`G0DH,${a.uid},0,1`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.team && p.tux.length === 0,
+          );
+        },
+      },
+      // JNH1002 - Grant pet to save dying allies
+      {
+        code: 'JNH1002',
+        action: (player, _type, _fuse, argst) => {
+          const parts = argst.split(',');
+          const who = parseInt(parts[0], 10);
+          this.raiseGMessage(`G0HI,${player.uid},${parts[1]}`);
+          this.raiseGMessage(`G0IA,${who},0,1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.getPetCount() > 0 && [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.team && p.hp <= 2,
+          );
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL011 - ShuiGang (水缸)
+  // ═══════════════════════════════════════════════
+
+  private registerHL011(): EffectRegistration[] {
+    return [
+      // JNH1101 - Take cards from losing combatants
+      {
+        code: 'JNH1101',
+        action: (player, _type, _fuse, argst) => {
+          const who = parseInt(argst, 10);
+          const py = this.board.garden.get(who);
+          if (py && py.tux.length > 0) {
+            const ut = py.tux[0];
+            this.raiseGMessage(`G0HQ,2,${player.uid},${who},0,0,${ut}`);
+          }
+        },
+        valid: (player, _type, fuse) => {
+          return fuse.includes('G0OH') && this.board.isAttendWar(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL012 - LiuYing'er (柳莺儿)
+  // ═══════════════════════════════════════════════
+
+  private registerHL012(): EffectRegistration[] {
+    return [
+      // JNH1201 - Steal random card from each opponent
+      {
+        code: 'JNH1201',
+        action: (player, _type, _fuse, _argst) => {
+          const enemies = [...this.board.garden.values()].filter(
+            p => p.isAlive && p.team === player.oppTeam && p.tux.length > 0,
+          );
+          for (const e of enemies) {
+            const idx = Math.floor(Math.random() * e.tux.length);
+            const ut = e.tux[idx];
+            this.raiseGMessage(`G0HQ,2,${player.uid},${e.uid},0,0,${ut}`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.oppTeam && p.tux.length > 0,
+          );
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // HL013 - Xiongshanjun (熊山君)
+  // ═══════════════════════════════════════════════
+
+  private registerHL013(): EffectRegistration[] {
+    return [
+      // JNH1301 - Reveal top monster card for ATK bonus
+      {
+        code: 'JNH1301',
+        action: (player, _type, _fuse, _argst) => {
+          if (this.board.monPiles.count > 0) {
+            this.raiseGMessage(`G0IB,${player.uid},2`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player) && this.board.monPiles.count > 0;
+        },
+      },
+      // JNH1302 - Team draw when opponent gives up
+      {
+        code: 'JNH1302',
+        action: (player, _type, _fuse, _argst) => {
+          const allies = [...this.board.garden.values()].filter(
+            p => p.isAlive && p.team === player.team,
+          );
+          for (const a of allies) {
+            this.raiseGMessage(`G0DH,${a.uid},0,1`);
+          }
+        },
+        valid: (player, _type, fuse) => {
+          return fuse.includes('G0OH') && this.board.isAttendWar(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR001 - Suyu (素玉)
+  // ═══════════════════════════════════════════════
+
+  private registerTR001(): EffectRegistration[] {
+    return [
+      // JNT0101 - Conditional buff when rounder meets gender/team conditions
+      {
+        code: 'JNT0101',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IA,${player.uid},0,1`);
+          this.raiseGMessage(`G0IX,${player.uid},0,1`);
+        },
+        valid: (player, _type, _fuse) => {
+          if (player.uid === this.board.rounder.uid) return false;
+          const rd = this.board.rounder;
+          return (rd.team === player.team && rd.gender === 'M') ||
+                 (rd.team === player.oppTeam && rd.gender === 'F');
+        },
+      },
+      // JNT0102 - Reduce AQUA/AGNI harm to allies by 1
+      {
+        code: 'JNT0102',
+        action: (player, _type, fuse, _argst) => {
+          const harms = this.parseHarmFuse(fuse);
+          for (const h of harms) {
+            const py = this.board.garden.get(h.who);
+            if (py && py.team === player.team && h.n > 0 &&
+                (h.element === FiveElement.AQUA || h.element === FiveElement.AGNI) &&
+                !FiveElementHelper.isSet(h.mask, HPEvoMask.IMMUNE_INVAO)) {
+              h.n--;
+            }
+          }
+          const filtered = harms.filter(h => h.n > 0);
+          if (filtered.length > 0) this.innerGMessage(this.harmsToMessage(filtered), -19);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return harms.some(h => {
+            const py = this.board.garden.get(h.who);
+            return py !== undefined && py.team === player.team && h.n > 0 &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.IMMUNE_INVAO) &&
+              (h.element === FiveElement.AQUA || h.element === FiveElement.AGNI);
+          });
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR002 - XuChangqing (徐长卿)
+  // ═══════════════════════════════════════════════
+
+  private registerTR002(): EffectRegistration[] {
+    return [
+      // JNT0201 - Ally draws 2 when enemy obtains pet
+      {
+        code: 'JNT0201',
+        action: (player, _type, _fuse, argst) => {
+          const who = parseInt(argst, 10);
+          this.raiseGMessage(`G0DH,${who},0,2`);
+        },
+        valid: (player, _type, fuse) => {
+          return fuse.includes('G2HP');
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') {
+            const allies = [...this.board.garden.values()].filter(
+              p => p.isAlive && p.team === player.team && p.uid !== player.uid,
+            );
+            return `/T1(p${allies.map(p => p.uid).join('p')})`;
+          }
+          return '';
+        },
+      },
+      // JNT0202 - Capture non-BOSS monster as pet on battle loss
+      {
+        code: 'JNT0202',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G1CK,${player.uid}`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.uid === this.board.rounder.uid && !this.board.isAttendWarSucc(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR003 - YunTianqing (云天青)
+  // ═══════════════════════════════════════════════
+
+  private registerTR003(): EffectRegistration[] {
+    return [
+      // JNT0301 - +3 DEX vs non-AQUA/AGNI monsters
+      {
+        code: 'JNT0301',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IX,${player.uid},1,3`);
+        },
+        valid: (player, _type, _fuse) => {
+          if (!this.board.isAttendWar(player)) return false;
+          const mon = this.libGroup.ml.decode(this.board.monster1);
+          if (!mon) return false;
+          return mon.element !== FiveElement.AQUA && mon.element !== FiveElement.AGNI;
+        },
+      },
+      // JNT0302 - Give pet to teammate, draw 2
+      {
+        code: 'JNT0302',
+        action: (player, _type, _fuse, argst) => {
+          const parts = argst.split(',');
+          const pet = parseInt(parts[0], 10);
+          const to = parseInt(parts[1], 10);
+          this.raiseGMessage(`G0HI,${player.uid},${pet}`);
+          this.raiseGMessage(`G0IA,${to},0,1`);
+          this.raiseGMessage(`G0DH,${player.uid},0,2`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.getPetCount() > 0 && [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.team && p.uid !== player.uid && p.isTared,
+          );
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/M1(p${player.pets.filter(p => p !== 0).join('p')})`;
+          if (!prev.includes(',')) return `/T1(p${[...this.board.garden.values()].filter(
+            p => p.isAlive && p.team === player.team && p.uid !== player.uid && p.isTared,
+          ).map(p => p.uid).join('p')})`;
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR004 - Lingyin (凌音)
+  // ═══════════════════════════════════════════════
+
+  private registerTR004(): EffectRegistration[] {
+    return [
+      // JNT0401 - Redirect harm to another player using elemental tokens
+      {
+        code: 'JNT0401',
+        action: (player, _type, _fuse, argst) => {
+          const tar = parseInt(argst, 10);
+          this.raiseGMessage(`G0TT,${tar}`);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return harms.some(h => h.who === player.uid && h.n > 0 &&
+            !FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO)) &&
+            [...this.board.garden.values()].some(p => p.uid !== player.uid && p.isTared);
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return '/T1' + this.aOthersTared(player);
+          return '';
+        },
+      },
+      // JNT0403 - Gain STR when losing tokens
+      {
+        code: 'JNT0403',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IA,${player.uid},0,1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tokenCount > 0;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR005 - Lingbo (凌波)
+  // ═══════════════════════════════════════════════
+
+  private registerTR005(): EffectRegistration[] {
+    return [
+      // JNT0501 - Convert DEX to STR during others' battle
+      {
+        code: 'JNT0501',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IA,${player.uid},0,${player.dex}`);
+        },
+        valid: (player, _type, _fuse) => {
+          return !this.board.isAttendWar(player) && this.board.inCampaign;
+        },
+      },
+      // JNT0502 - Disable target's pet effect
+      {
+        code: 'JNT0502',
+        action: (player, _type, _fuse, argst) => {
+          const tar = parseInt(argst, 10);
+          this.raiseGMessage(`G0HI,${tar},0`);
+        },
+        valid: (player, _type, _fuse) => {
+          return [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.oppTeam && p.getPetCount() > 0,
+          );
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') {
+            const enemies = [...this.board.garden.values()].filter(
+              p => p.isAlive && p.team === player.oppTeam && p.getPetCount() > 0,
+            );
+            return `/T1(p${enemies.map(p => p.uid).join('p')})`;
+          }
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR006 - OuyangQian (欧阳倩)
+  // ═══════════════════════════════════════════════
+
+  private registerTR006(): EffectRegistration[] {
+    return [
+      // JNT0601 - Sacrifice card type, self-damage, buff ally
+      {
+        code: 'JNT0601',
+        action: (player, _type, _fuse, argst) => {
+          const ut = parseInt(argst, 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          this.harm(null, player, 1);
+          if (player.isAlive) {
+            const ally = this.board.supporter?.team === player.team
+              ? this.board.supporter : this.board.hinder;
+            if (ally && ally.team === player.team) {
+              this.raiseGMessage(`G0IX,${ally.uid},0,1`);
+            }
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length > 0 && (
+            (this.board.supporter && this.board.supporter.team === this.board.rounder.team) ||
+            (this.board.hinder && this.board.hinder.team === this.board.rounder.oppTeam)
+          );
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q1(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+      // JNT0602 - Amplify team draw/discard
+      {
+        code: 'JNT0602',
+        action: (player, type, fuse, _argst) => {
+          if (type === 0) {
+            // Amplify ally draws by +1
+            this.innerGMessage(fuse, 100);
+          } else if (type === 1) {
+            // Force extra discard from allies
+            const allies = [...this.board.garden.values()].filter(
+              p => p.isAlive && p.team === player.team && p.tux.length > 0,
+            );
+            for (const a of allies) {
+              this.raiseGMessage(`G0DS,${a.uid},0,1`);
+            }
+          }
+        },
+        valid: (player, type, fuse) => {
+          if (type === 0) return fuse.includes('G0DH');
+          if (type === 1) return fuse.includes('G0DS');
+          return false;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR007 - LiYiru (李忆如)
+  // ═══════════════════════════════════════════════
+
+  private registerTR007(): EffectRegistration[] {
+    return [
+      // JNT0701 - Use teammate's tux cards
+      {
+        code: 'JNT0701',
+        action: (player, _type, _fuse, argst) => {
+          this.raiseGMessage(`G0IP,${player.team},1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.team && p.uid !== player.uid && p.tux.length > 0,
+          );
+        },
+      },
+      // JNT0702 - Guardian spirit system: track spirit count, draw based on it
+      {
+        code: 'JNT0702',
+        action: (player, _type, _fuse, _argst) => {
+          const spiritCount = player.ram.getInt('GuardianSpirit') + 1;
+          player.ram.set('GuardianSpirit', spiritCount);
+          const drawCount = Math.min(spiritCount, 3);
+          this.raiseGMessage(`G0DH,${player.uid},0,${drawCount}`);
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR008 - XiahouJinxuan (夏侯瑾轩)
+  // ═══════════════════════════════════════════════
+
+  private registerTR008(): EffectRegistration[] {
+    return [
+      // JNT0801 - Coaching: make teammate the lead attacker
+      {
+        code: 'JNT0801',
+        action: (player, _type, _fuse, argst) => {
+          const tar = parseInt(argst, 10);
+          this.raiseGMessage(`G0IB,${tar},2`);
+        },
+        valid: (player, _type, _fuse) => {
+          return [...this.board.garden.values()].some(
+            p => p.isAlive && p.team === player.team && p.uid !== player.uid && p.isTared,
+          );
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') {
+            const allies = [...this.board.garden.values()].filter(
+              p => p.isAlive && p.team === player.team && p.uid !== player.uid && p.isTared,
+            );
+            return `/T1(p${allies.map(p => p.uid).join('p')})`;
+          }
+          return '';
+        },
+      },
+      // JNT0802 - Discard tux to grant rune
+      {
+        code: 'JNT0802',
+        action: (player, _type, _fuse, argst) => {
+          const ut = parseInt(argst, 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          this.raiseGMessage(`G0IF,3`);
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length > 0;
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q1(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR009 - Xia (瑕)
+  // ═══════════════════════════════════════════════
+
+  private registerTR009(): EffectRegistration[] {
+    return [
+      // JNT0901 - On ally draw, swap 1 card with that ally
+      {
+        code: 'JNT0901',
+        action: (player, _type, fuse, _argst) => {
+          const parts = fuse.split(',');
+          const who = parseInt(parts[1], 10);
+          const py = this.board.garden.get(who);
+          if (py && py.tux.length > 0 && player.tux.length > 0) {
+            const myIdx = Math.floor(Math.random() * player.tux.length);
+            const theirIdx = Math.floor(Math.random() * py.tux.length);
+            const myCard = player.tux[myIdx];
+            const theirCard = py.tux[theirIdx];
+            player.tux[myIdx] = theirCard;
+            py.tux[theirIdx] = myCard;
+          }
+        },
+        valid: (player, _type, fuse) => {
+          return fuse.includes('G0DH');
+        },
+      },
+      // JNT0902 - On battle entry, ally draws 2
+      {
+        code: 'JNT0902',
+        action: (player, _type, _fuse, _argst) => {
+          const allies = [...this.board.garden.values()].filter(
+            p => p.isAlive && p.team === player.team && p.uid !== player.uid,
+          );
+          for (const a of allies) {
+            this.raiseGMessage(`G0DH,${a.uid},0,2`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player);
+        },
+      },
+      // JNT0903 - Survival: roll dice to cancel lethal damage
+      {
+        code: 'JNT0903',
+        action: (player, _type, _fuse, _argst) => {
+          const dice = Math.floor(Math.random() * 6) + 1;
+          if (dice < 5) {
+            // Cancel the harm
+            this.innerGMessage('', -100);
+          }
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return harms.some(h => h.who === player.uid && h.n >= player.hp);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR010 - MuChanglan (暮菖兰)
+  // ═══════════════════════════════════════════════
+
+  private registerTR010(): EffectRegistration[] {
+    return [
+      // JNT1001 - Gain/lose STR when enemies equip/unequip weapons
+      {
+        code: 'JNT1001',
+        action: (player, type, _fuse, _argst) => {
+          if (type === 0) this.raiseGMessage(`G0IA,${player.uid},0,1`);
+          else this.raiseGMessage(`G0OA,${player.uid},0,1`);
+        },
+        valid: (player, type, fuse) => {
+          return fuse.includes('G0QZ') || fuse.includes('G0ZI');
+        },
+      },
+      // JNT1002 - Free strike when enemy attacks someone else
+      {
+        code: 'JNT1002',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IP,${player.team},1`);
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.inCampaign && !this.board.isAttendWar(player);
+        },
+      },
+      // JNT1003 - On battle loss, steal 1 card from opponent
+      {
+        code: 'JNT1003',
+        action: (player, _type, _fuse, _argst) => {
+          const opp = this.board.hinder;
+          if (opp && opp.tux.length > 0) {
+            const ut = opp.tux[0];
+            this.raiseGMessage(`G0HQ,2,${player.uid},${opp.uid},0,0,${ut}`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player) && !this.board.isAttendWarSucc(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR011 - JiangCheng (姜承)
+  // ═══════════════════════════════════════════════
+
+  private registerTR011(): EffectRegistration[] {
+    return [
+      // JNT1101 - Take +1 harm in place of teammate
+      {
+        code: 'JNT1101',
+        action: (player, _type, _fuse, argst) => {
+          const tar = parseInt(argst, 10);
+          this.targetPlayer(player.uid, tar);
+          this.raiseGMessage(`G0TT,${player.uid}`);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return harms.some(h => {
+            const py = this.board.garden.get(h.who);
+            return py !== undefined && py.team === player.team && h.who !== player.uid && h.n > 0 &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.TERMIN_AT) &&
+              !FiveElementHelper.isSet(h.mask, HPEvoMask.DECR_INVAO);
+          });
+        },
+        input: (player, _type, fuse, prev) => {
+          if (prev === '') {
+            const harms = this.parseHarmFuse(fuse);
+            const targets = [...new Set(harms.filter(h => {
+              const py = this.board.garden.get(h.who);
+              return py !== undefined && py.team === player.team && h.who !== player.uid && h.n > 0;
+            }).map(h => h.who))];
+            return `/T1(p${targets.join('p')})`;
+          }
+          return '';
+        },
+      },
+      // JNT1102 - +2 STR as supporter
+      {
+        code: 'JNT1102',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IA,${player.uid},0,2`);
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.supporter?.uid === player.uid;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR012 - HuangfuZhuo (皇甫卓)
+  // ═══════════════════════════════════════════════
+
+  private registerTR012(): EffectRegistration[] {
+    return [
+      // JNT1201 - Discard card, teammate draws from monster pile
+      {
+        code: 'JNT1201',
+        action: (player, _type, _fuse, argst) => {
+          const ut = parseInt(argst, 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          if (this.board.monPiles.count > 0) {
+            this.board.monPiles.dequeue();
+            this.raiseGMessage('G2IN,1,1');
+          }
+          player.ram.set('watched', player.ram.getInt('watched') + 1);
+          if (this.board.poolEnabled) {
+            this.raiseGMessage(`G0IX,${player.uid},0,1`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return player.tux.length > 0 && this.board.monPiles.count > 0;
+        },
+        input: (player, _type, _fuse, prev) => {
+          if (prev === '') return `/Q1(p${player.tux.join('p')})`;
+          return '';
+        },
+      },
+      // JNT1202 - +3 STR when no supporter
+      {
+        code: 'JNT1202',
+        action: (player, _type, _fuse, _argst) => {
+          this.raiseGMessage(`G0IA,${player.uid},0,3`);
+        },
+        valid: (player, _type, _fuse) => {
+          return !this.board.supporter || !this.board.supportSucc;
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR013 - XieCangxing (谢沧行)
+  // ═══════════════════════════════════════════════
+
+  private registerTR013(): EffectRegistration[] {
+    return [
+      // JNT1301 - Self-damage to gain STR while unarmed
+      {
+        code: 'JNT1301',
+        action: (player, _type, _fuse, _argst) => {
+          this.harm(null, player, 1);
+          if (player.isAlive) {
+            this.raiseGMessage(`G0IA,${player.uid},0,1`);
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return this.board.isAttendWar(player) && player.weapon === 0;
+        },
+      },
+      // JNT1302 - Force opponent discard pets when HP < 5
+      {
+        code: 'JNT1302',
+        action: (player, _type, _fuse, _argst) => {
+          const opp = this.board.hinder;
+          if (opp && opp.getPetCount() > 0) {
+            const petCount = Math.min(opp.getPetCount(), player.hp * 2);
+            for (let i = 0; i < petCount && opp.pets.length > 0; i++) {
+              const pet = opp.pets[0];
+              this.raiseGMessage(`G0HI,${opp.uid},${pet}`);
+            }
+          }
+        },
+        valid: (player, _type, _fuse) => {
+          return player.hp < 5 && player.hp > 0 && this.board.isAttendWar(player);
+        },
+      },
+    ];
+  }
+
+  // ═══════════════════════════════════════════════
+  // TR014 - Jieluo (结萝)
+  // ═══════════════════════════════════════════════
+
+  private registerTR014(): EffectRegistration[] {
+    return [
+      // JNT1401 - Negate WORM-type lethal damage
+      {
+        code: 'JNT1401',
+        action: (player, _type, fuse, _argst) => {
+          // Cancel the harm
+          this.innerGMessage('', -100);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return player.hp >= 2 &&
+            harms.some(h => h.who === player.uid && h.n >= player.hp &&
+              FiveElementHelper.isSet(h.mask, HPEvoMask.RSV_WORM));
+        },
+      },
+      // JNT1402 - Split damage to male player
+      {
+        code: 'JNT1402',
+        action: (player, _type, _fuse, argst) => {
+          const parts = argst.split(',');
+          const ut = parseInt(parts[0], 10);
+          const tar = parseInt(parts[1], 10);
+          this.raiseGMessage(`G0QZ,${player.uid},${ut}`);
+          this.raiseGMessage(`G0TT,${tar}`);
+        },
+        valid: (player, _type, fuse) => {
+          const harms = this.parseHarmFuse(fuse);
+          return player.tux.length > 0 && harms.some(h => h.who === player.uid && h.n > 0);
+        },
+        input: (player, _type, fuse, prev) => {
+          if (prev === '') return `/Q1(p${player.tux.join('p')})`;
+          if (!prev.includes(',')) {
+            const males = [...this.board.garden.values()].filter(
+              p => p.isAlive && p.gender === 'M' && p.uid !== player.uid,
+            );
+            return `/T1(p${males.map(p => p.uid).join('p')})`;
+          }
+          return '';
+        },
+      },
+    ];
+  }
+
   // ─── Helper methods for harm parsing ───
 
-  private parseHarmFuse(fuse: string): Array<{ who: number; n: number; mask: number }> {
-    const results: Array<{ who: number; n: number; mask: number }> = [];
+  private parseHarmFuse(fuse: string): Array<{ who: number; element: FiveElement; n: number; mask: number }> {
+    const results: Array<{ who: number; element: FiveElement; n: number; mask: number }> = [];
     const parts = fuse.split(';');
     for (const part of parts) {
       if (part === '') continue;
@@ -2611,6 +3892,7 @@ export class SkillCottage extends JNSBase {
       if (pParts.length >= 4) {
         results.push({
           who: parseInt(pParts[0], 10),
+          element: FiveElementHelper.int2Elem(parseInt(pParts[2], 10) || 0),
           n: parseInt(pParts[3], 10) || 0,
           mask: parseInt(pParts[4], 10) || 0,
         });

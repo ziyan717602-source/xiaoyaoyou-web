@@ -9,18 +9,22 @@
 import { Player } from '../player';
 import { Board } from '../board';
 import type { OpEffectRegistration } from './types';
+import type { LibGroup } from '../lib-group';
 
 export class OperationCottage {
   private board: Board;
+  private libGroup: LibGroup;
   private raiseGMessage: (msg: string) => void;
-  private asyncInput: (uid: number, format: string, code: string, arg: string) => string;
+  private asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>;
 
   constructor(
     board: Board,
+    libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     this.board = board;
+    this.libGroup = libGroup;
     this.raiseGMessage = raiseGMessage;
     this.asyncInput = asyncInput;
   }
@@ -45,7 +49,8 @@ export class OperationCottage {
       code: 'CZ01',
       action: (player, _fuse, args) => {
         const card = parseInt(args, 10);
-        const price = player.getPrice('', false); // Simplified - real lookup uses tux code
+        const tux = this.libGroup.tl.decodeTux(card);
+        const price = player.getPrice(tux ? tux.code : '', false);
         this.raiseGMessage(`G0QZ,${player.uid},${card}`);
         if (price > 0) {
           this.raiseGMessage(`G0DH,${player.uid},0,${price}`);
@@ -54,9 +59,15 @@ export class OperationCottage {
       input: (player, _fuse, prev) => {
         if (prev !== '') return '';
         const goods: number[] = [];
-        goods.push(...player.tux.filter(p => player.getPrice('', false) > 0));
+        goods.push(...player.tux.filter(p => {
+          const tux = this.libGroup.tl.decodeTux(p);
+          return tux && player.getPrice(tux.code, false) > 0;
+        }));
         if (!player.weaponDisabled) {
-          goods.push(...player.listOutAllEquips().filter(p => player.getPrice('', true) > 0));
+          goods.push(...player.listOutAllEquips().filter(p => {
+            const tux = this.libGroup.tl.decodeTux(p);
+            return tux && player.getPrice(tux.code, true) > 0;
+          }));
         }
         return `/Q1(p${goods.join('p')})`;
       },
@@ -64,8 +75,14 @@ export class OperationCottage {
         const idx = fuse.indexOf('R');
         const who = fuse.charCodeAt(idx + 1) - 48; // '0' = 48
         return player.uid === who && (
-          player.tux.some(p => player.getPrice('', false) > 0) ||
-          player.listOutAllEquips().some(p => player.getPrice('', true) > 0)
+          player.tux.some(p => {
+            const tux = this.libGroup.tl.decodeTux(p);
+            return tux && player.getPrice(tux.code, false) > 0;
+          }) ||
+          player.listOutAllEquips().some(p => {
+            const tux = this.libGroup.tl.decodeTux(p);
+            return tux && player.getPrice(tux.code, true) > 0;
+          })
         );
       },
     };
@@ -78,9 +95,9 @@ export class OperationCottage {
   private cz02Effect(): OpEffectRegistration {
     return {
       code: 'CZ02',
-      action: (player, _fuse, _args) => {
+      action: async (player, _fuse, _args) => {
         this.raiseGMessage('G1SG,0');
-        const yes = this.asyncInput(
+        const yes = await this.asyncInput(
           player.uid,
           '#是否发动混战？##不发动##发动,Y2',
           'CZ02',
@@ -112,12 +129,12 @@ export class OperationCottage {
   private cz03Effect(): OpEffectRegistration {
     return {
       code: 'CZ03',
-      action: (player, _fuse, args) => {
+      action: async (player, _fuse, args) => {
         const which = parseInt(args, 10);
         if (player.escue.includes(which)) {
           player.escue.splice(player.escue.indexOf(which), 1);
           this.raiseGMessage(`G2OL,${player.uid},${which}`);
-          const side = parseInt(this.asyncInput(player.uid, 'S', 'CZ03', '0'), 10);
+          const side = parseInt(await this.asyncInput(player.uid, 'S', 'CZ03', '0'), 10);
           this.raiseGMessage(`G0IP,${side},1`);
         }
       },
@@ -178,7 +195,7 @@ export class OperationCottage {
   private cz05Effect(): OpEffectRegistration {
     return {
       code: 'CZ05',
-      action: (player, _fuse, args) => {
+      action: async (player, _fuse, args) => {
         const card = parseInt(args, 10);
         if (this.board.csEquips.includes(`${player.uid},${card}`)) return;
         if (player.fakeq.has(card)) {
@@ -186,7 +203,7 @@ export class OperationCottage {
           if (fakeqCode === 'TPT2' || (fakeqCode === '0' && true)) {
             this.raiseGMessage(`G0QZ,${player.uid},${card}`);
             const side = parseInt(
-              this.asyncInput(player.uid, '#战力增加,S', 'CZ05', '0'),
+              await this.asyncInput(player.uid, '#战力增加,S', 'CZ05', '0'),
               10,
             );
             this.raiseGMessage(`G0IP,${side},2`);

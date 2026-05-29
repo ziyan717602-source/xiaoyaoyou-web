@@ -23,14 +23,14 @@ export abstract class JNSBase {
   protected libGroup: LibGroup;
   protected raiseGMessage: (msg: string) => void;
   protected innerGMessage: (msg: string, prior: number) => void;
-  protected asyncInput: (uid: number, format: string, code: string, arg: string) => string;
+  protected asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>;
 
   constructor(
     board: Board,
     libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     this.board = board;
     this.libGroup = libGroup;

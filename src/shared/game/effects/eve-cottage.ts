@@ -7,7 +7,7 @@
 import { JNSBase } from './base';
 import { Player } from '../player';
 import { Board } from '../board';
-import { FiveElement } from '@shared/types/enums';
+import { FiveElement, TuxType } from '@shared/types/enums';
 import { FiveElementHelper, HPEvoMask } from '../card/five-element';
 import type { EveEffectRegistration } from './types';
 import type { LibGroup } from '../lib-group';
@@ -18,7 +18,7 @@ export class EveCottage extends JNSBase {
     libGroup: LibGroup,
     raiseGMessage: (msg: string) => void,
     innerGMessage: (msg: string, prior: number) => void,
-    asyncInput: (uid: number, format: string, code: string, arg: string) => string,
+    asyncInput: (uid: number, format: string, code: string, arg: string) => Promise<string>,
   ) {
     super(board, libGroup, raiseGMessage, innerGMessage, asyncInput);
   }
@@ -48,6 +48,15 @@ export class EveCottage extends JNSBase {
       this.sjt12Effect(),
       this.sjt19Effect(),
       this.sjt20Effect(),
+      this.sjh01Effect(),
+      this.sjh02Effect(),
+      this.sjh03Effect(),
+      this.sjh04Effect(),
+      this.sjh05Effect(),
+      this.sjh06Effect(),
+      this.sjh07Effect(),
+      this.sjh10Effect(),
+      this.sjh11Effect(),
     ];
   }
 
@@ -58,7 +67,7 @@ export class EveCottage extends JNSBase {
   private sj101Effect(): EveEffectRegistration {
     return {
       code: 'SJ101',
-      action: (rd) => {
+      action: async (rd) => {
         if (rd.gender === 'M') {
           this.raiseGMessage(`G0DH,${rd.uid},0,1`);
           this.harm(null, rd, 1, FiveElement.THUNDER);
@@ -67,7 +76,7 @@ export class EveCottage extends JNSBase {
             this.raiseGMessage(`G0QZ,${rd.uid},${rd.armor}`);
           }
           if ([...this.board.garden.values()].some(p => p.isAlive && p.gender === 'M')) {
-            const input = this.asyncInput(
+            const input = await this.asyncInput(
               rd.uid,
               `#「天雷破」的,/T1${this.formatPlayers(p => p.isAlive && p.gender === 'M')}`,
               'SJ101',
@@ -104,8 +113,8 @@ export class EveCottage extends JNSBase {
   private sj103Effect(): EveEffectRegistration {
     return {
       code: 'SJ103',
-      action: (rd) => {
-        const input = this.asyncInput(
+      action: async (rd) => {
+        const input = await this.asyncInput(
           rd.uid,
           `#获得2张手牌的,T1${this.aTeammates(rd)},T1${this.aEnemy(rd)}`,
           'SJ103',
@@ -120,7 +129,7 @@ export class EveCottage extends JNSBase {
   private sj104Effect(): EveEffectRegistration {
     return {
       code: 'SJ104',
-      action: (rd) => {
+      action: async (rd) => {
         const nx = this.board.getOpponent(rd);
         if (this.board.tuxPiles.count >= 4) {
           const pops: number[] = [];
@@ -132,7 +141,7 @@ export class EveCottage extends JNSBase {
           do {
             const ut = [rd.uid, nx.uid][idxs];
             this.raiseGMessage(`G2FU,0,${ut},0,C,${pops.join(',')}`);
-            const input = this.asyncInput(
+            const input = await this.asyncInput(
               ut,
               `+Z1(p${this.board.pZone.join('p')}),#获得卡牌的,/T1${[this.aTeammates(rd), this.aEnemy(rd)][idxs]}`,
               'SJ104',
@@ -177,12 +186,12 @@ export class EveCottage extends JNSBase {
   private sj202Effect(): EveEffectRegistration {
     return {
       code: 'SJ202',
-      action: (rd) => {
+      action: async (rd) => {
         const invs = [...this.board.garden.values()]
           .filter(p => p.isAlive && p.hp >= 2 && p.team === rd.team)
           .map(p => p.uid);
         if (invs.length > 0) {
-          const input = this.asyncInput(
+          const input = await this.asyncInput(
             rd.uid,
             `#HP将为1的,T1(p${invs.join('p')})`,
             'SJ202',
@@ -345,12 +354,19 @@ export class EveCottage extends JNSBase {
     return {
       code: 'SJT03',
       action: (rd) => {
-        // Would need Procedure.ObtainAndAllocateTux
-        // Simplified: draw cards for rounder
         const oppPetCount = [...this.board.garden.values()]
           .filter(p => p.isAlive && p.team === rd.oppTeam)
           .reduce((sum, p) => sum + p.getPetCount(), 0) + 1;
-        this.raiseGMessage(`G0DH,${rd.uid},0,${oppPetCount}`);
+        const teammates = [...this.board.garden.values()]
+          .filter(p => p.isAlive && p.team === rd.team);
+        const cardsPerPlayer = Math.floor(oppPetCount / teammates.length);
+        const remainder = oppPetCount % teammates.length;
+        for (let i = 0; i < teammates.length; i++) {
+          const count = cardsPerPlayer + (i < remainder ? 1 : 0);
+          if (count > 0) {
+            this.raiseGMessage(`G0DH,${teammates[i].uid},0,${count}`);
+          }
+        }
       },
     };
   }
@@ -518,6 +534,328 @@ export class EveCottage extends JNSBase {
         this.raiseGMessage('G2HP,2,0,15');
         this.raiseGMessage('G2HP,4,0,6');
         this.raiseGMessage('G2HP,6,0,7');
+      },
+    };
+  }
+
+  // ═══════════════════════════════════════════════
+  // Holiday Events (SJH01-SJH11)
+  // ═══════════════════════════════════════════════
+
+  private sjh01Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH01',
+      action: async (rd) => {
+        const greater = [...this.board.garden.values()]
+          .filter(p => p.isAlive && p.strh > rd.strh && p.tux.length > 0)
+          .map(p => p.uid);
+        if (greater.length === 0) return;
+        const hint = greater.length === 1
+          ? `#获取手牌,/T1(p${greater[0]})`
+          : `#获取手牌,/T1~2(p${greater.join('p')})`;
+        const select = await this.asyncInput(rd.uid, hint, 'SJH01', '0');
+        if (select.startsWith('/')) return;
+        const tars = select.split(',').map(Number);
+        this.raiseGMessage(`G0TT,${rd.uid}`);
+        for (const tar of tars) {
+          const tg = this.board.garden.get(tar);
+          if (!tg || tg.tux.length === 0) continue;
+          await this.asyncInput(
+            rd.uid,
+            `#获得${tg.name}的,C1(p${tg.tux.map(() => 'p0').join('')})`,
+            'SJH01',
+            '1',
+          );
+          this.raiseGMessage(`G0HQ,0,${rd.uid},${tar},2,1`);
+        }
+      },
+    };
+  }
+
+  private sjh02Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH02',
+      action: async (_rd) => {
+        const list = this.board.orderedPlayer();
+        const showList: number[] = [];
+        const notShowList: number[] = [];
+        for (const ut of list) {
+          const py = this.board.garden.get(ut);
+          if (!py || !py.isAlive) continue;
+          let show = false;
+          const hasTP = py.tux.some(c => {
+            const decoded = this.libGroup.tl.decodeTux(c);
+            return decoded && decoded.type === TuxType.TP;
+          });
+          if (!hasTP) {
+            const select = await this.asyncInput(ut, '#是否展示您的手牌？##是##否,Y2', 'SJH02', '0');
+            if (select === '1') show = true;
+          } else {
+            await this.asyncInput(ut, '#是否展示您的手牌？##否,Y1', 'SJH02', '0');
+          }
+          if (show) {
+            if (py.tux.length > 0) {
+              this.raiseGMessage(`G2FU,0,${ut},0,C,${py.tux.join(',')}`);
+            }
+            showList.push(ut);
+          } else {
+            notShowList.push(ut);
+          }
+        }
+        let result = '';
+        if (notShowList.length > 0) {
+          result += ',' + notShowList.map(p => `${p},1,2`).join(',');
+        }
+        if (showList.length > 0) {
+          result += ',' + showList.map(p => `${p},0,2`).join(',');
+        }
+        if (result) {
+          this.raiseGMessage(`G0DH${result}`);
+        }
+      },
+    };
+  }
+
+  private sjh03Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH03',
+      action: async (_rd) => {
+        const requires = new Map<number, string>();
+        for (const py of this.board.garden.values()) {
+          if (py.getEquipCount() > 0) {
+            requires.set(py.uid, `#须弃置,Q1(p${py.listOutAllEquips().join('p')})`);
+          }
+        }
+        for (const [uid, hint] of requires) {
+          const input = await this.asyncInput(uid, hint, 'SJH03', '0');
+          if (!input.startsWith('/')) {
+            this.raiseGMessage(`G0QZ,${uid},${input}`);
+          }
+        }
+        requires.clear();
+        for (const py of this.board.garden.values()) {
+          const equips = py.listOutAllEquips();
+          if (equips.length >= 2) {
+            requires.set(py.uid, `#须弃置,Q2(p${equips.join('p')})`);
+          } else if (equips.length === 1) {
+            requires.set(py.uid, `#须弃置,Q1(p${equips.join('p')})`);
+          }
+        }
+        for (const [uid, hint] of requires) {
+          const input = await this.asyncInput(uid, hint, 'SJH03', '1');
+          if (!input.startsWith('/')) {
+            this.raiseGMessage(`G0QZ,${uid},${input}`);
+          }
+        }
+        const hasEscues = [...this.board.garden.values()].filter(p => p.escue.length > 0);
+        if (hasEscues.length > 0) {
+          const olParts = hasEscues.flatMap(p => p.escue.map(q => `${p.uid},${q}`));
+          this.raiseGMessage(`G2OL,${olParts.join(',')}`);
+          for (const p of hasEscues) {
+            this.raiseGMessage(`G2AB,NMB,${p.escue.join(',')}`);
+            p.escue.splice(0);
+          }
+        }
+        for (const py of this.board.garden.values()) {
+          if (py.runes.length > 0) {
+            this.raiseGMessage(`G0OF,${py.uid},${py.runes.join(',')}`);
+          }
+        }
+      },
+    };
+  }
+
+  private sjh04Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH04',
+      action: async (rd) => {
+        if (this.board.restMonPiles.count === 0) return;
+        const pop = this.board.restMonPiles.dequeue() as number;
+        this.raiseGMessage('G2FU,0,0,0,NMB');
+        this.raiseGMessage(`G0TT,${rd.uid}`);
+        const mon = this.board.restMonPiles.count > 0 ? null : null;
+        // Decode the monster from NMB pile
+        const monCode = pop;
+        if (this.board.diceValue + rd.strh > 2) {
+          let done = false;
+          while (!done) {
+            const commer = [...this.board.garden.values()].filter(p =>
+              p.isAlive && p.getPetCount() > rd.getPetCount());
+            if (commer.length > 0) {
+              const selT = await this.asyncInput(rd.uid,
+                `#弃置宠物,/T1(p${commer.map(p => p.uid).join('p')})`, 'SJH04', '0');
+              if (!selT.startsWith('/')) {
+                const who = parseInt(selT, 10);
+                const wg = this.board.garden.get(who);
+                if (wg && wg.pets.length > 0) {
+                  const selM = await this.asyncInput(rd.uid,
+                    `#弃置宠物,/M1(p${wg.pets.filter(q => q !== 0).join('p')})`, 'SJH04', '1');
+                  if (!selM.startsWith('/')) {
+                    this.raiseGMessage(`G2LP,${who},${selM}`);
+                    done = true;
+                  }
+                }
+              } else {
+                done = true;
+              }
+            } else {
+              done = true;
+            }
+          }
+        } else {
+          this.harm(null, rd, rd.getPetCount() + 1);
+        }
+      },
+    };
+  }
+
+  private sjh05Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH05',
+      action: async (rd) => {
+        if (rd.tux.length > 0) {
+          const nx = this.board.getOpponent(rd);
+          this.raiseGMessage(`G2FU,0,${nx.uid},0,C,${rd.tux.join(',')}`);
+          const select = await this.asyncInput(nx.uid, `C1(p${rd.tux.join('p')})`, 'SJH05', '0');
+          if (!select.startsWith('/')) {
+            const ut = parseInt(select, 10);
+            if (rd.tux.includes(ut)) {
+              this.raiseGMessage(`G0QZ,${rd.uid},${ut}`);
+            }
+          }
+        }
+        this.raiseGMessage(`G0DH,${rd.uid},0,1`);
+      },
+    };
+  }
+
+  private sjh06Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH06',
+      action: async (rd) => {
+        for (const ut of this.board.orderedPlayer(rd.uid)) {
+          if (rd.getAllCardsCount() === 0) break;
+          const py = this.board.garden.get(ut);
+          if (!py || ut === rd.uid || !py.isAlive) continue;
+          this.raiseGMessage(`G0TT,${rd.uid}`);
+          const second = await this.asyncInput(rd.uid,
+            `#交予${py.name}的,Q1(p${rd.listOutAllCards().join('p')})`, 'SJH06', '0');
+          const card = parseInt(second, 10);
+          if (card === 0) {
+            this.raiseGMessage(`G0HQ,0,${ut},${rd.uid},2,1`);
+          } else {
+            this.raiseGMessage(`G0HQ,0,${ut},${rd.uid},0,1,${card}`);
+          }
+        }
+        const alive = [...this.board.garden.values()].filter(p => p.isAlive && p.uid !== rd.uid);
+        const allLowerOrEqual = alive.some(p => p.hp <= rd.hp) &&
+          alive.some(p => p.strh <= rd.strh) &&
+          alive.some(p => p.dexh <= rd.dexh);
+        if (!allLowerOrEqual || alive.length === 0) {
+          this.cure(null, rd, this.board.garden.size);
+        }
+      },
+    };
+  }
+
+  private sjh07Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH07',
+      action: async (rd) => {
+        let count = 0;
+        for (const ut of this.board.orderedPlayer(rd.uid)) {
+          const py = this.board.garden.get(ut);
+          if (!py || ut === rd.uid || !py.isAlive || py.getAllCardsCount() === 0) continue;
+          this.raiseGMessage(`G0TT,${rd.uid}`);
+          const second = await this.asyncInput(rd.uid,
+            `#获得${py.name}的,C1(p${py.listOutAllCardsWithEncrypt().join('p')})`, 'SJH07', '0');
+          const card = parseInt(second, 10);
+          if (card === 0) {
+            this.raiseGMessage(`G0HQ,0,${rd.uid},${ut},2,1`);
+          } else {
+            this.raiseGMessage(`G0HQ,0,${rd.uid},${ut},0,1,${card}`);
+          }
+          if (py.team === rd.oppTeam) ++count;
+        }
+        if (count > 0) {
+          this.harm(null, rd, count);
+        }
+      },
+    };
+  }
+
+  private sjh10Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH10',
+      action: async (rd) => {
+        const possible: number[] = [];
+        const name = ['手牌', '装备牌', '标记', '助战NPC'];
+        if (rd.tux.length > 0) possible.push(0);
+        if (rd.getEquipCount() > 0) possible.push(1);
+        if (rd.runes.length > 0) possible.push(2);
+        if (rd.escue.length > 0) possible.push(3);
+        if (possible.length === 0) return;
+        const select = await this.asyncInput(rd.uid,
+          `#请选择要全部弃置的牌类型##${possible.map(p => name[p]).join('##')},Y${possible.length}`,
+          'SJH10', '0');
+        if (select.startsWith('/')) return;
+        const pick = possible[parseInt(select, 10) - 1];
+        if (pick === 0) {
+          this.raiseGMessage(`G0DH,${rd.uid},2,${rd.tux.length}`);
+          this.raiseGMessage(`G0DH,${rd.uid},0,1`);
+        } else if (pick === 1) {
+          const equips = rd.listOutAllEquips();
+          this.raiseGMessage(`G0QZ,${rd.uid},${equips.join(',')}`);
+          this.raiseGMessage(`G0HQ,2,${rd.uid},0,0,${equips[0]}`);
+        } else if (pick === 2) {
+          this.raiseGMessage(`G0OF,${rd.uid},${rd.runes.join(',')}`);
+          const obtain = await this.asyncInput(rd.uid,
+            `#获得标记,F1(p${rd.runes.join('p')})`, 'SJH10', '1');
+          if (!obtain.startsWith('/')) {
+            this.raiseGMessage(`G0IF,${rd.uid},${obtain}`);
+          }
+        } else if (pick === 3) {
+          const escueParts = rd.escue.map(p => `${rd.uid},${p}`).join(',');
+          this.raiseGMessage(`G2OL,${escueParts}`);
+          this.raiseGMessage(`G2AB,NMB,${rd.escue.join(',')}`);
+          rd.escue.splice(0);
+        }
+      },
+    };
+  }
+
+  private sjh11Effect(): EveEffectRegistration {
+    return {
+      code: 'SJH11',
+      action: async (rd) => {
+        const excess = [...this.board.garden.values()].filter(p =>
+          p.isAlive && p.team === rd.oppTeam && p.tux.length > 3);
+        const deficit = [...this.board.garden.values()].filter(p =>
+          p.isAlive && p.team === rd.oppTeam && p.tux.length < 3 && p.tux.length > 0);
+        if (excess.length > 0) {
+          const dict = new Map<number, string>();
+          for (const p of excess) {
+            dict.set(p.uid, `#交予对方的,Q${p.tux.length - 3}(p${p.tux.join('p')})`);
+          }
+          for (const [uid, hint] of dict) {
+            const ans = await this.asyncInput(uid, hint, 'SJH11', '0');
+            if (!ans.startsWith('/')) {
+              const cards = ans.split(',').map(Number);
+              const tg = this.board.garden.get(uid);
+              if (tg) {
+                const fac = this.board.facer(tg);
+                if (fac && fac.isAlive) {
+                  this.raiseGMessage(`G0HQ,0,${fac.uid},${uid},1,${cards.length},${cards.join(',')}`);
+                  this.raiseGMessage(`G0DH,${uid},0,${cards.length * 2}`);
+                }
+              }
+            }
+          }
+        }
+        if (deficit.length > 0) {
+          const parts = deficit.map(p => `${p.uid},1,${3 - p.tux.length}`).join(',');
+          this.raiseGMessage(`G0DH,${parts}`);
+        }
       },
     };
   }

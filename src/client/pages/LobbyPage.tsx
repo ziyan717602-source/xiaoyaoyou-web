@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { ServerMessage } from '@shared/network';
-import { useWebSocket } from '../hooks/useWebSocket';
+import { useWebSocketContext } from '../contexts/WebSocketContext';
 import { useRoom } from '../hooks/useRoom';
 import RoomList from '../components/lobby/RoomList';
 import CreateRoomDialog from '../components/lobby/CreateRoomDialog';
@@ -11,7 +11,7 @@ import ErrorToast from '../components/common/ErrorToast';
 
 const LobbyPage: React.FC = () => {
   const navigate = useNavigate();
-  const websocket = useWebSocket();
+  const websocket = useWebSocketContext();
   const room = useRoom(websocket);
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [showJoinDialog, setShowJoinDialog] = useState(false);

@@ -63,7 +63,7 @@ describe('JNSBase', () => {
       (msg, prior) => innerMessages.push({ msg, prior }),
       (uid, format, code, arg) => {
         asyncInputs.push(format);
-        return asyncInputs.length > 0 ? asyncInputs[asyncInputs.length - 1] : '/';
+        return Promise.resolve(asyncInputs.length > 0 ? asyncInputs[asyncInputs.length - 1] : '/');
       },
     );
 

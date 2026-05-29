@@ -122,14 +122,13 @@ export class TuxLib {
   }
 
   uniqueEquipSerial(code: string): number {
-    let ans = 0;
+    let count = 0;
     for (const [, tux] of this.dicts) {
       if (tux.code === code) {
-        if (ans === 0) ans = 1; // simplified
-        else return 0;
+        count++;
       }
     }
-    return ans;
+    return count;
   }
 
   isTuxInGroup(tux: Tux, level: number): boolean {

@@ -42,7 +42,7 @@ describe('GLoop', () => {
   });
 
   it('should accept config overrides', () => {
-    const custom = new GLoop(eventBus, board, skillRegistry, {
+    const custom = new GLoop(eventBus, board, skillRegistry, undefined, {
       maxQueueSize: 500,
       enableLogging: false,
     });
@@ -68,41 +68,41 @@ describe('GLoop', () => {
     expect(gLoop.queueLength).toBe(0);
   });
 
-  it('should raise G messages', () => {
+  it('should raise G messages', async () => {
     const handler = vi.fn();
     eventBus.on('G0OH', handler);
 
-    gLoop.raiseGMessage('G0OH,1,2,3,1');
+    await gLoop.raiseGMessage('G0OH,1,2,3,1');
     expect(handler).toHaveBeenCalled();
   });
 
-  it('should handle G2 messages', () => {
+  it('should handle G2 messages', async () => {
     const handler = vi.fn();
     eventBus.on('G2AS', handler);
 
-    gLoop.raiseGMessage('G2AS,0');
+    await gLoop.raiseGMessage('G2AS,0');
     expect(handler).toHaveBeenCalled();
   });
 
-  it('should emit to event bus on raise', () => {
+  it('should emit to event bus on raise', async () => {
     const handler = vi.fn();
     eventBus.on('G1TH', handler);
 
-    gLoop.raiseGMessage('G1TH,1,0,5,-3,1');
+    await gLoop.raiseGMessage('G1TH,1,0,5,-3,1');
     expect(handler).toHaveBeenCalled();
   });
 
-  it('should broadcast messages via handler', () => {
+  it('should broadcast messages via handler', async () => {
     const broadcast = vi.fn();
     gLoop.setMessageHandler(broadcast);
 
-    gLoop.raiseGMessage('G0OH,1,2,3,1');
+    await gLoop.raiseGMessage('G0OH,1,2,3,1');
     expect(broadcast).toHaveBeenCalledWith('G0OH,1,2,3,1');
   });
 
-  it('should handle unknown event types gracefully', () => {
+  it('should handle unknown event types gracefully', async () => {
     // Should not throw
-    gLoop.raiseGMessage('G0XX,1,2');
+    await gLoop.raiseGMessage('G0XX,1,2');
   });
 
   it('should support pause and resume', () => {

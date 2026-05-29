@@ -17,15 +17,26 @@ import { SkillRegistry } from './engine/skill-registry';
 import { GLoop } from './engine/g-loop';
 import { RoundManager } from './engine/round';
 import { SelectHero } from './engine/select-hero';
-import { CardEffectRegistry } from './effects/registry';
+import { CardEffectRegistry, NpcEffectRegistry, RuneEffectRegistry, EveEffectRegistry, OperationEffectRegistry } from './effects/registry';
 import { TuxCottage } from './effects/tux-cottage';
 import { SkillCottage } from './effects/skill-cottage';
 import { NpcCottage } from './effects/npc-cottage';
 import { RuneCottage } from './effects/rune-cottage';
 import { EveCottage } from './effects/eve-cottage';
 import { OperationCottage } from './effects/operation-cottage';
+import { MonsterCottage } from './effects/monster-cottage';
 import type { AIStrategy } from './ai/types';
 import { AIPlayer } from './ai/types';
+
+/**
+ * InputProvider - Interface for getting player input from external sources.
+ * AI players use AIPlayer.getInput() which returns synchronously.
+ * Network players use this interface which returns a Promise,
+ * allowing the game to wait for the player's response over the network.
+ */
+export interface InputProvider {
+  getInput(uid: number, format: string, code: string, arg: string): Promise<string>;
+}
 
 /** Game configuration */
 export interface GameConfig {
@@ -43,6 +54,8 @@ export interface GameConfig {
   libGroupData: LibGroupData;
   /** Level code for filtering cards */
   levelCode: number;
+  /** Optional input provider for network players */
+  inputProvider?: InputProvider;
 }
 
 /** Game result after settlement */
@@ -75,11 +88,17 @@ export class Game {
   private roundManager: RoundManager;
   private selectHero: SelectHero;
   private effectRegistry: CardEffectRegistry;
+  private npcEffectRegistry: NpcEffectRegistry;
+  private runeEffectRegistry: RuneEffectRegistry;
+  private eveEffectRegistry: EveEffectRegistry;
+  private operationEffectRegistry: OperationEffectRegistry;
+  private monsterCottage: MonsterCottage | undefined;
 
   // Game state
   private config: GameConfig;
   private players: Map<number, Player>;
   private aiPlayers: Map<number, AIPlayer>;
+  private inputProvider: InputProvider | null;
   private initialized = false;
   private running = false;
   private rng: () => number;
@@ -88,6 +107,7 @@ export class Game {
     this.config = config;
     this.players = new Map();
     this.aiPlayers = new Map();
+    this.inputProvider = config.inputProvider ?? null;
     this.rng = this.createRNG(config.seed);
 
     // Initialize core components
@@ -95,8 +115,8 @@ export class Game {
     this.libGroup = new LibGroup();
     this.eventBus = new EventBus();
     this.skillRegistry = new SkillRegistry(this.eventBus);
-    this.gLoop = new GLoop(this.eventBus, this.board, this.skillRegistry);
-    this.roundManager = new RoundManager(this.board, this.eventBus);
+    this.gLoop = new GLoop(this.eventBus, this.board, this.skillRegistry, this.libGroup);
+    this.roundManager = new RoundManager(this.board, this.eventBus, this.libGroup);
     this.selectHero = new SelectHero(
       this.board,
       this.eventBus,
@@ -104,6 +124,10 @@ export class Game {
       config.levelCode,
     );
     this.effectRegistry = new CardEffectRegistry();
+    this.npcEffectRegistry = new NpcEffectRegistry();
+    this.runeEffectRegistry = new RuneEffectRegistry();
+    this.eveEffectRegistry = new EveEffectRegistry();
+    this.operationEffectRegistry = new OperationEffectRegistry();
   }
 
   /**
@@ -205,8 +229,8 @@ export class Game {
    * Register card effects from all Cottage modules.
    */
   private registerEffects(): void {
-    const raiseGMessage = (msg: string) => this.gLoop.raiseGMessage(msg);
-    const innerGMessage = (msg: string, prior: number) => this.gLoop.innerGMessage(msg, prior);
+    const raiseGMessage = (msg: string) => { this.gLoop.raiseGMessage(msg); };
+    const innerGMessage = (msg: string, prior: number) => { this.gLoop.innerGMessage(msg, prior); };
     const asyncInput = (uid: number, format: string, code: string, arg: string) =>
       this.getInput(uid, format, code, arg);
 
@@ -220,24 +244,26 @@ export class Game {
 
     // NPC effects
     const npcCottage = new NpcCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
-    const npcRegs = npcCottage.registerAll();
-    // NPC effects use a separate registry type; store for future use
-    void npcRegs;
+    this.npcEffectRegistry.registerAll(npcCottage.registerAll());
 
     // Rune effects
     const runeCottage = new RuneCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
-    const runeRegs = runeCottage.registerAll();
-    void runeRegs;
+    this.runeEffectRegistry.registerAll(runeCottage.registerAll());
 
     // Evenement effects
     const eveCottage = new EveCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
-    const eveRegs = eveCottage.registerAll();
-    void eveRegs;
+    this.eveEffectRegistry.registerAll(eveCottage.registerAll());
 
     // Operation effects (CZ series)
-    const operationCottage = new OperationCottage(this.board, raiseGMessage, asyncInput);
-    const opRegs = operationCottage.registerAll();
-    void opRegs;
+    const operationCottage = new OperationCottage(this.board, this.libGroup, raiseGMessage, asyncInput);
+    this.operationEffectRegistry.registerAll(operationCottage.registerAll());
+
+    // Monster effects (debut, curtain, win/lose, consume)
+    this.monsterCottage = new MonsterCottage(this.board, this.libGroup, raiseGMessage, innerGMessage, asyncInput);
+    this.monsterCottage.registerDelegates(this.libGroup.ml);
+
+    // NPC debut effects
+    npcCottage.registerNpcDelegates(this.libGroup.nl);
   }
 
   /**
@@ -418,15 +444,19 @@ export class Game {
   }
 
   /**
-   * Get input from AI player or empty string for human players.
-   * This is the bridge between the game's input system and AI decisions.
+   * Get input from AI player, InputProvider, or empty string for human players.
+   * AI players return synchronously (auto-wrapped in resolved Promise).
+   * Network players use InputProvider which returns a Promise that resolves
+   * when the player responds over the network.
    */
-  private getInput(uid: number, format: string, code: string, arg: string): string {
+  private async getInput(uid: number, format: string, code: string, arg: string): Promise<string> {
     const aiPlayer = this.aiPlayers.get(uid);
     if (aiPlayer) {
       return aiPlayer.getInput(format, code, arg);
     }
-    // Human players would be handled by network layer
+    if (this.inputProvider) {
+      return this.inputProvider.getInput(uid, format, code, arg);
+    }
     return '';
   }
 
@@ -477,6 +507,11 @@ export class Game {
   getRoundManager(): RoundManager { return this.roundManager; }
   getSelectHero(): SelectHero { return this.selectHero; }
   getEffectRegistry(): CardEffectRegistry { return this.effectRegistry; }
+  getNpcEffectRegistry(): NpcEffectRegistry { return this.npcEffectRegistry; }
+  getRuneEffectRegistry(): RuneEffectRegistry { return this.runeEffectRegistry; }
+  getEveEffectRegistry(): EveEffectRegistry { return this.eveEffectRegistry; }
+  getOperationEffectRegistry(): OperationEffectRegistry { return this.operationEffectRegistry; }
+  getMonsterCottage(): MonsterCottage | undefined { return this.monsterCottage; }
   getPlayers(): Map<number, Player> { return this.players; }
   getAIPlayers(): Map<number, AIPlayer> { return this.aiPlayers; }
   isRunning(): boolean { return this.running; }

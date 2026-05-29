@@ -17,13 +17,15 @@ export interface UseWebSocketReturn {
   disconnect: () => void;
 }
 
-const WS_URL = 'ws://localhost:3000';
+const WS_URL = (import.meta as unknown as { env: Record<string, string> }).env?.VITE_WS_URL || 'ws://localhost:3000';
 const MAX_RECONNECT_ATTEMPTS = 10;
+const PING_INTERVAL = 25000; // 25 seconds
 
 export function useWebSocket(url: string = WS_URL): UseWebSocketReturn {
   const wsRef = useRef<WebSocket | null>(null);
   const handlersRef = useRef<Map<string, (message: ServerMessage) => void>>(new Map());
   const reconnectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pingTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const reconnectAttemptsRef = useRef(0);
   const [state, setState] = useState<WebSocketState>({
     isConnected: false,
@@ -36,6 +38,10 @@ export function useWebSocket(url: string = WS_URL): UseWebSocketReturn {
     if (reconnectTimerRef.current) {
       clearTimeout(reconnectTimerRef.current);
       reconnectTimerRef.current = null;
+    }
+    if (pingTimerRef.current) {
+      clearInterval(pingTimerRef.current);
+      pingTimerRef.current = null;
     }
     if (wsRef.current) {
       wsRef.current.onopen = null;
@@ -65,6 +71,14 @@ export function useWebSocket(url: string = WS_URL): UseWebSocketReturn {
           reconnectAttempts: 0,
           error: null,
         }));
+
+        // Start heartbeat
+        if (pingTimerRef.current) clearInterval(pingTimerRef.current);
+        pingTimerRef.current = setInterval(() => {
+          if (wsRef.current?.readyState === WebSocket.OPEN) {
+            wsRef.current.send(JSON.stringify({ type: 'ping', payload: { timestamp: Date.now() } }));
+          }
+        }, PING_INTERVAL);
       };
 
       ws.onmessage = (event) => {
@@ -75,6 +89,10 @@ export function useWebSocket(url: string = WS_URL): UseWebSocketReturn {
       };
 
       ws.onclose = () => {
+        if (pingTimerRef.current) {
+          clearInterval(pingTimerRef.current);
+          pingTimerRef.current = null;
+        }
         setState(prev => ({
           ...prev,
           isConnected: false,
