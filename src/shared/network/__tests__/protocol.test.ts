@@ -22,8 +22,8 @@ describe('Protocol', () => {
       expect(createMessage('room_left', { roomId: 'X' }).type).toBe('room_left');
       expect(createMessage('room_list', { rooms: [] }).type).toBe('room_list');
       expect(createMessage('game_started', { playerCount: 4 }).type).toBe('game_started');
-      expect(createMessage('player_disconnected', { playerName: 'A' }).type).toBe('player_disconnected');
-      expect(createMessage('player_reconnected', { playerName: 'B' }).type).toBe('player_reconnected');
+      expect(createMessage('player_disconnected', { playerName: 'A', players: [] }).type).toBe('player_disconnected');
+      expect(createMessage('player_reconnected', { playerName: 'B', players: [] }).type).toBe('player_reconnected');
       expect(createMessage('pong', { timestamp: 0 }).type).toBe('pong');
     });
   });
@@ -41,8 +41,24 @@ describe('Protocol', () => {
     });
 
     it('should have correct game_state structure', () => {
-      const msg = { type: 'game_state' as const, payload: { state: { players: [], currentTurn: 1, phase: '00', board: { tuxPileCount: 10, monPileCount: 5, evePileCount: 3 } } } };
+      const msg = { type: 'game_state' as const, payload: { state: { players: [], currentTurn: 1, phase: '00', board: { tuxPileCount: 10, monPileCount: 5, evePileCount: 3, activeMonster: null } } } };
       expect(msg.payload.state.board.tuxPileCount).toBe(10);
+      expect(msg.payload.state.board.activeMonster).toBeNull();
+    });
+
+    it('should have correct activeMonster structure', () => {
+      const msg = { type: 'game_state' as const, payload: { state: { players: [], currentTurn: 1, phase: '00', board: { tuxPileCount: 10, monPileCount: 5, evePileCount: 3, activeMonster: { code: 'MO001', name: '蝴蝶仙子', str: 5, agl: 3, element: 1, level: 2 } } } } };
+      expect(msg.payload.state.board.activeMonster).not.toBeNull();
+      expect(msg.payload.state.board.activeMonster!.code).toBe('MO001');
+      expect(msg.payload.state.board.activeMonster!.name).toBe('蝴蝶仙子');
+      expect(msg.payload.state.board.activeMonster!.str).toBe(5);
+      expect(msg.payload.state.board.activeMonster!.agl).toBe(3);
+    });
+
+    it('should have correct PlayerState with handCount', () => {
+      const msg = { type: 'game_state' as const, payload: { state: { players: [{ uid: 1, name: 'Alice', hp: 5, hand: ['JP01'], handCount: 3, team: 1 }], currentTurn: 1, phase: '00', board: { tuxPileCount: 10, monPileCount: 5, evePileCount: 3 } } } };
+      expect(msg.payload.state.players[0].handCount).toBe(3);
+      expect(msg.payload.state.players[0].hand).toHaveLength(1);
     });
 
     it('should have correct input_request structure', () => {
@@ -54,6 +70,20 @@ describe('Protocol', () => {
       const msg = { type: 'game_over' as const, payload: { result: { winner: 1, totalRounds: 10, akaScore: 15, aoScore: 12, reason: 'victory' as const } } };
       expect(msg.payload.result.winner).toBe(1);
       expect(msg.payload.result.reason).toBe('victory');
+    });
+
+    it('should have correct hero_select_request structure', () => {
+      const msg = { type: 'hero_select_request' as const, payload: { uid: 1, availableHeroes: [{ avatar: 101, name: '李逍遥', group: 1, gender: 'M', hp: 5, str: 2, dex: 2 }] } };
+      expect(msg.payload.uid).toBe(1);
+      expect(msg.payload.availableHeroes).toHaveLength(1);
+      expect(msg.payload.availableHeroes[0].name).toBe('李逍遥');
+    });
+
+    it('should have correct hero_select_response structure', () => {
+      const msg = { type: 'hero_select_response' as const, payload: { uid: 1, heroId: 101, success: true } };
+      expect(msg.payload.uid).toBe(1);
+      expect(msg.payload.heroId).toBe(101);
+      expect(msg.payload.success).toBe(true);
     });
   });
 
@@ -93,6 +123,13 @@ describe('Protocol', () => {
       expect(msg!.type).toBe('start_game');
     });
 
+    it('should parse a hero_select message', () => {
+      const raw = JSON.stringify({ type: 'hero_select', payload: { heroId: 101 } });
+      const msg = parseMessage(raw);
+      expect(msg).not.toBeNull();
+      expect(msg!.type).toBe('hero_select');
+    });
+
     it('should parse a player_input message', () => {
       const raw = JSON.stringify({ type: 'player_input', payload: { input: 'attack' } });
       const msg = parseMessage(raw);
@@ -101,7 +138,7 @@ describe('Protocol', () => {
     });
 
     it('should parse a get_state message', () => {
-      const raw = JSON.stringify({ type: 'get_state' });
+      const raw = JSON.stringify({ type: 'get_state', payload: { requestUid: 1 } });
       const msg = parseMessage(raw);
       expect(msg).not.toBeNull();
       expect(msg!.type).toBe('get_state');

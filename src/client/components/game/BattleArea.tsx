@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PlayerState, BoardState } from '@shared/network';
 import PlayerInfo from './PlayerInfo';
+import MonsterArea from './MonsterArea';
 
 interface BattleAreaProps {
   players: PlayerState[];
@@ -50,6 +51,7 @@ const BattleArea: React.FC<BattleAreaProps> = ({
           <span className="battle-info-label">事件堆</span>
           <span className="battle-info-value">{board.evePileCount}</span>
         </div>
+        <MonsterArea monster={board.activeMonster} />
       </div>
       <div className="battle-area-players">
         {players.map((player) => (

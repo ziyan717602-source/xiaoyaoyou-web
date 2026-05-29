@@ -155,6 +155,7 @@ describe('GameSession', () => {
       expect(state.players.length).toBe(2);
       expect(state.board).toBeDefined();
       expect(state.phase).toBe('waiting');
+      expect(state.board.activeMonster).toBeNull();
     });
 
     it('should include player details in state before game starts', () => {

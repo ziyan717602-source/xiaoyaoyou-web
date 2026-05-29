@@ -11,27 +11,31 @@
 export type ClientMessage =
   | { type: 'create_room'; payload: { playerCount: number; packages: number[]; playerName?: string } }
   | { type: 'join_room'; payload: { roomId: string; playerName: string } }
+  | { type: 'reconnect'; payload: { roomId: string; playerName: string } }
   | { type: 'leave_room' }
   | { type: 'list_rooms' }
   | { type: 'start_game' }
+  | { type: 'hero_select'; payload: { heroId: number } }
   | { type: 'player_input'; payload: { input: string } }
-  | { type: 'get_state' }
+  | { type: 'get_state'; payload: { requestUid: number } }
   | { type: 'ping'; payload: { timestamp: number } };
 
 // === Server -> Client Messages ===
 
 export type ServerMessage =
-  | { type: 'room_created'; payload: { roomId: string; players: PlayerInfo[] } }
-  | { type: 'room_joined'; payload: { roomId: string; players: PlayerInfo[] } }
+  | { type: 'room_created'; payload: { roomId: string; players: PlayerInfo[]; myUid: number } }
+  | { type: 'room_joined'; payload: { roomId: string; players: PlayerInfo[]; myUid: number } }
   | { type: 'room_left'; payload: { roomId: string } }
   | { type: 'room_list'; payload: { rooms: RoomInfo[] } }
   | { type: 'player_joined'; payload: { playerName: string; players: PlayerInfo[] } }
   | { type: 'player_left'; payload: { playerName: string; players: PlayerInfo[] } }
-  | { type: 'player_disconnected'; payload: { playerName: string } }
-  | { type: 'player_reconnected'; payload: { playerName: string } }
+  | { type: 'player_disconnected'; payload: { playerName: string; players: PlayerInfo[] } }
+  | { type: 'player_reconnected'; payload: { playerName: string; players: PlayerInfo[] } }
   | { type: 'game_started'; payload: { playerCount: number } }
+  | { type: 'hero_select_request'; payload: { uid: number; availableHeroes: HeroInfo[] } }
+  | { type: 'hero_select_response'; payload: { uid: number; heroId: number; success: boolean } }
   | { type: 'game_state'; payload: { state: GameState } }
-  | { type: 'input_request'; payload: { format: string; code: string; arg: string } }
+  | { type: 'input_request'; payload: { uid: number; format: string; code: string; arg: string } }
   | { type: 'game_over'; payload: { result: GameResultPayload } }
   | { type: 'error'; payload: { code: string; message: string } }
   | { type: 'pong'; payload: { timestamp: number } };
@@ -43,6 +47,16 @@ export interface PlayerInfo {
   name: string;
   isReady: boolean;
   isConnected: boolean;
+}
+
+export interface HeroInfo {
+  avatar: number;
+  name: string;
+  group: number;
+  gender: string;
+  hp: number;
+  str: number;
+  dex: number;
 }
 
 export interface RoomInfo {
@@ -63,14 +77,25 @@ export interface PlayerState {
   uid: number;
   name: string;
   hp: number;
-  hand: string[]; // Card codes (e.g. "JP01", "HL001"), resolved server-side
+  hand: string[]; // Only populated for the requesting player; empty for others
+  handCount: number; // Visible to all players
   team: number;
+}
+
+export interface ActiveMonster {
+  code: string;
+  name: string;
+  str: number;
+  agl: number;
+  element: number;
+  level: number;
 }
 
 export interface BoardState {
   tuxPileCount: number;
   monPileCount: number;
   evePileCount: number;
+  activeMonster: ActiveMonster | null;
 }
 
 /** Game result payload sent over the network (excludes Player object reference) */

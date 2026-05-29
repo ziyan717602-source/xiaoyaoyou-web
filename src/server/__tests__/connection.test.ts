@@ -157,22 +157,33 @@ describe('ConnectionManager', () => {
       if (conn1) conn1.roomId = 'ROOM1';
       if (conn2) conn2.roomId = 'ROOM2';
 
+      // Verify room assignments
+      expect(manager.getRoomConnections('ROOM1')).toHaveLength(1);
+      expect(manager.getRoomConnections('ROOM2')).toHaveLength(1);
+
+      // Collect all messages from ws1 for a short window
+      const ws1Messages: any[] = [];
+      ws1.on('message', (data) => {
+        ws1Messages.push(JSON.parse(data.toString()));
+      });
+
       manager.broadcast('ROOM1', { type: 'pong', payload: { timestamp: 789 } });
 
-      // ws1 should get the message (skip heartbeat pings)
-      let msg1: any = null;
-      for (let i = 0; i < 10; i++) {
-        const m = await waitForMessage(ws1, 500);
-        if (m.type === 'pong') { msg1 = m; break; }
-      }
-      expect(msg1?.type).toBe('pong');
+      // Wait for broadcast to arrive
+      await new Promise((r) => setTimeout(r, 200));
 
-      // ws2 should NOT get the message - verify no message arrives within a short window
+      // ws1 should have received the broadcast pong
+      const broadcastMsg = ws1Messages.find(m => m.type === 'pong' && m.payload.timestamp === 789);
+      expect(broadcastMsg).toBeDefined();
+
+      // ws2 should NOT get the message
       let gotMessage = false;
-      ws2.once('message', () => { gotMessage = true; });
+      ws2.on('message', () => { gotMessage = true; });
       await new Promise((r) => setTimeout(r, 200));
       expect(gotMessage).toBe(false);
 
+      ws1.removeAllListeners();
+      ws2.removeAllListeners();
       ws1.close();
       ws2.close();
     });

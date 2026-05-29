@@ -126,6 +126,15 @@ export class ConnectionManager {
   }
 
   /**
+   * Find a connection by room ID and player name.
+   */
+  findConnectionByPlayer(roomId: string, playerName: string): Connection | undefined {
+    return Array.from(this.connections.values()).find(
+      (c) => c.roomId === roomId && c.playerName === playerName,
+    );
+  }
+
+  /**
    * Get all connection IDs.
    */
   getConnectionIds(): string[] {
