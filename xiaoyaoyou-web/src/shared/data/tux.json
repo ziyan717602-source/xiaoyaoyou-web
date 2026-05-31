@@ -1,0 +1,3266 @@
+[
+  {
+    "Name": "偷盗",
+    "Code": "JP01",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1,
+      6
+    ],
+    "Range": [
+      1,
+      2,
+      119,
+      119
+    ],
+    "Description": "您抽取任意玩家的1张手牌。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "$"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "窥测天机",
+    "Code": "JP02",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1,
+      6
+    ],
+    "Range": [
+      3,
+      4,
+      120,
+      120
+    ],
+    "Description": "您从怪物牌组上面翻取2张怪牌，检视后放回原位，先允许改变二者之间的顺序。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "五气朝元",
+    "Code": "JP03",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      5,
+      6
+    ],
+    "Description": "我方全体HP+1。",
+    "Special": {
+      "典当": "您的技牌阶段，可以弃掉此牌，补1张牌。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "0"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "鼠儿果",
+    "Code": "JP04",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      7,
+      9
+    ],
+    "Description": "您指定一人补2张手牌。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "天雷破",
+    "Code": "JP05",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      10,
+      12
+    ],
+    "Description": "您指定一名玩家HP-2，此伤害为雷属性。",
+    "Special": {},
+    "Priorities": [
+      0,
+      0
+    ],
+    "Occurs": [
+      "R#GR",
+      "^"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      false
+    ]
+  },
+  {
+    "Name": "铜钱镖",
+    "Code": "JP06",
+    "Type": "JP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      13,
+      15,
+      57,
+      57
+    ],
+    "Description": "弃掉任意玩家的1张手牌或装备。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "$"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "金蝉脱壳",
+    "Code": "ZP01",
+    "Type": "ZP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      16,
+      17
+    ],
+    "Description": "参战时可使用。强制结束本场战斗，不进行胜负结算。",
+    "Special": {
+      "结界乙": "本牌不可被【净衣咒】响应。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "天罡战气",
+    "Code": "ZP02",
+    "Type": "ZP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      18,
+      19
+    ],
+    "Description": "参战并命中时生效。本场战斗您的基础战力（含装备、宠物）加倍。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "金蚕王",
+    "Code": "ZP03",
+    "Type": "ZP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      20,
+      24,
+      58,
+      58
+    ],
+    "Description": "参战并命中时生效。本场战斗中您的战力+3。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "天玄五音",
+    "Code": "ZP04",
+    "Type": "ZP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      25,
+      32,
+      59,
+      59
+    ],
+    "Description": "未参战亦可使用。您指定一方本场战斗中战力+2。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "冰心诀",
+    "Code": "TP01",
+    "Type": "TP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      33,
+      35,
+      60,
+      60
+    ],
+    "Description": "任意玩家使用技牌、战牌、特殊牌时打出，可令当前打出的这张牌无效。",
+    "Special": {
+      "结界甲": "对于本牌使用的【净衣咒】改为抵消目标卡牌的效果。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "G0CD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "0"
+    ],
+    "IsTermini": [
+      true
+    ]
+  },
+  {
+    "Name": "灵葫仙丹",
+    "Code": "TP02",
+    "Type": "TP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      36,
+      38,
+      91,
+      91
+    ],
+    "Description": "您的技牌阶段使用，您自己的HP+2。当有玩家HP为0时使用，可令其复活并恢复2点HP。",
+    "Special": {
+      "结界丙": "对于本牌使用的【净衣咒】均执行第一项效果。"
+    },
+    "Priorities": [
+      0,
+      0
+    ],
+    "Occurs": [
+      "R#GR",
+      "G0ZH"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      true
+    ]
+  },
+  {
+    "Name": "隐蛊",
+    "Code": "TP03",
+    "Type": "TP",
+    "Genre": 1,
+    "Package": [
+      1,
+      4
+    ],
+    "Range": [
+      39,
+      42,
+      92,
+      92
+    ],
+    "Description": "抵消一次您自己受到的HP伤害（倾慕除外）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "G0OH"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      true
+    ]
+  },
+  {
+    "Name": "洞冥宝镜",
+    "Code": "TP04",
+    "Type": "TP",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      43,
+      46
+    ],
+    "Description": "任意玩家决定是否翻取怪物牌前使用，指定一名玩家翻取怪物牌堆顶的1张，检视后放回原处。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "G1SG"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "无尘剑",
+    "Code": "WQ01",
+    "Type": "WQ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      47,
+      47
+    ],
+    "Description": "战力+1，命中+1。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 1,
+    "SingleEntry": 47,
+    "CsPriorites": [
+      [],
+      []
+    ],
+    "CsOccur": [
+      [],
+      []
+    ],
+    "CsLock": [
+      [],
+      []
+    ],
+    "CsOnce": [
+      [],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "天蛇杖",
+    "Code": "WQ02",
+    "Type": "WQ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      48,
+      48
+    ],
+    "Description": "战力+1。",
+    "Special": {
+      "特效": "装备后的角色如果HP得到回复（倾慕除外）HP回复量额外+1。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 0,
+    "SingleEntry": 48,
+    "CsPriorites": [
+      [
+        10
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0IH"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "魔刀天叱",
+    "Code": "WQ03",
+    "Type": "WQ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      49,
+      49
+    ],
+    "Description": "战力+2。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 2,
+    "IncrOfDEX": 0,
+    "SingleEntry": 49,
+    "CsPriorites": [
+      [],
+      []
+    ],
+    "CsOccur": [
+      [],
+      []
+    ],
+    "CsLock": [
+      [],
+      []
+    ],
+    "CsOnce": [
+      [],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "魔剑",
+    "Code": "WQ04",
+    "Type": "WQ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      50,
+      50
+    ],
+    "Description": "命中+1。",
+    "Special": {
+      "典当": "您的技牌阶段，可以放弃魔剑（是否装备均可），之后您补2张牌。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 1,
+    "SingleEntry": 50,
+    "CsPriorites": [
+      [],
+      []
+    ],
+    "CsOccur": [
+      [],
+      []
+    ],
+    "CsLock": [
+      [],
+      []
+    ],
+    "CsOnce": [
+      [],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "彩环",
+    "Code": "WQ05",
+    "Type": "WQ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      51,
+      51
+    ],
+    "Description": "命中+2。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 2,
+    "SingleEntry": 51,
+    "CsPriorites": [
+      [],
+      []
+    ],
+    "CsOccur": [
+      [],
+      []
+    ],
+    "CsLock": [
+      [],
+      []
+    ],
+    "CsOnce": [
+      [],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "五彩霞衣",
+    "Code": "FJ01",
+    "Type": "FJ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      52,
+      52
+    ],
+    "Description": "战力+1。",
+    "Special": {
+      "爆发": "装备后，您HP为0时，可丢弃五彩霞衣，复活并恢复2点HP。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 0,
+    "SingleEntry": 52,
+    "CsPriorites": [
+      [],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [],
+      [
+        "G0ZH"
+      ]
+    ],
+    "CsLock": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        true
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "天帝祭服",
+    "Code": "FJ02",
+    "Type": "FJ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      53,
+      53
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "装备后，您可将任何手牌当作【隐蛊】使用。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [
+      "TP03,0"
+    ],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 53,
+    "CsPriorites": [
+      [
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "&TP03&0"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      []
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "龙魂战铠",
+    "Code": "FJ03",
+    "Type": "FJ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      54,
+      54
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "装备后，您受到任何伤害（倾慕除外），HP损失降低1点，最低可降至0点。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 54,
+    "CsPriorites": [
+      [
+        -10
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0OH"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      []
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "乾坤道袍",
+    "Code": "FJ04",
+    "Type": "FJ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      55,
+      55
+    ],
+    "Description": "战力+1。",
+    "Special": {
+      "特效": "装备后，您免疫技牌导致的HP伤害。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 0,
+    "SingleEntry": 55,
+    "CsPriorites": [
+      [
+        -50
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0OH"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "踏云靴",
+    "Code": "FJ05",
+    "Type": "FJ",
+    "Genre": 1,
+    "Package": [
+      1
+    ],
+    "Range": [
+      56,
+      56
+    ],
+    "Description": "命中+1。",
+    "Special": {
+      "爆发": "装备后受到伤害时（倾慕除外），您可丢弃踏云靴，免疫本次伤害，并令HP回复1点。隐蛊无效的伤害亦能免疫。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 1,
+    "SingleEntry": 56,
+    "CsPriorites": [
+      [],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [],
+      [
+        "G0OH"
+      ]
+    ],
+    "CsLock": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        true
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR驯化",
+    "Code": "JPT1",
+    "Type": "JP",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      61,
+      62
+    ],
+    "Description": "以下功能二选一：\r1. 翻开等于双方宠物总数的手牌，从宠物战力和较低方（平局则从使用方）开始轮流挑选1张并任意分配；\r2. 额外弃1张手牌执行一名玩家将1只宠物交给其队友（可触发交换）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR洒金笺",
+    "Code": "JPT2",
+    "Type": "JP",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      63,
+      64
+    ],
+    "Description": "我方全体各补1张牌。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "0"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR五灵轮",
+    "Code": "ZPT1",
+    "Type": "ZP",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      65,
+      68
+    ],
+    "Description": "战牌阶段使用，指定一方战力+1；若您参战未命中，则改为指定一方战力+4。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR傀儡虫",
+    "Code": "TPT1",
+    "Type": "TP",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      69,
+      70
+    ],
+    "Description": "宠物总战力不高于敌方时，可在您触发战斗前使用，指定敌方一只宠物作为本战怪牌。任意角色受到伤害（隐蛊无效及倾慕除外）时可使用，令该伤害变为1点。",
+    "Special": {
+      "结界乙": "本牌用于夺宠时，不可被【净衣咒】响应。"
+    },
+    "Priorities": [
+      -20,
+      85
+    ],
+    "Occurs": [
+      "R#ZW",
+      "G0OH"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      true
+    ]
+  },
+  {
+    "Name": "TR天仙玉露",
+    "Code": "TPT2",
+    "Type": "TP",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      71,
+      72
+    ],
+    "Description": "技牌阶段使用，作为装备放在手边。战牌阶段使用，指定任意一人补1张牌。",
+    "Special": {
+      "特效": "任意战斗的战牌阶段可以弃置已放在手边装备的天仙玉露，指定一方战力+2。"
+    },
+    "Priorities": [
+      0,
+      0
+    ],
+    "Occurs": [
+      "R#GR",
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      false
+    ]
+  },
+  {
+    "Name": "TR羲和",
+    "Code": "WQT1",
+    "Type": "WQ",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      73,
+      73
+    ],
+    "Description": "战力+1。",
+    "Special": {
+      "爆发": "当您参战时，战牌阶段开始时，令您强制命中。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 0,
+    "SingleEntry": 73,
+    "CsPriorites": [
+      [],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [],
+      [
+        "R*ZC"
+      ]
+    ],
+    "CsLock": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR望舒",
+    "Code": "WQT2",
+    "Type": "WQ",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      74,
+      74
+    ],
+    "Description": "命中+1。",
+    "Special": {
+      "爆发": "当您参战时，战牌阶段开始时，令您战力加倍。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 1,
+    "SingleEntry": 74,
+    "CsPriorites": [
+      [],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [],
+      [
+        "R*ZC"
+      ]
+    ],
+    "CsLock": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR烟月神镜",
+    "Code": "FJT1",
+    "Type": "FJ",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      75,
+      75
+    ],
+    "Description": "命中+1。",
+    "Special": {
+      "特效": "您受到伤害时（倾慕除外），可以给一名敌方角色1张手牌将该伤害变为1点转移给该角色。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 1,
+    "SingleEntry": 75,
+    "CsPriorites": [
+      [
+        -110
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0OH"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR寿葫芦",
+    "Code": "FJT2",
+    "Type": "FJ",
+    "Genre": 5,
+    "Package": [
+      4
+    ],
+    "Range": [
+      76,
+      76
+    ],
+    "Description": "每回合每个目标限一次，您可为任意角色装备。进入装备区时，装备者HP+2。",
+    "Special": {
+      "爆发": "您受到伤害时（倾慕除外），弃置此装备，令该伤害变为1点并补1张牌。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 76,
+    "CsPriorites": [
+      [],
+      [
+        85
+      ]
+    ],
+    "CsOccur": [
+      [],
+      [
+        "G0OH"
+      ]
+    ],
+    "CsLock": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      [
+        true
+      ]
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      [
+        false
+      ]
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR元祖星空",
+    "Code": "JPT3",
+    "Type": "JP",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      77,
+      78
+    ],
+    "Description": "以下功能三选一：1. 立即翻开一张事件牌并执行；2. 指定我方两名角色同时交换任意数量的手牌（至多为两人较小者且最多为3）；3. 指定我方两名角色交换1只宠物，交换完毕后您HP-1。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR锁魂钉",
+    "Code": "JPT4",
+    "Type": "JP",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      79,
+      80
+    ],
+    "Description": "指定一人减少其宠物数量的HP（至少为1）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR还魂香",
+    "Code": "JPT5",
+    "Type": "JP",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      81,
+      82
+    ],
+    "Description": "指定一人执行一个额外的NPC行动（执行「加入」后的角色HP最多为3）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR天魔附体",
+    "Code": "ZPT2",
+    "Type": "ZP",
+    "Genre": 6,
+    "Package": [
+      4,
+      6
+    ],
+    "Range": [
+      83,
+      85,
+      125,
+      125
+    ],
+    "Description": "参战者可使用，指定本场战斗自身战力+2或命中+3。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR乾坤一掷",
+    "Code": "ZPT3",
+    "Type": "ZP",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      86,
+      87
+    ],
+    "Description": "指定任意一人命中+1或令您自身战力或命中临时变为两者之和（不包含战牌阶段临时改变的部分）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR净衣咒",
+    "Code": "TPT3",
+    "Type": "TP",
+    "Genre": 6,
+    "Package": [
+      4,
+      6
+    ],
+    "Range": [
+      88,
+      90,
+      121,
+      121
+    ],
+    "Description": "敌方使用非装备牌（无结界）时对我方一人使用，生效后放在该角色手边。对方牌结算完毕后，目标角色将本牌当做与其相同的牌使用。",
+    "Special": {
+      "结界": "对于结界甲类卡牌使用【净衣咒】时，改为抵消目标卡牌的效果。不可响应结界乙类卡牌。",
+      "结界甲": "对于本牌使用的【净衣咒】改为抵消目标卡牌的效果。"
+    },
+    "Priorities": [
+      90,
+      0
+    ],
+    "Occurs": [
+      "G0CD",
+      "G0CD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*",
+      "*"
+    ],
+    "IsTermini": [
+      true,
+      true
+    ]
+  },
+  {
+    "Name": "TR紫金葫芦",
+    "Code": "XBT1",
+    "Type": "XB",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      93,
+      93
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "我方触发战斗中进入弃牌堆的怪物牌可收入紫金葫芦。您的技牌阶段开始时可弃置其中的全部怪牌，指定任意数量的角色共补等于怪物战力总和1/4的牌。",
+      "行囊": "紫金葫芦进入装备区时立即补1张牌，离开装备区时移除其中所有怪牌。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 93,
+    "CsPriorites": [
+      [
+        80,
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0ON",
+        "R#GS"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true,
+        false
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "Capacities": [],
+    "Pull": false,
+    "ILAS": null,
+    "_type": "luggage"
+  },
+  {
+    "Name": "TR炼蛊皿",
+    "Code": "XBT2",
+    "Type": "XB",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      94,
+      94
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "您弃置的牌可直接置入炼蛊皿，上限为4；其他玩家的弃牌阶段，您可每弃置2张皿中的牌将1张弃牌收归您的手牌。",
+      "行囊": "炼蛊皿进入装备区时立即补1张牌，离开装备区时其中的牌直接弃置。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 94,
+    "CsPriorites": [
+      [
+        40,
+        140
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G1DI",
+        "G1DI"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true,
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "Capacities": [],
+    "Pull": false,
+    "ILAS": null,
+    "_type": "luggage"
+  },
+  {
+    "Name": "TR梦见樽",
+    "Code": "XBT3",
+    "Type": "XB",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      95,
+      95
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "您补牌后可将梦见樽中的牌收归手牌，然后置入至多2张手牌。当可直接使用梦见樽中的牌时，您可直接使用之。",
+      "行囊": "梦见樽进入装备区时立即补1张牌，离开装备区时其中的牌返归手牌。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [
+      "JP01,0",
+      "JP02,0",
+      "JP03,0",
+      "JP04,0",
+      "JP05,0",
+      "JP06,0",
+      "ZP01,0",
+      "ZP02,0",
+      "ZP03,0",
+      "ZP04,0",
+      "TP02,0",
+      "TP04,0",
+      "WQ01,0",
+      "WQ02,0",
+      "WQ03,0",
+      "WQ04,0",
+      "WQ05,0",
+      "FJ01,0",
+      "FJ02,0",
+      "FJ03,0",
+      "FJ04,0",
+      "FJ05,0",
+      "JPT1,0",
+      "JPT2,0",
+      "ZPT1,0",
+      "TPT1,0",
+      "TPT2,0",
+      "TPT2,1",
+      "WQT1,0",
+      "WQT2,0",
+      "FJT1,0",
+      "FJT2,0",
+      "JPT3,0",
+      "JPT4,0",
+      "JPT5,0",
+      "ZPT2,0",
+      "ZPT3,0",
+      "XBT1,0",
+      "XBT2,0",
+      "XBT3,0",
+      "XBT4,0",
+      "JPT6,0",
+      "TPT4,0",
+      "TPT4,1",
+      "ZPT4,0",
+      "ZPT5,0",
+      "TPR1,0",
+      "TPR1,1",
+      "JPR1,0",
+      "JPR2,0",
+      "XBR1,0",
+      "JPH2,0",
+      "TPH1,0",
+      "TPH1,1",
+      "TPH4,0",
+      "ZPH1,0",
+      "WQH1,0",
+      "FJH1,0",
+      "XBH1,0",
+      "TP01,0",
+      "TP02,1",
+      "TP03,0",
+      "TPT1,1",
+      "TPT3,0",
+      "TPT3,1"
+    ],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 95,
+    "CsPriorites": [
+      [
+        270,
+        0,
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G1DI",
+        "%3",
+        "%4"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false,
+        false,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false,
+        false,
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true,
+        false,
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false,
+        false,
+        false
+      ],
+      []
+    ],
+    "Capacities": [],
+    "Pull": false,
+    "ILAS": null,
+    "_type": "luggage"
+  },
+  {
+    "Name": "TR神农鼎",
+    "Code": "XBT4",
+    "Type": "XB",
+    "Genre": 6,
+    "Package": [
+      4
+    ],
+    "Range": [
+      96,
+      96
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "战斗中我方直接使用并进入弃牌堆的战牌放置于神农鼎旁，若我方战败则将这些牌全部置入神农鼎，否则返回弃牌堆。任意战牌阶段可以将神农鼎中所有牌移除，令我方战力增加移除的牌数。",
+      "行囊": "神农鼎进入装备区时立即补1张牌，离开装备区时您可选择其中1张牌收归手牌，其余牌移除。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 96,
+    "CsPriorites": [
+      [
+        240,
+        0,
+        0,
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G0CC",
+        "R*VS",
+        "R*Z2",
+        "R*ZD"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        true,
+        false,
+        true,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false,
+        false,
+        false,
+        false
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        true,
+        false,
+        true,
+        false
+      ],
+      []
+    ],
+    "Capacities": [],
+    "Pull": false,
+    "ILAS": null,
+    "_type": "luggage"
+  },
+  {
+    "Name": "风卷尘生",
+    "Code": "JPH1",
+    "Type": "JP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      97,
+      97
+    ],
+    "Description": "您指定一名角色选择：弃置装备区内所有牌（至少1张）并补等量牌；或弃置等同于装备区内牌数+1的手牌或装备牌。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "罡风惊天",
+    "Code": "JPH2",
+    "Type": "JP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      98,
+      98
+    ],
+    "Description": "您令一名装备区内有牌的角色选择：弃置装备区内所有牌（至多3张），或受到等同于装备区内牌数+2点风属性伤害（至多5点）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "七光御阵",
+    "Code": "JPH3",
+    "Type": "JP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      99,
+      99
+    ],
+    "Description": "您指定一种属性：对拥有此属性宠物的全体角色造成n点此属性伤害，然后其弃置n张牌，n为其宠物数；或令无此属性宠物的全体角色HP+1并补1张牌。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "七色神石",
+    "Code": "JPH4",
+    "Type": "JP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      100,
+      100
+    ],
+    "Description": "您翻开怪物牌堆顶的牌直至有3张怪物牌为止，对方将其任意分配，游戏直接结束。",
+    "Special": {
+      "典当": "技牌阶段可弃置此牌，补2张牌。",
+      "结界乙": "本牌不可被【净衣咒】响应。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      true
+    ]
+  },
+  {
+    "Name": "代表石",
+    "Code": "TPH1",
+    "Type": "TP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      101,
+      101
+    ],
+    "Description": "技牌阶段使用，指定一名角色获得「神算」标记；战斗开始阶段使用，指定本场触发怪物闪避+1或-1。",
+    "Special": {},
+    "Priorities": [
+      0,
+      -50
+    ],
+    "Occurs": [
+      "R#GR",
+      "R*Z1"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#",
+      "#"
+    ],
+    "IsTermini": [
+      false,
+      false
+    ]
+  },
+  {
+    "Name": "幻缈蓝晶",
+    "Code": "TPH2",
+    "Type": "TP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      102,
+      102
+    ],
+    "Description": "当有角色触发战斗获得宠物前，您可对其使用，弃置该宠物，然后其主人任意分配等同于宠物等级数量2倍枚普通标记。",
+    "Special": {
+      "结界甲": "对于本牌使用的【净衣咒】改为抵消目标卡牌的效果。"
+    },
+    "Priorities": [
+      70
+    ],
+    "Occurs": [
+      "G0HC"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      true
+    ]
+  },
+  {
+    "Name": "无心花",
+    "Code": "TPH3",
+    "Type": "TP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      103,
+      103
+    ],
+    "Description": "其他角色补牌阶段结束时使用，您与其手牌对调。若其非您队友且结算时您的手牌少于对方3张或更多，您横置且HP-2。",
+    "Special": {},
+    "Priorities": [
+      180
+    ],
+    "Occurs": [
+      "R$BC"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "$"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "神观玄视镜",
+    "Code": "TPH4",
+    "Type": "TP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      104,
+      104
+    ],
+    "Description": "当一张事件牌被翻开执行前，您可观看事件牌堆顶2张牌，放回其中一张，弃置另一张。",
+    "Special": {},
+    "Priorities": [
+      80
+    ],
+    "Occurs": [
+      "G1EV"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "魔临天下",
+    "Code": "ZPH1",
+    "Type": "ZP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      105,
+      106
+    ],
+    "Description": "您指定一名角色命中-2。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "轩辕鼓槌",
+    "Code": "ZPH2",
+    "Type": "ZP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      107,
+      107
+    ],
+    "Description": "参战时可使用。您指定一名未参战角色额外参战。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "$"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "赤霞丹",
+    "Code": "ZPH3",
+    "Type": "ZP",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      108,
+      108
+    ],
+    "Description": "您指定一名有宠物的参战角色弃置等同于其宠物数的手牌，然后其选择战力、命中、HP中的一项增加弃置的牌数。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "$"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "大夏龙雀",
+    "Code": "WQH1",
+    "Type": "WQ",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      109,
+      109
+    ],
+    "Description": "命中+1。",
+    "Special": {
+      "特效": "您可将2张手牌当作【金蚕王】使用。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 1,
+    "SingleEntry": 109,
+    "CsPriorites": [
+      [
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "&ZP03&0"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      []
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "梦华天蛇冠",
+    "Code": "FJH1",
+    "Type": "FJ",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      110,
+      110
+    ],
+    "Description": "每回合每个目标限一次，您可为任意角色装备。离开装备区时，装备者HP+1。",
+    "Special": {
+      "特效": "您触发的战斗中，可将怪物失败效果改为「触发者HP-1」。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 110,
+    "CsPriorites": [
+      [
+        80
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G1GE"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      []
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "青龙碧血玉",
+    "Code": "XBH1",
+    "Type": "XB",
+    "Genre": 9,
+    "Package": [
+      7
+    ],
+    "Range": [
+      111,
+      111
+    ],
+    "Description": "战力+1。",
+    "Special": {
+      "特效": "回合结束阶段，若您未放弃触发战斗，可指定一名其他角色交给您1张手牌，然后其获得您装备区内的【青龙碧血玉】。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 1,
+    "IncrOfDEX": 0,
+    "SingleEntry": 111,
+    "CsPriorites": [
+      [
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "R#TM"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false
+      ],
+      []
+    ],
+    "_type": "equip"
+  },
+  {
+    "Name": "TR毒龙胆",
+    "Code": "JPT6",
+    "Type": "JP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      117,
+      118
+    ],
+    "Description": "指定一人进行掷骰，若该角色为我方角色则HP回复n点，为对方角色则受到n点阴属性伤害（n为掷骰结果的一半且向上取整）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR赤雪流珠丹",
+    "Code": "TPT4",
+    "Type": "TP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      122,
+      124
+    ],
+    "Description": "技牌阶段使用，您可弃置双方各至多一个标准标记。当有角色即将受到不小于其剩余HP的伤害时使用，令该角色掷骰判定，HP增加掷骰结果。",
+    "Special": {},
+    "Priorities": [
+      0,
+      -7,
+      0
+    ],
+    "Occurs": [
+      "R#GR",
+      "G0OH",
+      "^"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*",
+      "*",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "Name": "TR神鬼万劫轮",
+    "Code": "ZPT4",
+    "Type": "ZP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      126,
+      127
+    ],
+    "Description": "参战者使用后进行一次掷骰判定，若为1或6我方强制战斗失败；否则指定一方战力增加掷骰结果，本战强制结束，进入胜负结算阶段。",
+    "Special": {
+      "结界甲": "对于本牌使用的【净衣咒】改为抵消目标卡牌的效果。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      true
+    ]
+  },
+  {
+    "Name": "TR妄念弑心咒",
+    "Code": "ZPT5",
+    "Type": "ZP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      128,
+      129
+    ],
+    "Description": "若您已受伤，参战并命中时生效。您的战力增加已损失的HP值。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR伏羲剑",
+    "Code": "XBT5",
+    "Type": "XB",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      130,
+      130
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "您可将一张手牌当【天玄五音】使用。",
+      "幻化": "战斗开始阶段，您可弃置1张手牌，直至本战结束：【伏羲剑】原始特效失效，此牌同时视作【无尘剑】或【烟月神镜】（您对应的装备槽须未满且场上装备区内无幻化目标时方可发动）。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 130,
+    "CsPriorites": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "&ZP04&0",
+        "R*Z2",
+        "R*ED",
+        "&FJT1&0!0"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false,
+        true,
+        true,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false,
+        true,
+        true,
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        false,
+        false,
+        false,
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false,
+        true,
+        true,
+        false
+      ],
+      []
+    ],
+    "ILAS": null,
+    "_type": "illusion"
+  },
+  {
+    "Name": "TR女娲血玉",
+    "Code": "XBT6",
+    "Type": "XB",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      131,
+      131
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "我方其他角色承受伤害前，或有角色阵亡退场前，您可执行一个额外的NPC行动。若执行「加入」，您爆发【女娲血玉】。",
+      "幻化": "战斗开始阶段，您可弃置1张手牌，直至本战结束：【女娲血玉】原始特效失效，此牌同时视作【彩环】或【五彩霞衣】（您对应的装备槽须未满且场上装备区内无幻化目标时方可发动）。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 131,
+    "CsPriorites": [
+      [
+        95,
+        80,
+        0,
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [
+        "G0OH",
+        "G0ZW",
+        "R*Z2",
+        "R*ED"
+      ],
+      [
+        "&FJ01&1!0"
+      ]
+    ],
+    "CsLock": [
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        true
+      ]
+    ],
+    "CsHind": [
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "ILAS": null,
+    "_type": "illusion"
+  },
+  {
+    "Name": "TR蚩尤护符",
+    "Code": "XBT7",
+    "Type": "XB",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      132,
+      132
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "每回合限一次，您可将2张相同类型的非装备牌当同类型的任意手牌使用。",
+      "幻化": "战斗开始阶段，您可弃置1张手牌，直至本战结束：【蚩尤护符】原始特效失效，此牌同时视作【魔刀天叱】或【踏云靴】（您对应的装备槽须未满且场上装备区内无幻化目标时方可发动）。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 132,
+    "CsPriorites": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "CsOccur": [
+      [
+        "%1",
+        "%4",
+        "R*Z2",
+        "R*ED"
+      ],
+      [
+        "&FJ05&1!0"
+      ]
+    ],
+    "CsLock": [
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsOnce": [
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "CsIsTermini": [
+      [
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        true
+      ]
+    ],
+    "CsHind": [
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false
+      ]
+    ],
+    "ILAS": null,
+    "_type": "illusion"
+  },
+  {
+    "Name": "TR天仙玉露",
+    "Code": "TPR1",
+    "Type": "TP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      133,
+      134
+    ],
+    "Description": "技牌阶段使用，指定一名角色获得1枚普通增益标记；战牌阶段使用，指定一名角色补1张牌。",
+    "Special": {},
+    "Priorities": [
+      0,
+      0
+    ],
+    "Occurs": [
+      "R#GR",
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*",
+      "*"
+    ],
+    "IsTermini": [
+      false,
+      false
+    ]
+  },
+  {
+    "Name": "TR驯化",
+    "Code": "JPR1",
+    "Type": "JP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      135,
+      136
+    ],
+    "Description": "翻开等于双方宠物总数的手牌，从宠物战力和较低方（平局则从使用方）开始轮流挑选1张并任意分配；\r或令一名角色将1只宠物交给其队友（触发交换）。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR锁魂钉",
+    "Code": "JPR2",
+    "Type": "JP",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      137,
+      138
+    ],
+    "Description": "对一名角色造成n点伤害，n为其宠物数量与基础装备数的较大值且至少为1。",
+    "Special": {},
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "*"
+    ],
+    "IsTermini": [
+      false
+    ]
+  },
+  {
+    "Name": "TR炼蛊皿",
+    "Code": "XBR1",
+    "Type": "XB",
+    "Genre": 7,
+    "Package": [
+      5
+    ],
+    "Range": [
+      139,
+      139
+    ],
+    "Description": "",
+    "Special": {
+      "特效": "您弃置的非装备牌可置入炼蛊皿，上限为4；您可每弃置2张皿中的牌将1张其他角色弃置的非装备牌收归您的手牌。",
+      "行囊": "炼蛊皿进入装备区时立即补1张牌，离开装备区时其中的牌直接弃置。"
+    },
+    "Priorities": [
+      0
+    ],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "Targets": [
+      "#"
+    ],
+    "IsTermini": [
+      false
+    ],
+    "IncrOfSTR": 0,
+    "IncrOfDEX": 0,
+    "SingleEntry": 139,
+    "CsPriorites": [
+      [
+        40,
+        140
+      ],
+      []
+    ],
+    "CsOccur": [
+      [
+        "G1DI",
+        "G1DI"
+      ],
+      []
+    ],
+    "CsLock": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsOnce": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "CsIsTermini": [
+      [
+        true,
+        true
+      ],
+      []
+    ],
+    "CsHind": [
+      [
+        false,
+        false
+      ],
+      []
+    ],
+    "Capacities": [],
+    "Pull": false,
+    "ILAS": null,
+    "_type": "luggage"
+  }
+]

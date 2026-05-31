@@ -1,0 +1,102 @@
+[
+  {
+    "Name": "典当",
+    "Code": "CZ01",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [],
+    "Occurs": [
+      "R#GR"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [],
+    "Lock": [
+      false
+    ],
+    "IsHind": [],
+    "Descripe": ""
+  },
+  {
+    "Name": "混战",
+    "Code": "CZ02",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [],
+    "Occurs": [
+      "R#ZD"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [],
+    "Lock": [
+      false
+    ],
+    "IsHind": [],
+    "Descripe": ""
+  },
+  {
+    "Name": "助战",
+    "Code": "CZ03",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [],
+    "Occurs": [
+      "??"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [],
+    "Lock": [
+      false
+    ],
+    "IsHind": [],
+    "Descripe": ""
+  },
+  {
+    "Name": "幻化",
+    "Code": "CZ04",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [],
+    "Occurs": [
+      "R*Z1"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      true
+    ],
+    "IsTermini": [],
+    "Lock": [
+      false
+    ],
+    "IsHind": [],
+    "Descripe": ""
+  },
+  {
+    "Name": "佩戴物",
+    "Code": "CZ05",
+    "Group": 0,
+    "Genre": 0,
+    "Priorities": [],
+    "Occurs": [
+      "R*ZD"
+    ],
+    "Parasitism": [],
+    "IsOnce": [
+      false
+    ],
+    "IsTermini": [],
+    "Lock": [
+      false
+    ],
+    "IsHind": [],
+    "Descripe": ""
+  }
+]
