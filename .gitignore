@@ -1,18 +1,19 @@
-# Root-level exclusions
-.claude/
-.vite/
-.vscode/
+# Dependencies
 node_modules/
-PSD48.0.4.23.174/
-PSDRisoLib.g.resources/
-dnSpy-net-win64/
-psd48-master/
-问题记录/
 
-# Misc files
-AI的建议.txt
-基于节点小宝的逍遥游联机教程.docx
-范围.txt
+# Build output
+dist/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Vite
+.vite/
+
+# Claude skills
+.claude/skills/cc-sdd/
+.claude/skills/web-access/
 
 # Environment files
 .env
